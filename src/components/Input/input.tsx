@@ -66,7 +66,7 @@ const InputField = () => (
             <input
               type="checkbox"
               id="remember"
-              className="mr-4 text-green w-4 h-4"
+              className="custom mr-4 text-green w-4 h-4"
             />
             By signing up, I agree to the Terms of service
           </label>

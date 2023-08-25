@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
+
 const RadioButton = () => {
   const [selectedOption, setSelectedOption] = useState("");
 
@@ -8,12 +9,11 @@ const RadioButton = () => {
     target: { value: React.SetStateAction<string> };
   }) => {
     setSelectedOption(event.target.value);
+    console.log(event.target.value);
   };
 
   return (
     <>
-
-{/* <input type="radio" className="custom" /> */}
       <input
         id="default-radio-1"
         type="radio"

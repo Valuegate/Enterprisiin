@@ -1,3 +1,5 @@
+// import Link from "next/link";
+import Link from "next/link";
 import { ReactNode, FC } from "react";
 
 interface iAuthLayout {
@@ -9,7 +11,9 @@ const AuthLayout: FC<iAuthLayout> = ({ children }) => {
     <div className="w-full h-[100vh] flex justify-center items-center">
       <div className="w-[50%] h-full bg-green hidden md:flex">
         <header>
+          <Link href={"/"}>
           <h1 className="text-2xl text-white font-semibold pt-4 pl-4">VALUE GATE</h1>
+          </Link>
         </header>
       </div>
       <div className="w-full md:w-[50%] h-full bg-white overflow-y-scroll">{children}</div>

@@ -1,35 +1,44 @@
+"use client";
+import { useState } from "react";
 import GetStartedCard from "@/public/components/Card/GetStartedCard";
 import Button from "@/public/components/Button";
-import WT from "../../../assets/Work time-amico 1.png";
-import MM from "../../../assets/Manage money-bro 1.png"
+import { useRouter } from "next/navigation";
 
 const Register = () => {
+  const router = useRouter();
+  const [userState, setUserState] = useState<string | null>("");
+  const handleSelectOption = (data: string) => {
+    setUserState(data);
+  };
+
+  const handleProceed = () => {
+    return router.push(`/auth/create?role=${userState}`);
+  };
+
+  // const [isClicked, setIsClicked] = useState(false);
+
+  // const handleClick = () => {
+  //   setIsClicked(!isClicked);
+  // };
+
   return (
     <>
-      <div className="m-auto px-24 pt-28">
+      <div className="m-auto px-24 pt-24">
         <h1 className="font-bold text-3xl pb-4">Get Started</h1>
         <p className="text-base font-medium text-light-black-4 pb-4">
-          Choose your best fit from the options provided below
+        Select your perfect match
         </p>
-        <div>
-          <GetStartedCard
-                      heading={"I’m a Business Buyer"}
-                      paragraph={"Pool Academy Aquatics is an international aquatics club."} imageSrc={WT.src}          />
+        <div
+          // className={`box ${isClicked ? "clicked" : ""}`}
+          // onClick={handleClick}
+        >
+          <GetStartedCard getSelectedOption={handleSelectOption} />
         </div>
-
-        <div className="pt-4 pb-8">
-          <GetStartedCard
-                      heading={"I’m a Business Seller"}
-                      paragraph={"Pool Academy Aquatics is an international aquatics club."} imageSrc={MM.src}          />
-        </div>
-
         <Button
           type="button"
-          className="border-r-amber-400 rounded-md w-full h-12 text-white"
-          // disabled={true}
+          className="border rounded-md w-full h-12 text-white"
           colorType="primary"
-          // loading={load}
-        //   handleClick={() => setLoad(!load)}
+          handleClick={handleProceed}
         >
           Proceed
         </Button>

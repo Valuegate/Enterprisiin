@@ -40,7 +40,7 @@ const Button: React.FC<IButtonProps> = ({
       disabled={disabled}
       onClick={handleClick}
       className={joinClasses(
-        "w-auto h-12",
+        "w-auto? h-12",
         disabled && "bg-gray-400",
         getButtonColorType(colorType || "primary"),
         className
