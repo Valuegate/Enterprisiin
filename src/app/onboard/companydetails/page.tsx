@@ -1,4 +1,5 @@
 import NextButton from "@/public/components/NextButton/NextButton";
+import ProgressBar from "@/public/components/ProgressBar/ProgressBar";
 import SocialInput from "@/public/components/SocialInput/SocialInput";
 import IBackButton from "@/public/components/iBackButton/IBackButton";
 import Link from "next/link";
@@ -30,16 +31,20 @@ const CompanyDetails = () => {
           </div>
         </div>
 
-        <div className="mt-40 px-8">
-          <div className="flex justify-between">
-            <Link href="../../onboard/profileupload">
-              <IBackButton />
-            </Link>
-            <Link href="../../onboard/passwordsetup">
-              <NextButton />
-            </Link>
-          </div>
+        <div className="mt-[8.5rem]">
+        <ProgressBar progress={20} />
+      </div>
+
+      <div className="pl-6 top-auto fixed bottom-0 pb-4">
+        <div className="flex justify-between">
+          <Link href="../../onboard/companydetails">
+            <IBackButton />
+          </Link>
+          <Link href="../../onboard/socialmedia">
+            <NextButton />
+          </Link>
         </div>
+      </div>
       </div>
     </>
   );

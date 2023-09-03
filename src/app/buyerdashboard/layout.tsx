@@ -3,7 +3,6 @@ import {
   AddIcon,
   HelpIcon,
   LogoutIcon,
-  MaximizeIcon,
   MessageIcon,
   MicrophoneIcon,
   NotificationIcon,
@@ -19,71 +18,51 @@ import React from "react";
 import { ReactNode, FC, useState } from "react";
 import ProfileDropdown from "@/public/components/ProfileDropdown/ProfileDropdown";
 
-interface iDashBoardLayout {
+interface iBuyerDashBoardLayout {
   children: ReactNode;
 }
 
-const DashBoardLayout: FC<iDashBoardLayout> = ({ children }) => {
+const BuyerDashBoardLayout: FC<iBuyerDashBoardLayout> = ({ children }) => {
   const menus = [
-    { name: "Overview", link: "", icon: OverviewIcon },
+    { name: "Overview", link: "./overview", icon: OverviewIcon },
     { name: "Store", link: "", icon: StoreIcon },
     { name: "Message", link: "", icon: MessageIcon },
     { name: "Wallet", link: "", icon: WalletIcon },
     { name: "consult", link: "", icon: MicrophoneIcon },
-    { name: "Setting", link: "", icon: SettingsIcon, margin: true },
-    { name: "Help & Support", link: "", icon: HelpIcon },
+    { name: "Setting", link: "./settings", icon: SettingsIcon, margin: true },
+    { name: "Help & Support", link: "./helpandsupport", icon: HelpIcon },
     { name: "Logout", link: "", icon: LogoutIcon },
   ];
 
   const [open, setOpen] = useState(true);
 
   return (
-    <div className="flex">
+    <div className="flex bg-light-black h-auto">
       <div
-        className={`bg-green min-h-screen ${
+        className={`bg-green h-screen ${
           open ? "w-64" : "w-16"
-        } duration-500 text-gray-100 px-2`}
+        } duration-500 px-2`}
       >
-        <div className="flex justify-between items-center pt-4">
-          {/* <header>
-          <Link href={""}>
-          <h1 className="text-2xl text-white font-semibold pl-4">VALUE GATE</h1>
+        <div className={`flex justify-between items-center pt-4 ${
+            !open && "relative"
+          }`}>
+          <Link href={"./overview"}>
+            <h2
+              className={`whitespace-pre duration-500 text-2xl text-white font-semibold pl-2 ${
+                !open && "opacity-0 translate-x-28 overflow-hidden"
+              }`}
+            >
+              VALUE GATE
+            </h2>
           </Link>
-        </header> */}
-          <h2
-            // style={{
-            //   transitionDelay: `${i + 3}00ms`,
-            // }}
-            className={`whitespace-pre duration-500 text-2xl text-white font-semibold pl-4 ${
-              !open && "opacity-0 translate-x-28 overflow-hidden"
-            }`}
-          >
-            ValueGate
-          </h2>
-          <div className="py-3 pr-4 flex justify-end">
+          <div className={`py-3 pr-4 flex justify-end ${
+            !open && "absolute left-2"
+          }`}>
             <TbWindowMaximize
               className="cursor-pointer w-6 h-6 text-white"
               onClick={() => setOpen(!open)}
             />
           </div>
-        </div>
-
-        <div
-          className={`whitespace-pre duration-500 flex mt-6 text-2xl text-white font-semibold ${
-            !open && "opacity-0 translate-x-28 overflow-hidden"
-          }`}
-        >
-          <button
-            className="text-sm rounded-md w-full h-10 flex justify-center items-center gap-2 font-medium text-light-black-8 bg-white"
-            // disabled={true}
-            // loading={load}
-            //   handleClick={() => setLoad(!load)}
-          >
-            <span>
-              <AddIcon />
-            </span>
-            Create New List
-          </button>
         </div>
 
         <div className="mt-4 flex flex-col gap-1 relative">
@@ -92,8 +71,8 @@ const DashBoardLayout: FC<iDashBoardLayout> = ({ children }) => {
               href={menu?.link}
               key={i}
               className={` ${
-                menu?.margin && "mb-32"
-              } group flex items-center text-sm text-white gap-3.5 font-medium p-2 hover:bg-light-green-8 rounded-md`}
+                menu?.margin && "mb-52"
+              } group flex items-center text-sm text-white gap-3.5 font-medium p-2 hover:bg-light-green-8 rounded`}
             >
               <div>{React.createElement(menu?.icon)}</div>
               <h2
@@ -109,7 +88,7 @@ const DashBoardLayout: FC<iDashBoardLayout> = ({ children }) => {
               <h2
                 className={`${
                   open && "hidden"
-                } absolute left-48 bg-white font-semibold whitespace-pre text-green rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit  `}
+                } absolute left-48 bg-white font-semibold whitespace-pre text-green rounded drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit  `}
               >
                 {menu?.name}
               </h2>
@@ -117,7 +96,7 @@ const DashBoardLayout: FC<iDashBoardLayout> = ({ children }) => {
           ))}
         </div>
       </div>
-      <div className="w-full pt-4 bg-light-black">
+      <div className="w-full pt-4 bg-light-black-12 h-screen">
         <nav className="flex justify-between items-center px-6">
           <div className="">
             <h1 className="text-2xl font-bold pb-1">Welcome Back, John Doe! 👋</h1>
@@ -132,7 +111,7 @@ const DashBoardLayout: FC<iDashBoardLayout> = ({ children }) => {
               <input
                 type="text"
                 placeholder="Search..."
-                className="py-2 pl-10 pr-4 border-none bg-light-black-1 rounded focus:ring focus:ring-none focus:border-none"
+                className="search py-2 pl-10 pr-4 border-none bg-white-1 rounded focus:ring-none focus:border-none"
               />
             </div>
             <div className="">
@@ -146,11 +125,11 @@ const DashBoardLayout: FC<iDashBoardLayout> = ({ children }) => {
         </nav>
         <hr className="mt-2 border-none bg-light-black-1 h-[2px]"/>
 
-        <div className="bg-light-black">{children}</div>
+        <div className="bg-light-black-12">{children}</div>
 
       </div>
     </div>
   );
 };
 
-export default DashBoardLayout;
+export default BuyerDashBoardLayout;

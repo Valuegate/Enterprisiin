@@ -1,6 +1,6 @@
 "use client";
 import Button from "@/public/components/Button";
-import InputField from "@/public/components/Input/input";
+import InputField from "@/public/components/InputField/InputField";
 import { GoogleIcon } from "@/public/icons";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -16,7 +16,7 @@ const CreateAccount = () => {
     //   return "Get started to start your selling journey";
     // }
     return role === "Buyer"
-      ? "Join Us Today and Unlock New Opportunities!"
+      ? "Join us today and unlock new opportunities!"
       : "Get started to start your selling journey";
   };
 
@@ -28,11 +28,16 @@ const CreateAccount = () => {
       </p>
       <InputField />
 
-      <div className="text-center font-base text-xl pt-4 pb-4">OR</div>
+      <div className="flex gap-4 items-center pt-4 pb-4">
+      <hr className="border-none bg-light-black-1 h-[1px] w-full" />
+      <div className="text-center font-base text-xl ">OR</div>
+      <hr className="border-none bg-light-black-1 h-[1px] w-full" />
+      </div>
+
 
       <Button
         type="button"
-        className="border-r-amber-400 rounded-md w-full h-12 flex justify-center items-center gap-4 font-semibold"
+        className="bg-light-green-2 rounded w-full h-12 flex justify-center items-center gap-4 font-medium"
         // disabled={true}
         colorType="secondary"
         // loading={load}
@@ -45,7 +50,7 @@ const CreateAccount = () => {
       </Button>
 
       <div className="flex justify-center gap-1 pt-8 pb-12">
-        <h1 className="text-center font-semibold text-l">
+        <h1 className="text-center font-medium text-l">
           Already have an account?
         </h1>
         <Link href="../../auth/login">

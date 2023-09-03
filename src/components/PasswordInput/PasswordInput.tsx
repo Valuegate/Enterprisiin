@@ -13,7 +13,7 @@ const PasswordInput: FC<iPasswordInput> = ({ label }) => {
 
     return ( 
         <>
-        <label className="block text-gray-700 font-medium text-lg" htmlFor="password">
+        <label className="block text-gray-700 pb-1 font-medium text-lg" htmlFor="password">
           {label}
         </label>
         <div className="relative">
@@ -21,10 +21,10 @@ const PasswordInput: FC<iPasswordInput> = ({ label }) => {
             type={showPassword ? 'text' : 'password'}
             id="password"
             placeholder="Enter password"
-            className="placeholder-italic mt-1 p-2 border-none bg-gray-light rounded-md w-full"
+            className="placeholder-italic p-3 border-none bg-white-1 rounded w-full"
           />
           <button
-            className="absolute inset-y-0 right-0 flex items-center px-2 text-gray-600 cursor-pointer"
+            className="absolute inset-y-0 right-2 flex items-center px-2 cursor-pointer"
             onClick={() => setShowPassword(!showPassword)}
           >
             {showPassword ? (

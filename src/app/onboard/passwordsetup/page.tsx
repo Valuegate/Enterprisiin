@@ -1,5 +1,6 @@
 import NextButton from "@/public/components/NextButton/NextButton";
 import PasswordInput from "@/public/components/PasswordInput/PasswordInput";
+import ProgressBar from "@/public/components/ProgressBar/ProgressBar";
 import IBackButton from "@/public/components/iBackButton/IBackButton";
 import Link from "next/link";
 
@@ -9,7 +10,8 @@ const PasswordSetup = () => {
       <div className="text-center items-center">
         <h1 className="onboard-heading">Setup your password</h1>
         <p className="onboard-paragraph">
-        Boost your account security in moments by creating a strong and unique password.
+          Boost your account security in moments by creating a strong and unique
+          password.
         </p>
       </div>
       <div className="mt-12 mb-6 px-96">
@@ -19,16 +21,22 @@ const PasswordSetup = () => {
         <PasswordInput label={"Confirm Password"} />
       </div>
 
-      <div className="mt-44 px-8">
-      <div className="flex justify-between">
-        <Link href="../../onboard/companydetails">
-            <IBackButton/>
-        </Link>
-        <Link href="../../onboard/socialmedia">
-            <NextButton/>
-        </Link>
+      <div className="mt-[9rem]">
+        <ProgressBar progress={90} />
       </div>
+
+      <div className="pl-6 top-auto fixed bottom-0 pb-6">
+        <div className="flex justify-between">
+          <Link href="../../onboard/companydetails">
+            <IBackButton />
+          </Link>
+          <Link href="../../onboard/socialmedia">
+            <NextButton />
+          </Link>
+        </div>
       </div>
+
+      
     </>
   );
 };

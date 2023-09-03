@@ -5,6 +5,7 @@ import { GoogleIcon } from "../icons";
 import Button from "../components/Button";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Theme } from "@radix-ui/themes";
 
 export default function Home() {
   const router = useRouter();
@@ -26,6 +27,7 @@ export default function Home() {
       >
         Submit
       </Button> */}
+{/* <Theme></Theme> */}
     </>
   );
 }

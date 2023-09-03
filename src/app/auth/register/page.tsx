@@ -36,7 +36,7 @@ const Register = () => {
         </div>
         <Button
           type="button"
-          className="border rounded-md w-full h-12 text-white"
+          className="border rounded w-full h-12 text-white"
           colorType="primary"
           handleClick={handleProceed}
         >

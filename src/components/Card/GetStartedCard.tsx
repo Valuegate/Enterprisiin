@@ -23,7 +23,7 @@ const GetStartedCard: FC<iGetStartedCard> = ({ getSelectedOption }) => {
     <>
       <label htmlFor="buyer">
         <div
-          className={`bg-gray-light rounded-md mb-6 relative container ${
+          className={`bg-gray-light rounded mb-6 relative container ${
             activeContainer === "first" ? "border-color-green" : ""
           }`}
           onClick={() => setActiveContainer("first")}
@@ -55,7 +55,7 @@ const GetStartedCard: FC<iGetStartedCard> = ({ getSelectedOption }) => {
 
       <label htmlFor="seller">
         <div
-          className={`bg-gray-light rounded-md mb-6 relative container ${
+          className={`bg-gray-light rounded mb-6 relative container ${
             activeContainer === "second" ? "border-color-green" : ""
           }`}
           onClick={() => setActiveContainer("second")}

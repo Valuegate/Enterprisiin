@@ -26,14 +26,14 @@ const ForgotPassword = () => {
               id="email"
               name="email"
               placeholder="Enter your email address"
-              className="placeholder-italic mt-1 p-2 border-none bg-gray-light rounded-md w-full"
+              className="placeholder-italic mt-1 p-3 border-none bg-white-1 rounded w-full"
             />
           </div>
           <div className="mt-12">
             <Link href="../../auth/passwordreset">
               <button
                 type="submit"
-                className="border-r-amber-400 bg-green rounded-md w-full h-12 text-white"
+                className="border-r-amber-400 bg-green rounded w-full h-12 text-white"
               >
                 Send
               </button>

@@ -11,14 +11,14 @@ const SocialInput: FC<iSocialInput> = ({ label, placeholderValue, id }) => {
 
     return ( 
         <>
-        <label className="block text-gray-700 font-medium text-lg" htmlFor="text">
+        <label className="block text-black font-semibold text-base" htmlFor="text">
           {label}
         </label>
         <input
             type="text"
             id={id as string}
             placeholder={placeholderValue as string}
-            className="placeholder-italic mt-1 p-2 border-none bg-gray-light w-full rounded-md "
+            className="placeholder-italic mt-1 p-3 border-none bg-white-1 w-full rounded "
           />
         </>
      );
