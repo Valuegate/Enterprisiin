@@ -11,6 +11,7 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   disabled?: boolean;
   loading?: boolean;
+  backgroundColor?: string;
   handleClick?: () => void;
 }
 

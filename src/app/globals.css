@@ -32,6 +32,7 @@ body {
 .placeholder-italic::placeholder {
   font-style: italic;
   padding-left: 8px;
+  font-weight: 400;
 }
 
 /* input {
@@ -97,4 +98,22 @@ input:focus, .search:focus {
 
 .placeholder-left {
   padding-left: 3rem;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  color: #080F0B;
+}
+
+.close {
+  width: 13px;
+  height: 13px;
+  color: #080F0B;
 }

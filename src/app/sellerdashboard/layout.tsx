@@ -25,7 +25,7 @@ interface iSellerDashBoardLayout {
 const SellerDashBoardLayout: FC<iSellerDashBoardLayout> = ({ children }) => {
   const menus = [
     { name: "Overview", link: "./overview", icon: OverviewIcon },
-    { name: "Store", link: "", icon: StoreIcon },
+    { name: "Store", link: "./store", icon: StoreIcon },
     { name: "Message", link: "", icon: MessageIcon },
     { name: "Wallet", link: "", icon: WalletIcon },
     { name: "consult", link: "", icon: MicrophoneIcon },

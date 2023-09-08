@@ -11,6 +11,7 @@ import {
   SettingsIcon,
   StoreIcon,
   WalletIcon,
+  MarketplaceIcon,
 } from "@/public/icons";
 import { TbWindowMaximize } from "react-icons/tb";
 import Link from "next/link";
@@ -25,11 +26,11 @@ interface iBuyerDashBoardLayout {
 const BuyerDashBoardLayout: FC<iBuyerDashBoardLayout> = ({ children }) => {
   const menus = [
     { name: "Overview", link: "./overview", icon: OverviewIcon },
-    { name: "Store", link: "", icon: StoreIcon },
+    { name: "Marketplace", link: "./marketplace", icon: MarketplaceIcon },
     { name: "Message", link: "", icon: MessageIcon },
     { name: "Wallet", link: "", icon: WalletIcon },
-    { name: "consult", link: "", icon: MicrophoneIcon },
-    { name: "Setting", link: "./settings", icon: SettingsIcon, margin: true },
+    { name: "Settings", link: "./settings", icon: SettingsIcon },
+    { name: "Overview", link: "./overview", icon: OverviewIcon, margin: true },
     { name: "Help & Support", link: "./helpandsupport", icon: HelpIcon },
     { name: "Logout", link: "", icon: LogoutIcon },
   ];

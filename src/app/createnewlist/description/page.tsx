@@ -19,19 +19,19 @@ const Description = () => {
   };
 
   return (
-    <>
+    <div className="relative">
       <div className="">
-        <ProgressBar progress={20} />
+        <ProgressBar progress={30} />
       </div>
 
       <div className="pt-8 overflow-y-scroll h-[85vh]">
         <div className="text-center px-[12rem]">
-          <h1 className="text-[36px] font-semibold leading-[54px] pb-2">
-            Tell us about your business
+          <h1 className="text-[36px] font-semibold leading-[52px] pb-2">
+            Present your business to buyers
           </h1>
           <p className="text-base font-medium">
-            Share the unique story of your business and its offerings to the
-            buyers
+            Showcase your business strengths and value proposition to the
+            buyers.
           </p>
         </div>
 
@@ -44,16 +44,16 @@ const Description = () => {
               Headline
             </label>
             <p className="font-medium text-[16px] leading-[32px] text-light-black-5">
-              Make sure the picture is an overview of.
+              Capture attention that summarizes your business&apos;s essence.
             </p>
             <div className="">
-              <textarea
+              <input
                 className="search placeholder-italic mt-1 p-3 border-none bg-white-1 rounded w-full"
                 // rows={4}
                 placeholder="Business caption"
                 value={text}
                 onChange={handleChange}
-              ></textarea>
+              ></input>
               <div className="font-medium text-base text-light-black-5 text-right">
                 {maxLength - text.length} characters remaining
               </div>
@@ -68,7 +68,8 @@ const Description = () => {
               Business Description
             </label>
             <p className="font-medium text-[16px] leading-[32px] text-light-black-5">
-              Make sure the picture is an overview of.
+              Provide an overview of your business&apos;s products, services,
+              and mission.
             </p>
             <TextAreaWithCounter placeholder={"Business overview..."} />
           </div>
@@ -81,7 +82,8 @@ const Description = () => {
               Product and Services Description
             </label>
             <p className="font-medium text-[16px] leading-[32px] text-light-black-5">
-              Make sure the picture is an overview of.
+              Detail the features, benefits, and value of your products and
+              services.
             </p>
             <TextAreaWithCounter
               placeholder={"Product and services overview..."}
@@ -103,37 +105,61 @@ const Description = () => {
 
           <div className="pb-4">
             <label
+              htmlFor="facilities"
+              className="font-semibold text-base text-light-green-17"
+            >
+              Facilities Description
+            </label>
+            <p className="font-medium text-[16px] leading-[32px] text-light-black-5">
+              Highlight the unique facilities and amenities that set your
+              business apart.
+            </p>
+            <TextAreaWithCounter placeholder={"Facilities overview..."} />
+          </div>
+
+          <div className="pb-4">
+            <label
+              htmlFor="capital"
+              className="font-semibold text-base text-light-green-17"
+            >
+              Capitalization Description
+            </label>
+            <p className="font-medium text-[16px] leading-[32px] text-light-black-5">
+              Explain the financial foundation of your business.
+            </p>
+            <TextAreaWithCounter placeholder={"Capital overview..."} />
+          </div>
+
+          <div className="pb-4">
+            <label
               htmlFor="upload"
               className="font-semibold text-base text-light-green-17"
             >
               Upload your business plan documents
             </label>
             <p className="font-normal text-base text-light-black-5">
-            Information including on market analysis, competitive advantage, growth strategies, financial projections, and the intended return on investment.
+              Information including on market analysis, competitive advantage,
+              growth strategies, financial projections, and the intended return
+              on investment.
             </p>
             <div className="flex justify-start pt-4 ">
-            <UploadBtn />
+              <UploadBtn />
             </div>
-            
           </div>
         </div>
       </div>
 
-      <div className="relative">
-        <hr className="border-none bg-light-black-1 h-[1px] w-full absolute bottom-[3.5rem]" />
-      </div>
-
-      <div className="pl-6 top-auto fixed bottom-0 pb-4">
-        <div className="flex justify-between">
+      <div className="w-full absolute bottom-0 right-0 left-0 h-[50px] bg-light-black-12 border-t-[1px] border-t-light-black-1">
+        <div className="flex justify-between pt-3 px-6">
           <Link href="../../createnewlist/details">
             <IBackButton />
           </Link>
-          <Link href="../../createnewlist/description">
+          <Link href="../../createnewlist/duration">
             <NextButton />
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

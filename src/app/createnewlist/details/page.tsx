@@ -8,14 +8,14 @@ import Link from "next/link";
 
 const Details = () => {
   return (
-    <>
+    <div className="relative">
       <div className="">
         <ProgressBar progress={20} />
       </div>
 
       <div className="pt-8 overflow-y-scroll h-[85vh]">
         <div className="text-center px-[12rem]">
-          <h1 className="text-[36px] font-semibold leading-[54px] pb-2">
+          <h1 className="text-[36px] font-semibold leading-[52px] pb-2">
             Tell us about your business
           </h1>
           <p className="text-base font-medium">
@@ -33,7 +33,7 @@ const Details = () => {
               Business Name
             </label>
             <p className="font-medium text-[16px] leading-[32px] text-light-green-17">
-            Make sure the picture is an overview of.
+              Make sure the picture is an overview of.
             </p>
             <input
               type="text"
@@ -260,12 +260,8 @@ const Details = () => {
         </div>
       </div>
 
-      <div className="relative">
-        <hr className="border-none bg-light-black-1 h-[1px] w-full absolute bottom-[3.5rem]" />
-      </div>
-
-      <div className="pl-6 top-auto fixed bottom-0 pb-4">
-        <div className="flex justify-between">
+      <div className="w-full absolute bottom-0 right-0 left-0 h-[50px] bg-light-black-12 border-t-[1px] border-t-light-black-1">
+        <div className="flex justify-between pt-3 px-6">
           <Link href="../../createnewlist/newlist">
             <IBackButton />
           </Link>
@@ -274,7 +270,7 @@ const Details = () => {
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

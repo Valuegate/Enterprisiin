@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react";
 import { FileButton, Button, Group, Text, List } from "@mantine/core";
+import { FileIcon } from "@/public/icons/file-icon";
 
 const UploadBtn = () => {
   const [files, setFiles] = useState<File[]>([]);
@@ -9,7 +10,7 @@ const UploadBtn = () => {
     <>
       <Group position="center">
         <FileButton onChange={setFiles} accept="image/png,image/jpeg" multiple>
-          {(props) => <Button className="italic font-normal text-base  bg-white-1 text-light-black-10 hover:bg-white-1" {...props}>Upload</Button>}
+          {(props) => <Button className="flex items-center italic font-normal text-base bg-white-1 text-light-black-10 hover:bg-white-1" {...props}> <span className="pr-2"><FileIcon /></span> Upload</Button>}
         </FileButton>
       </Group>
 
