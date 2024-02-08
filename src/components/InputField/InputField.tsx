@@ -2,6 +2,7 @@
 import React from 'react';
 import { useField, Form, FormikProps, Formik } from 'formik';
 import { ReactNode, FC } from "react";
+import Link from 'next/link';
 
 interface Values {
   firstName: string;
@@ -68,7 +69,7 @@ const InputField = () => (
               id="remember"
               className="custom mr-2 text-green w-4 h-4"
             />
-            By signing up, I agree to the Terms of service
+            By signing up, I agree to the <Link href={'#'} className=''>Terms of service</Link> 
           </label>
             <div className="mt-4">
                 <button type="submit" className="bg-green rounded w-full h-12 text-white">Create Account</button>
