@@ -7,14 +7,14 @@ const IBackButton = () => {
         <div className="flex">
           <Button
             type="button"
-            className="border-r-amber-400 rounded w-24 h-12 flex justify-center items-center gap-2 font-semibold text-green"
+            className="border-r-amber-400 text-light-blue rounded w-24 h-12 flex justify-center items-center gap-2 font-semibold text-green"
             // disabled={true}
             colorType="secondary"
             // loading={load}
             //   handleClick={() => setLoad(!load)}
           >
             <span>
-              <ArrowLeftIcon />
+              <ArrowLeftIcon color="#3399FF" />
             </span>
             Back
           </Button>

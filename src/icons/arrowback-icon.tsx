@@ -11,7 +11,7 @@ export const ArrowBackIcon = ({ color, width, height }: IconProps) => {
     >
       <path
         d="M9.57007 5.92993L3.50007 11.9999L9.57007 18.0699"
-        stroke="#2C4C3B"
+        stroke="#3399FF"
         stroke-width="1.5"
         stroke-miterlimit="10"
         stroke-linecap="round"
@@ -19,7 +19,7 @@ export const ArrowBackIcon = ({ color, width, height }: IconProps) => {
       />
       <path
         d="M20.5 12H3.67"
-        stroke="#2C4C3B"
+        stroke="#3399FF"
         stroke-width="1.5"
         stroke-miterlimit="10"
         stroke-linecap="round"

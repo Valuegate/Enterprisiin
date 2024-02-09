@@ -16,7 +16,7 @@ const EmailVerification = () => {
         </div>
             <p className="text-center pt-2 text-light-black-4 text-base">Didn’t get email?</p>
             <div className="mt-8">
-                <button type="submit" className="border-r-amber-400 bg-green rounded w-full h-12 text-white">Resend</button>
+                <button type="submit" className="border-r-amber-400 bg-light-blue rounded w-full h-12 text-white">Resend</button>
             </div>
       </div>
     </>

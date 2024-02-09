@@ -53,7 +53,7 @@ const Login = () => {
           </label>
           <Link
             href="../../auth/forgotpassword"
-            className="text-light-black-4 text-sm font-medium"
+            className="text-light-blue text-sm font-medium"
           >
             Forgot password?
           </Link>
@@ -65,7 +65,7 @@ const Login = () => {
           <Link href="../../onboard/profileupload">
             <button
               type="submit"
-              className="border-r-amber-400 bg-green rounded w-full h-12 text-white"
+              className="border-r-amber-400 bg-light-blue rounded w-full h-12 text-white"
             >
               Login
             </button>
@@ -80,14 +80,14 @@ const Login = () => {
 
         <Button
           type="button"
-          className="rounded w-full flex justify-center items-center gap-4 font-medium"
+          className="rounded w-full text-light-blue flex justify-center items-center gap-4 font-medium"
           // disabled={true}
           colorType="secondary"
           // loading={load}
           //   handleClick={() => setLoad(!load)}
         >
           <span>
-            <GoogleIcon />
+            <GoogleIcon color="#3399FF" />
           </span>
           Create with Google
         </Button>
@@ -97,7 +97,7 @@ const Login = () => {
             Don&apos;t have an account?
           </h1>
           <Link href="../../auth/create">
-            <h1 className="text-center font-medium text-l text-green">
+            <h1 className="text-center font-medium text-l text-light-blue">
               Sign Up
             </h1>
           </Link>

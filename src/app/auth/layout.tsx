@@ -11,16 +11,18 @@ interface iAuthLayout {
 
 const AuthLayout: FC<iAuthLayout> = ({ children }) => {
   return (
-    <div className="w-full h-[100vh] flex justify-center items-center">
+    <div className="w-full h-[100vh] flex justify-center">
       <div className="w-[50%]">
-        <header>
+      <header className="relative">
           {/* <Link href={"/"}>
           <Logo />
           </Link> */}
-          <div className="mx-4">
-            <Image src={Banner} alt={""} className="h-[100vh] w-full py-4 overflow-hidden" />
-            {/* <h2 className="text-4xl text-white font-semibold">Discovering the Best <br /> Business for Your Future</h2>
-            <p className="text-base text-white-1">Our practice is designing complete environments exceptional buildings communities and place in special situations</p> */}
+          <div className="mx-4 h-[100%] absolute bg-background-image">
+            {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}
+          </div>
+          <div className="relative z-10 text-center mx-8 top-[20rem]">
+            <h2 className="text-4xl text-white font-semibold">Discovering the Best <br /> Business for Your Future</h2>
+            <p className="text-base text-white">Our practice is designing complete environments exceptional buildings communities and place in special situations</p>
           </div>
         </header>
       </div>

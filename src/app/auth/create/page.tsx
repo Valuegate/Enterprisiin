@@ -37,14 +37,14 @@ const CreateAccount = () => {
 
       <Button
         type="button"
-        className="bg-light-green-2 rounded w-full h-12 flex justify-center items-center gap-4 font-medium"
+        className="bg-light-green-2 text-light-blue rounded w-full h-12 flex justify-center items-center gap-4 font-medium"
         // disabled={true}
         colorType="secondary"
         // loading={load}
         //   handleClick={() => setLoad(!load)}
       >
         <span>
-          <GoogleIcon />
+          <GoogleIcon color="#3399FF" />
         </span>
         Create with Google
       </Button>
@@ -54,7 +54,7 @@ const CreateAccount = () => {
           Already have an account?
         </h1>
         <Link href="../../auth/login">
-          <h1 className="text-center font-semibold text-l text-green">Login</h1>
+          <h1 className="text-center font-semibold text-l text-light-blue">Login</h1>
         </Link>
       </div>
     </div>

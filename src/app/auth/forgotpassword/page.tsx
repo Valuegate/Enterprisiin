@@ -1,5 +1,5 @@
 "use client";
-import BackButton from "@/public/components/backButton/backButton";
+import BackButton from "@/public/components/BackButton/backButton";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import React from "react";
 import Link from "next/link";
@@ -33,7 +33,7 @@ const ForgotPassword = () => {
             <Link href="../../auth/passwordreset">
               <button
                 type="submit"
-                className="border-r-amber-400 bg-green rounded w-full h-12 text-white"
+                className="border-r-amber-400 bg-light-blue rounded w-full h-12 text-white"
               >
                 Send
               </button>

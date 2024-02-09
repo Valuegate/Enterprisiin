@@ -1,3 +1,4 @@
+import Logo from "@/public/components/Logo/Logo";
 import Link from "next/link";
 import { ReactNode, FC } from "react";
 
@@ -11,7 +12,8 @@ const OnBoardLayout: FC<iOnBoardLayout> = ({ children }) => {
       <div className="mb-12">
         <nav>
           <Link href="/">
-          <h1 className="text-2xl text-green font-semibold pt-4 pl-4">VALUE GATE</h1>
+          {/* <h1 className="text-2xl text-green font-semibold pt-4 pl-4">VALUE GATE</h1> */}
+          <Logo/>
           </Link>
         </nav>
       </div>

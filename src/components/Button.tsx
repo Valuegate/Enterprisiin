@@ -27,8 +27,8 @@ const Button: React.FC<IButtonProps> = ({
 }) => {
   const getButtonColorType = (type: string): string => {
     const colorMap: Record<string, string> = {
-      primary: "bg-green",
-      secondary: "bg-gray-light",
+      primary: "bg-light-blue",
+      secondary: "bg-light-blue-1",
       warning: "bg-yellow-200",
       danger: "bg-red-400",
     };

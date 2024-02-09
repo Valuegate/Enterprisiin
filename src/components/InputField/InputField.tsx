@@ -69,10 +69,10 @@ const InputField = () => (
               id="remember"
               className="custom mr-2 text-green w-4 h-4"
             />
-            By signing up, I agree to the <Link href={'#'} className=''>Terms of service</Link> 
+            By signing up, I agree to the <Link href={'#'} className='text-light-blue'>Terms of service</Link> 
           </label>
             <div className="mt-4">
-                <button type="submit" className="bg-green rounded w-full h-12 text-white">Create Account</button>
+                <button type="submit" className="bg-light-blue rounded w-full h-12 text-white">Create Account</button>
             </div>
         </Form>
       )}

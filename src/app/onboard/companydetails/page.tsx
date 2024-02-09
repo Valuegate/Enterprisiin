@@ -40,7 +40,7 @@ const CompanyDetails = () => {
           <Link href="../../onboard/companydetails">
             <IBackButton />
           </Link>
-          <Link href="../../onboard/socialmedia">
+          <Link href="../../onboard/passwordsetup">
             <NextButton />
           </Link>
         </div>
