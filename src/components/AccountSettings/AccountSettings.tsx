@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Button from "../Button";
 import { UploadIcon } from "@/public/icons";
-import Upload from ".././../assets/Ellipse.png";
-import Input from "../Input/Input";
-import SocialInput from "../SocialInput/SocialInput";
-import AlertButtton from "../AlertButton/AlertButton";
+import Upload from "@/public/assets/Ellipse.png";
+import Input from "@/public/components/Input/input";
+import SocialInput from "@/public/components/SocialInput/SocialInput";
+import AlertButtton from "@/public/components/AlertButton/AlertButton";
 
 const AccountSettings = () => {
   return (

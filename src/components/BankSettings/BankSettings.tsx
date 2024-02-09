@@ -1,4 +1,4 @@
-import Input from "../Input/Input";
+import Input from "@/public/components/Input/input";
 
 const BankSettings = () => {
     return ( 
