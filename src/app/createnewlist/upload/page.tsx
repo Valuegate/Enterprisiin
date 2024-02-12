@@ -37,14 +37,16 @@ const Upload = () => {
               </p>
             </span>
 
-            <Group position="center">
+            <Group
+            
+            >
               <FileButton onChange={setFile} accept="image/png,image/jpeg">
                 {(props) => <button className=" border border-black-1 rounded-3xl w-[205px] h-[48px] text-light-black-5 font-semibold text-[16px] leading-[32px] " {...props}>Browse your device</button>}
               </FileButton>
             </Group>
 
             {file && (
-              <Text size="sm" align="center" mt="sm">
+              <Text size="sm"  mt="sm">
                 Picked file: {file.name}
               </Text>
             )}

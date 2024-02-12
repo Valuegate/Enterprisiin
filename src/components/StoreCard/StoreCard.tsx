@@ -25,7 +25,6 @@ const StoreCard: FC<iStoreCard> = ({ heading, amount, date, info }) => {
         <div className="">
           <TooltipProvider>
             <Tooltip
-              multiline
               content={
                 <span className="flex text-center text-white font-medium text-xs">
                   {info}

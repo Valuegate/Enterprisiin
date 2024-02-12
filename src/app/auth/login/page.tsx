@@ -6,7 +6,19 @@ import Link from "next/link";
 import PasswordInput from "@/public/components/PasswordInput/PasswordInput";
 import { useSearchParams } from "next/navigation";
 
+import React, { Suspense } from "react";
+
+const Fallback = () => <div>Loading...</div>;
+
 const Login = () => {
+  return (
+    <Suspense fallback={<Fallback />}>
+      <Content />
+    </Suspense>
+  );
+};
+
+const Content = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const searchParams = useSearchParams();

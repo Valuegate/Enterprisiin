@@ -171,7 +171,7 @@ const ConnectPopup = () => {
         </Modal.Content>
       </Modal.Root>
 
-      <Group position="center">
+      <Group>
         <button
           onClick={open}
           className="bg-green w-full h-[40px] rounded flex justify-center items-center font-medium text-base text-white"

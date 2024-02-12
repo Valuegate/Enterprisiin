@@ -191,7 +191,7 @@ const Filters = () => {
         </Modal.Content>
       </Modal.Root>
 
-      <Group position="center">
+      <Group>
         <button
           onClick={open}
           className="rounded w-[124px] h-[40px] items-center text-green font-medium text-base bg-light-black-15 flex justify-center gap-1 "

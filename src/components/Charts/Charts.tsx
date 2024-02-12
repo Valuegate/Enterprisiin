@@ -11,7 +11,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-import faker from 'faker';
+//import faker from 'faker';
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -29,19 +29,19 @@ export const data = {
   datasets: [
     {
       label: "Requests",
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 100 })),
+      data:  [],//labels.map(() => faker.datatype.number({ min: 0, max: 100 })),
       borderColor: "#55ACEE",
       backgroundColor: "rgba(53, 162, 235, 0.5)",
     },
     {
       label: "Click",
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 100 })),
+      data: [], //labels.map(() => faker.datatype.number({ min: 0, max: 100 })),
       borderColor: "#FF5341",
       backgroundColor: "rgba(255, 99, 132, 0.5)",
     },
     {
       label: "Likes",
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 100 })),
+      data: [], // labels.map(() => faker.datatype.number({ min: 0, max: 100 })),
       borderColor: "#FF8820",
       backgroundColor: "#FF8820",
     },
