@@ -6,7 +6,16 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    //screens: {},
+    screens: {
+      sm: {
+        max: "400px",
+      },
+
+      md: {
+        max: "768px",
+      },
+      
+    },
     colors: {
       white: "#fff",
       "white-1": "#F5F5F5",
@@ -70,10 +79,6 @@ module.exports = {
       "light-yellow-2": "#DE7C32",
       "light-yellow-3": "#FFE9E9",
       danger: "#FF0000",
-    },
-    fontFamily: {
-      sans: ["Graphik", "sans-serif"],
-      serif: ["Merriweather", "serif"],
     },
     // extend: {
     //   spacing: {

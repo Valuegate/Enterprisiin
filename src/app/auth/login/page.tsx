@@ -5,7 +5,7 @@ import { GoogleIcon } from "@/public/icons";
 import Link from "next/link";
 import PasswordInput from "@/public/components/PasswordInput/PasswordInput";
 import { useSearchParams } from "next/navigation";
-
+import { IoMdArrowBack } from "react-icons/io";
 import React, { Suspense } from "react";
 
 const Fallback = () => <div>Loading...</div>;
@@ -19,27 +19,32 @@ const Login = () => {
 };
 
 const Content = () => {
-  const [showPassword, setShowPassword] = useState(false);
-
   const searchParams = useSearchParams();
   const role = searchParams.get("role");
 
   const displayText = (role: string): string => {
     return role === "Buyer"
-      ? "Ready to buy? let's reconnect!"
-      : "Ready to sell? let's reconnect!";
+      ? "Ready to buy? Let's reconnect!"
+      : "Ready to sell? Let's reconnect!";
   };
 
   return (
-    <div className="m-auto px-24 pt-32">
-      <h1 className="font-bold text-3xl pb-4">Welcome Back!</h1>
-      <p className="text-base font-medium text-light-black-4 pb-4">
+    <div className="px-10 md:px-5 flex flex-col md:mb-10">
+      <div className="md:flex md:flex-row justify-between items-center w-full md:pt-6 pb-4">
+        <div className="hidden md:block">
+          <IoMdArrowBack fill="#000000" size={"25px"} />
+        </div>
+        <h1 className="font-bold md:text-xl text-3xl md:text-center w-full">
+          Welcome Back!
+        </h1>
+      </div>
+      <p className="text-base md:text-sm font-medium text-light-black-4 pb-4 md:pb-10 md:text-center">
         {displayText(role as string)}
       </p>
 
       <div className="mb-4">
         <label
-          className="block text-gray-700 font-medium text-lg"
+          className="block text-gray-700 font-medium text-md"
           htmlFor="email"
         >
           Email Address
@@ -48,7 +53,7 @@ const Content = () => {
           type="email"
           id="email"
           placeholder="Enter your email address"
-          className="placeholder-italic mt-1 p-3 border-none bg-white-1 rounded w-full"
+          className="placeholder-italic placeholder:pl-0 mt-1 p-3 border-none bg-white-1 rounded w-full"
         />
       </div>
 
