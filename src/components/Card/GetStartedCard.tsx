@@ -38,7 +38,7 @@ const GetStartedCard: FC<iGetStartedCard> = ({ getSelectedOption }) => {
             onChange={handleOptionChange}
           />
           <div className="flex gap-4 pt-4 pb-4">
-            <div className="ml-6 bg-white border border-white rounded-full p-1.5 w-16 h-11 mt-4">
+            <div className="ml-6 bg-white border-2 border-white rounded-full p-1.5 w-[3.7rem] h-[2.75rem] mt-4">
               <Image src={WT} alt={"Work time-amico"} width={30} height={30} />
             </div>
             <div className="">

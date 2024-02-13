@@ -17,6 +17,7 @@ import Link from "next/link";
 import React from "react";
 import { ReactNode, FC, useState } from "react";
 import ProfileDropdown from "@/public/components/ProfileDropdown/ProfileDropdown";
+import Logo from "@/public/components/Logo/Logo";
 
 interface iSellerDashBoardLayout {
   children: ReactNode;
@@ -47,13 +48,13 @@ const SellerDashBoardLayout: FC<iSellerDashBoardLayout> = ({ children }) => {
             !open && "relative"
           }`}>
           <Link href={"./overview"}>
-            <h2
+            <div
               className={`whitespace-pre duration-500 text-2xl text-white font-semibold pl-2 ${
                 !open && "opacity-0 translate-x-28 overflow-hidden"
               }`}
             >
-              VALUE GATE
-            </h2>
+              <Logo />
+            </div>
           </Link>
           <div className={`py-3 pr-4 flex justify-end ${
             !open && "absolute left-2"
