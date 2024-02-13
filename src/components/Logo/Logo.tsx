@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import React from 'react';
-import logo from "@/public/assets/entreprisiin-logo.png";
+import logo from "@/public/assets/enterprisiin-logo.png";
 
 const Logo = () => {
   return (
     <>
-    <div className="flex items-center gap-1 pt-4 pl-4">
+    <div className="flex items-center gap-1">
         <div>
             <Image src={logo} alt={''} />
         </div>
