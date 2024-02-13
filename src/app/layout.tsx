@@ -1,7 +1,7 @@
 // import { Theme } from '@radix-ui/themes'
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Public_Sans } from "next/font/google";
 
 import "@mantine/core/styles.css";
 import {
@@ -11,7 +11,7 @@ import {
   createTheme,
 } from "@mantine/core";
 
-const inter = Inter({ subsets: ["latin"] });
+const public_sans = Public_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
@@ -48,7 +48,7 @@ export default function RootLayout({
       <head>
         <ColorSchemeScript defaultColorScheme="auto" />
       </head>
-      <body className={inter.className}>
+      <body className={public_sans.className}>
         <MantineProvider theme={theme}>{children}</MantineProvider>
       </body>
     </html>

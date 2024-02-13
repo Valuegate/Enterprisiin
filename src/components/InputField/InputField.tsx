@@ -1,8 +1,8 @@
-"use client"
-import React from 'react';
-import { useField, Form, FormikProps, Formik } from 'formik';
+"use client";
+import React from "react";
+import { useField, Form, FormikProps, Formik } from "formik";
 import { ReactNode, FC } from "react";
-import Link from 'next/link';
+import Link from "next/link";
 
 interface Values {
   firstName: string;
@@ -11,9 +11,9 @@ interface Values {
 }
 
 interface iMyTextField {
-    name: string;
-    type: string;
-  }
+  name: string;
+  type: string;
+}
 
 const MyTextField: FC<iMyTextField> = ({ ...props }) => {
   const [field, meta, helpers] = useField(props);
@@ -34,9 +34,9 @@ const InputField = () => (
   <div>
     <Formik
       initialValues={{
-        email: '',
-        firstName: '',
-        lastName: '',
+        email: "",
+        firstName: "",
+        lastName: "",
       }}
       onSubmit={(values, actions) => {
         setTimeout(() => {
@@ -47,33 +47,90 @@ const InputField = () => (
     >
       {(props: FormikProps<Values>) => (
         <Form>
-            <div className="mb-4">
-                <label htmlFor="first-name" className="block text-sm font-medium text-gray-700">First Name</label>
-                <input type="text" id="first-name" name="first-name" placeholder='Enter your first name' className="placeholder-italic mt-1 p-3 border-none bg-white-1 rounded w-full" />
-            </div>
-            <div className="mb-4">
-                <label htmlFor="last-name" className="block text-sm font-medium text-gray-700">Last Name</label>
-                <input type="text" id="last-name" name="last-name" placeholder='Enter your last name' className="placeholder-italic mt-1 p-3 border-none bg-white-1 rounded w-full" />
-            </div>
-            <div className="mb-4">
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email Address</label>
-                <input type="email" id="email" name="email" placeholder='Enter your email address' className="placeholder-italic mt-1 p-3 border-none bg-white-1 rounded w-full" />
-            </div>
-            <div className="mb-4">
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder='+234' className="placeholder-italic mt-1 p-3 border-none bg-white-1 rounded w-full" />
-            </div>
-            <label className="flex items-center text-base font-medium text-light-black-4 mb-8" htmlFor="remember">
+          <div className="mb-4">
+            <label
+              htmlFor="first-name"
+              className="block text-md font-medium text-gray-700"
+            >
+              First Name
+            </label>
+            <input
+              type="text"
+              id="first-name"
+              name="first-name"
+              placeholder="Enter your first name"
+              className="placeholder-italic mt-1 p-3 placeholder:pl-0 border-none bg-white-1 rounded w-full"
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="last-name"
+              className="block text-md font-medium text-gray-700"
+            >
+              Last Name
+            </label>
+            <input
+              type="text"
+              id="last-name"
+              name="last-name"
+              placeholder="Enter your last name"
+              className="placeholder-italic placeholder:pl-0 mt-1 p-3 border-none bg-white-1 rounded w-full"
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="email"
+              className="block text-md font-medium text-gray-700"
+            >
+              Email Address
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email address"
+              className="placeholder-italic placeholder:pl-0 mt-1 p-3 border-none bg-white-1 rounded w-full"
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="phone"
+              className="block text-md font-medium text-gray-700"
+            >
+              Phone Number
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+234"
+              className="placeholder-italic placeholder:pl-0 mt-1 p-3 border-none bg-white-1 rounded w-full"
+            />
+          </div>
+          <label
+            className="text-base font-medium text-light-black-4 mb-8"
+            htmlFor="remember"
+          >
             <input
               type="checkbox"
               id="remember"
               className="custom mr-2 text-green w-4 h-4"
             />
-            By signing up, I agree to the <Link href={'#'} className='text-light-blue'>Terms of service</Link> 
+            By signing up, I agree to the{"  "}
+            <span>
+              <Link href={"#"} className="text-light-blue">
+                Terms of service
+              </Link>
+            </span>
           </label>
-            <div className="mt-4">
-                <button type="submit" className="bg-light-blue rounded w-full h-12 text-white">Create Account</button>
-            </div>
+          <div className="mt-4">
+            <button
+              type="submit"
+              className="bg-light-blue rounded w-full h-12 text-white"
+            >
+              Create Account
+            </button>
+          </div>
         </Form>
       )}
     </Formik>

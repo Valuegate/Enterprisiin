@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700&display=swap');
 @import '../../node_modules/@radix-ui/themes/styles.css';
 
@@ -27,6 +28,7 @@ body {
     )
     rgb(var(--background-start-rgb)); */
     font-family: 'Public Sans', sans-serif;
+    overflow-x: hidden;
 }
 
 .placeholder-italic::placeholder {
@@ -117,6 +119,24 @@ input:focus, .search:focus {
   height: 13px;
   color: #080F0B;
 }
+
+.scrollbar-custom {
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+  width: 0px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
 
 .bg-background-image {
   background-image: url("../assets/background-image.png");
