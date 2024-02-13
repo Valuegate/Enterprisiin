@@ -18,6 +18,7 @@ import React from "react";
 import { ReactNode, FC, useState } from "react";
 import ProfileDropdown from "@/public/components/ProfileDropdown/ProfileDropdown";
 import Logo from "@/public/components/Logo/Logo";
+import WhiteLogo from "@/public/components/WhiteLogo/WhiteLogo";
 
 interface iSellerDashBoardLayout {
   children: ReactNode;
@@ -40,7 +41,7 @@ const SellerDashBoardLayout: FC<iSellerDashBoardLayout> = ({ children }) => {
   return (
     <div className="flex bg-light-black h-auto">
       <div
-        className={`bg-green h-screen ${
+        className={`bg-blue h-screen ${
           open ? "w-64" : "w-16"
         } duration-500 text-gray-100 px-2`}
       >
@@ -53,7 +54,7 @@ const SellerDashBoardLayout: FC<iSellerDashBoardLayout> = ({ children }) => {
                 !open && "opacity-0 translate-x-28 overflow-hidden"
               }`}
             >
-              <Logo />
+              <WhiteLogo />
             </div>
           </Link>
           <div className={`py-3 pr-4 flex justify-end ${
@@ -66,23 +67,20 @@ const SellerDashBoardLayout: FC<iSellerDashBoardLayout> = ({ children }) => {
           </div>
         </div>
 
-        <div
-          className={`whitespace-pre duration-500 flex mt-6 text-2xl text-white font-semibold ${
-            !open && "opacity-0 translate-x-28 overflow-hidden"
-          }`}
-        >
+        <Link
+          className={`whitespace-pre duration-500 flex mt-6 text-2xl text-white font-semibold ${!open && "opacity-0 translate-x-28 overflow-hidden"}`} href={"../createnewlist/newlist"}        >
           <button
-            className="text-sm rounded w-full h-10 flex justify-center items-center gap-2 font-medium text-light-black-8 bg-white"
+            className="text-sm text-light-blue rounded w-full h-10 border flex justify-center items-center gap-2 font-medium bg-blue border-light-blue"
             // disabled={true}
             // loading={load}
             //   handleClick={() => setLoad(!load)}
           >
             <span>
-              <AddIcon />
+              <AddIcon color="#3399FF" />
             </span>
             Create New List
           </button>
-        </div>
+        </Link>
 
         <div className="mt-4 flex flex-col gap-1 relative">
           {menus?.map((menu, i) => (
@@ -91,7 +89,7 @@ const SellerDashBoardLayout: FC<iSellerDashBoardLayout> = ({ children }) => {
               key={i}
               className={` ${
                 menu?.margin && "mb-32"
-              } group flex items-center text-sm text-white gap-3.5 font-medium p-2 hover:bg-light-green-8 rounded`}
+              } group flex items-center text-sm text-white gap-3.5 font-medium p-2 hover:bg-light-blue-2 rounded`}
             >
               <div>{React.createElement(menu?.icon)}</div>
               <h2

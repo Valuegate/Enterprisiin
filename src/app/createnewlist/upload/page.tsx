@@ -28,7 +28,7 @@ const Upload = () => {
         </div>
 
         <div className="pt-6 px-[12rem] pb-20">
-          <div className="text-center border-dashed rounded-lg border-black-1 border-2 w-[631px] h-[296px] ">
+          <div className="flex flex-col items-center text-center border-dashed rounded-lg border-black-1 border-2 w-[631px] h-[296px] ">
             <span className="pt-[5rem] pb-[1rem] flex flex-col px-[6rem] gap-2 items-center justify-center">
               <UploadIcon width="16" height="16" color="#313734" />
               <p className="text-base font-medium text-light-black-5">
@@ -41,7 +41,7 @@ const Upload = () => {
             
             >
               <FileButton onChange={setFile} accept="image/png,image/jpeg">
-                {(props) => <button className=" border border-black-1 rounded-3xl w-[205px] h-[48px] text-light-black-5 font-semibold text-[16px] leading-[32px] " {...props}>Browse your device</button>}
+                {(props) => <button className="border border-black-1 rounded-3xl w-[205px] h-[48px] text-light-black-5 font-semibold text-[16px] leading-[32px] " {...props}>Browse your device</button>}
               </FileButton>
             </Group>
 

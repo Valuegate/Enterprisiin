@@ -83,14 +83,14 @@ const DraftsCard: FC<iDraftsCard> = ({  }) => {
                     >
                       <Link
                         href="#"
-                        className="block px-4 py-2 text-base leading-8 text-light-black-5 hover:bg-green hover:text-white hover:rounded"
+                        className="block px-4 py-2 text-base leading-8 text-light-black-5 hover:bg-light-blue hover:text-white hover:rounded"
                         role="menuitem"
                       >
                         Active
                       </Link>
                       <Link
                         href="#"
-                        className="block px-4 py-2 text-base leading-8 text-light-black-5 hover:bg-green hover:text-white hover:rounded"
+                        className="block px-4 py-2 text-base leading-8 text-light-black-5 hover:bg-light-blue hover:text-white hover:rounded"
                         role="menuitem"
                       >
                         Archived

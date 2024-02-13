@@ -40,27 +40,6 @@ const NewList = () => {
           <NewListCard getSelectedOption={handleSelectOption} />
         </div>
       </div>
-
-      {/* <div className="relative z-10 bg-white">
-        <hr className="border-none bg-light-black-1 h-[1px] w-full absolute bottom-[3.5rem]" />
-      </div> */}
-
-      {/* <div className="top-auto fixed bottom-0 right-6 pb-4 bg-[red] left-0">
-          <div className="flex">
-            <Button
-              type="button"
-              className="border-r-amber-400 rounded w-24 h-12 flex justify-center items-center gap-2 font-semibold text-white"
-              // disabled={true}
-              colorType="primary"
-              handleClick={handleProceed}
-            >
-              Next
-              <span>
-                <ArrowRightIcon />
-              </span>
-            </Button>
-          </div>
-        </div> */}
       <div className="w-full absolute bottom-0 right-0 left-0 h-[50px] bg-light-black-12 border-t-[1px] border-t-light-black-1">
       <div className="flex justify-end pt-3 pr-6">
             <Button

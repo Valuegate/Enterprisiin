@@ -45,16 +45,16 @@ const DropdownButton: FC<iDropdownButton> = ({ title, menu1, menu2, menu3, menu4
       {isOpen && (
         <div className="origin-top-right absolute right-0 mt-2 w-[220px] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
           <div className="py-4 px-2 text-left" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-            <Link href="#" className="block px-4 py-2 text-base leading-8 text-light-black-5 hover:bg-green hover:text-white hover:rounded" role="menuitem">
+            <Link href="#" className="block px-4 py-2 text-base leading-8 text-light-black-5 hover:bg-light-blue hover:text-white hover:rounded" role="menuitem">
             {menu1}
             </Link>
-            <Link href="#" className="block px-4 py-2 text-base leading-8 text-light-black-5 hover:bg-green hover:text-white hover:rounded" role="menuitem">
+            <Link href="#" className="block px-4 py-2 text-base leading-8 text-light-black-5 hover:bg-light-blue hover:text-white hover:rounded" role="menuitem">
             {menu2}
             </Link>
-            <Link href="#" className="block px-4 py-2 text-base leading-8 text-light-black-5 hover:bg-green hover:text-white hover:rounded" role="menuitem">
+            <Link href="#" className="block px-4 py-2 text-base leading-8 text-light-black-5 hover:bg-light-blue hover:text-white hover:rounded" role="menuitem">
             {menu3}
             </Link>
-            <Link href="#" className="block px-4 py-2 text-base leading-8 text-light-black-5 hover:bg-green hover:text-white hover:rounded" role="menuitem">
+            <Link href="#" className="block px-4 py-2 text-base leading-8 text-light-black-5 hover:bg-light-blue hover:text-white hover:rounded" role="menuitem">
             {menu4}
             </Link>
           </div>

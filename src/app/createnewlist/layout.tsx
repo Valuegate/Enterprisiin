@@ -10,6 +10,7 @@ import React from "react";
 import { ReactNode, FC, useState } from "react";
 import ProfileDropdown from "@/public/components/ProfileDropdown/ProfileDropdown";
 import ProgressBar from "@/public/components/ProgressBar/ProgressBar";
+import WhiteLogo from "@/public/components/WhiteLogo/WhiteLogo";
 
 
 interface iCreateNewListLayout {
@@ -27,7 +28,7 @@ const CreateNewListLayout: FC<iCreateNewListLayout> = ({ children }) => {
   return (
     <div className="flex bg-light-black h-auto">
       <div
-        className={`bg-green h-screen ${
+        className={`bg-blue h-screen ${
           open ? "w-72" : "w-16"
         } duration-500 px-2`}
       >
@@ -40,7 +41,7 @@ const CreateNewListLayout: FC<iCreateNewListLayout> = ({ children }) => {
                 !open && "opacity-0 translate-x-28 overflow-hidden"
               }`}
             >
-              VALUE GATE
+              <WhiteLogo />
             </h2>
           </Link>
           <div className={`py-3 pr-4 flex justify-end ${
@@ -66,7 +67,7 @@ const CreateNewListLayout: FC<iCreateNewListLayout> = ({ children }) => {
             <Link
               href={menu?.link}
               key={i}
-              className={`group flex items-center text-sm text-white gap-3.5 font-medium p-2 hover:bg-light-green-8 rounded`}
+              className={`group flex items-center text-sm text-white gap-3.5 font-medium p-2 hover:bg-light-blue-2 rounded`}
             >
               <div>{React.createElement(menu?.icon)}</div>
               <h2

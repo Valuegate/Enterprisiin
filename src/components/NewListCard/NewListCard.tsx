@@ -25,7 +25,7 @@ const NewListCard: FC<iNewListCardCard> = ({ getSelectedOption }) => {
       <label htmlFor="sale">
         <div
           className={`bg-gray-light rounded mb-6 relative container ${
-            activeContainer === "first" ? "border-color-green" : ""
+            activeContainer === "first" ? "border-color-light-blue bg-selection" : ""
           }`}
           onClick={() => setActiveContainer("first")}
         >
@@ -57,7 +57,7 @@ const NewListCard: FC<iNewListCardCard> = ({ getSelectedOption }) => {
       <label htmlFor="investment">
         <div
           className={`bg-gray-light rounded mb-6 relative container ${
-            activeContainer === "second" ? "border-color-green" : ""
+            activeContainer === "second" ? "border-color-light-blue bg-selection" : ""
           }`}
           onClick={() => setActiveContainer("second")}
         >
@@ -89,7 +89,7 @@ const NewListCard: FC<iNewListCardCard> = ({ getSelectedOption }) => {
       <label htmlFor="loan">
         <div
           className={`bg-gray-light rounded mb-6 relative container ${
-            activeContainer === "third" ? "border-color-green" : ""
+            activeContainer === "third" ? "border-color-light-blue bg-selection" : ""
           }`}
           onClick={() => setActiveContainer("third")}
         >
@@ -121,7 +121,7 @@ const NewListCard: FC<iNewListCardCard> = ({ getSelectedOption }) => {
       <label htmlFor="asset">
         <div
           className={`bg-gray-light rounded mb-6 relative container ${
-            activeContainer === "fourth" ? "border-color-green" : ""
+            activeContainer === "fourth" ? "border-color-light-blue bg-selection" : ""
           }`}
           onClick={() => setActiveContainer("fourth")}
         >

@@ -328,13 +328,13 @@ const ImagesUpload = () => {
         <div className="flex justify-end pt-4 px-6">
           <div className="flex gap-4">
             <Link href="">
-              <button className="rounded w-[96px] h-[40px] flex justify-center items-center font-semibold bg-green text-white">
+              <button className="rounded w-[96px] h-[40px] flex justify-center items-center font-semibold bg-light-blue text-white">
                 Re-edit
               </button>
             </Link>
             <Link href="">
               <div className="flex">
-                <button className="rounded w-[113px] h-[40px] flex justify-center items-center gap-2 font-semibold bg-light-green text-white">
+                <button className="rounded w-[113px] h-[40px] flex justify-center items-center gap-2 font-semibold bg-[#EABE63] text-white">
                   Launch
                   <span>
                     <ArrowRightIcon />

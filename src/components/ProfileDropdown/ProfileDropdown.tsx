@@ -43,19 +43,19 @@ const ProfileDropdown = () => {
         <div className="absolute right-0 mt-2 bg-white border-none border-light-green-8 rounded shadow-lg">
           <Link
             href=""
-            className="block px-4 py-2 hover:bg-light-green-8 hover:text-white"
+            className="block px-4 py-2 hover:bg-blue hover:text-white"
           >
             Profile
           </Link>
           <Link
             href="#"
-            className="block px-4 py-2 hover:bg-light-green-8 hover:text-white"
+            className="block px-4 py-2 hover:bg-blue hover:text-white"
           >
             Settings
           </Link>
           <Link
             href=""
-            className="block px-4 py-2 hover:bg-light-green-8 hover:text-white"
+            className="block px-4 py-2 hover:bg-blue hover:text-white"
           >
             Logout
           </Link>
