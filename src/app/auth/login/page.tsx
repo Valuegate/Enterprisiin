@@ -79,7 +79,7 @@ const Content = () => {
 
       <div className="pb-12">
         <div className="mt-4">
-          <Link href="/onboard/upload-profile-picture">
+          <Link href="/onboard">
             <button
               type="submit"
               className="border-r-amber-400 bg-light-blue rounded w-full h-12 text-white"
