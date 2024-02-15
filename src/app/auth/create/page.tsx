@@ -55,7 +55,6 @@ const Content = () => {
         // disabled={true}
         colorType="secondary"
         // loading={load}
-        //   handleClick={() => setLoad(!load)}
       >
         <span>
           <GoogleIcon color="#3399FF" />

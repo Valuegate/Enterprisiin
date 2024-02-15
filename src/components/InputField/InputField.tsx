@@ -127,6 +127,10 @@ const InputField = () => (
             <button
               type="submit"
               className="bg-light-blue rounded w-full h-12 text-white"
+              onClick={() => {
+                console.log("Here");
+                window.location.href = "/auth/account-verification";
+              }}
             >
               Create Account
             </button>

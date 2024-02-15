@@ -69,7 +69,7 @@ const Content = () => {
             Remember me
           </label>
           <Link
-            href="../../auth/forgotpassword"
+            href="/auth/forgot-password"
             className="text-light-blue text-sm font-medium"
           >
             Forgot password?
@@ -113,7 +113,7 @@ const Content = () => {
           <h1 className="text-center font-medium text-l text-light-black-5">
             Don&apos;t have an account?
           </h1>
-          <Link href="../../auth/create">
+          <Link href="/auth/create">
             <h1 className="text-center font-medium text-l text-light-blue">
               Sign Up
             </h1>
