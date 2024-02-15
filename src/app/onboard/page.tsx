@@ -40,7 +40,7 @@ const OnboardPage = () => {
           <Button
             type="button"
             height="h-10"
-            width={`md:w-[30vw] w-auto`}
+            width={`md:w-[35vw] w-auto`}
             className={`border-r-amber-400 ${
               index === 0 && "hidden"
             } rounded px-3 mt-5 flex justify-center items-center gap-2 font-medium text-light-blue`}
@@ -55,7 +55,7 @@ const OnboardPage = () => {
           <Button
             type="button"
             height="h-10"
-            width={`md:w-[${index === 0 ? "90" : "30"}vw] w-auto`}
+            width={`md:w-[${index === 0 ? "90" : "35"}vw] w-auto`}
             className={`border-r-amber-400 rounded px-3 mt-5 flex justify-center items-center gap-2 font-medium text-white`}
             colorType="primary"
             handleClick={() => {
