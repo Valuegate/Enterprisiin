@@ -14,10 +14,10 @@ import PasswordSetup from "@/public/components/onboarding-components/SetupPasswo
 const OnboardPage = () => {
   const [index, setIndex] = useState<number>(0);
   const children: ReactNode[] = [
-    <UploadProfilePicture />,
-    <CompanyDetails />,
-    <SocialMedia />,
-    <PasswordSetup />,
+    <UploadProfilePicture key="uploadProfilePicture" />,
+    <CompanyDetails key="companyDetails" />,
+    <SocialMedia key="socialMedia" />,
+    <PasswordSetup key="passwordSetup" />,
   ];
 
   return (
@@ -40,9 +40,7 @@ const OnboardPage = () => {
           <Button
             type="button"
             height="h-10"
-            width={`md:w-[${
-              index < children.length - 1 ? "30" : "90"
-            }vw] w-auto`}
+            width={`md:w-[30vw] w-auto`}
             className={`border-r-amber-400 ${
               index === 0 && "hidden"
             } rounded px-3 mt-5 flex justify-center items-center gap-2 font-medium text-light-blue`}
@@ -58,9 +56,7 @@ const OnboardPage = () => {
             type="button"
             height="h-10"
             width={`md:w-[${index === 0 ? "90" : "30"}vw] w-auto`}
-            className={`border-r-amber-400 ${
-              index === children.length - 1 && "hidden"
-            } rounded px-3 mt-5 flex justify-center items-center gap-2 font-medium text-white`}
+            className={`border-r-amber-400 rounded px-3 mt-5 flex justify-center items-center gap-2 font-medium text-white`}
             colorType="primary"
             handleClick={() => {
               setIndex((val) => val + 1);
