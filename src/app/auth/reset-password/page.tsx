@@ -26,7 +26,7 @@ const PasswordReset = () => {
         </div>
 
         <div className="mt-12 md:mt-72">
-          <Link href="../../onboard/profileupload">
+          <Link href="/onboard/upload-profile-picture">
             <button
               type="submit"
               className="border-r-amber-400 bg-light-blue rounded w-full h-12 text-white"
