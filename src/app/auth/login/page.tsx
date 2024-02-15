@@ -69,7 +69,7 @@ const Content = () => {
             Remember me
           </label>
           <Link
-            href="../../auth/forgotpassword"
+            href="/auth/forgot-password"
             className="text-light-blue text-sm font-medium"
           >
             Forgot password?
@@ -79,7 +79,7 @@ const Content = () => {
 
       <div className="pb-12">
         <div className="mt-4">
-          <Link href="../../onboard/profileupload">
+          <Link href="/onboard/upload-profile-picture">
             <button
               type="submit"
               className="border-r-amber-400 bg-light-blue rounded w-full h-12 text-white"
@@ -113,7 +113,7 @@ const Content = () => {
           <h1 className="text-center font-medium text-l text-light-black-5">
             Don&apos;t have an account?
           </h1>
-          <Link href="../../auth/create">
+          <Link href="/auth/create">
             <h1 className="text-center font-medium text-l text-light-blue">
               Sign Up
             </h1>
