@@ -2,7 +2,7 @@ import SocialInput from "@/public/components/SocialInput/SocialInput";
 
 const SocialMedia = () => {
   return (
-    <>
+    <div key={3000}>
       <div className="text-center items-center">
         <h1 className="font-bold md:text-xl text-3xl md:text-center w-full">
           Setup your social media
@@ -35,7 +35,7 @@ const SocialMedia = () => {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

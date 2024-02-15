@@ -2,7 +2,7 @@ import SocialInput from "@/public/components/SocialInput/SocialInput";
 
 const CompanyDetails = () => {
   return (
-    <>
+    <div key={2000}>
       <div className="text-center items-center">
         <h1 className="font-bold md:text-xl text-3xl md:text-center w-full">
           Setup company details
@@ -28,7 +28,7 @@ const CompanyDetails = () => {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

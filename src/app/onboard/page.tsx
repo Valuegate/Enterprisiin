@@ -14,10 +14,10 @@ import PasswordSetup from "@/public/components/onboarding-components/SetupPasswo
 const OnboardPage = () => {
   const [index, setIndex] = useState<number>(0);
   const children: ReactNode[] = [
-    <UploadProfilePicture />,
-    <CompanyDetails />,
-    <SocialMedia />,
-    <PasswordSetup />,
+    <UploadProfilePicture key="uploadProfilePicture" />,
+    <CompanyDetails key="companyDetails" />,
+    <SocialMedia key="socialMedia" />,
+    <PasswordSetup key="passwordSetup" />,
   ];
 
   return (

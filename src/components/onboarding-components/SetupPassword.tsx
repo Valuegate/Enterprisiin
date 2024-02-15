@@ -2,7 +2,7 @@ import PasswordInput from "@/public/components/PasswordInput/PasswordInput";
 
 const PasswordSetup = () => {
   return (
-    <>
+    <div key={4000}>
       <div className="text-center items-center">
         <h1 className="font-bold md:text-xl text-3xl md:text-center w-full">
           Setup your password
@@ -18,7 +18,7 @@ const PasswordSetup = () => {
         </div>
         <PasswordInput label={"Confirm Password"} />
       </div>
-    </>
+    </div>
   );
 };
 
