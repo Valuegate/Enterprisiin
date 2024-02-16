@@ -13,23 +13,23 @@ export const MoreIcon = ({ color, width, height }: IconProps) => {
         <path
           d="M1.83891 15.6667H1.82394"
           stroke={color ?? "#313734"}
-          stroke-width="3.33333"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="3.33333"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M1.83915 9.00004H1.82418"
           stroke={color ?? "#313734"}
-          stroke-width="3.33333"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="3.33333"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M1.83915 2.33329H1.82418"
           stroke={color ?? "#313734"}
-          stroke-width="3.33333"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="3.33333"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
     </svg>

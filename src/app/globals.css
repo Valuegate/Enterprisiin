@@ -70,6 +70,10 @@ input.custom {
     transition: border-color 0.3s ease; 
 }
 
+.tweak {
+  min-width: 0px;
+}
+
 .border-color-light-blue {
   border-color: #3399FF;
 }
