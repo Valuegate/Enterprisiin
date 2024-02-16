@@ -21,7 +21,7 @@ const ExpandableStore = () => {
           </div>
 
           <div className="">
-            <button className="w-[87px] h-[40px] rounded-lg flex gap- items-center justify-center text-white bg-green text-base font-medium ">
+            <button className="w-[87px] h-[40px] rounded-lg flex gap- items-center justify-center text-white bg-light-blue text-base font-medium ">
               <TbPencil />
               Edit
             </button>

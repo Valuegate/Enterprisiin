@@ -38,7 +38,7 @@ const AlertButton = () => {
             <AlertDialog.Action asChild>
               <button
                 type="submit"
-                className="border-none bg-green font-medium text-base rounded w-[132px] h-[40px] text-white"
+                className="border-none bg-light-blue font-medium text-base rounded w-[132px] h-[40px] text-white"
               >
                 Yes, delete
               </button>
