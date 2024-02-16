@@ -1,5 +1,4 @@
 "use client";
-import { InfoIcon } from "@/public/icons";
 import DashboardCard from "@/public/components/DashboardCard/DashboardCard";
 import { Charts } from "@/public/components/Charts/Charts";
 import RequestCard from "@/public/components/RequestCard/RequestCard";
