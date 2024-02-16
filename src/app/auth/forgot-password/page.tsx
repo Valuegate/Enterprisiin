@@ -1,5 +1,5 @@
 "use client";
-import { IoMdArrowBack } from "react-icons/io";
+import { GoArrowLeft } from "react-icons/go";
 import Link from "next/link";
 
 const ForgotPassword = () => {
@@ -8,9 +8,9 @@ const ForgotPassword = () => {
       <div className="px-10 md:px-5 flex flex-col md:mb-10">
         <div className="md:flex md:flex-row justify-between items-center w-full md:pt-6 pb-4">
           <div className="hidden md:block">
-            <IoMdArrowBack fill="#000000" size={"25px"} />
+            <GoArrowLeft fill="#000000" size={"25px"} />
           </div>
-          <h1 className="font-bold md:text-xl text-3xl md:text-center w-full">
+          <h1 className="font-bold md:font-semibold md:text-xl text-3xl md:text-center w-full">
             Forgot Password
           </h1>
         </div>
@@ -44,7 +44,7 @@ const ForgotPassword = () => {
           </Link>
 
           <div className="flex md:hidden gap-3 mt-16 items-center justify-center text-light-blue">
-            <IoMdArrowBack fill="#3399FF" size={"25px"} />
+            <GoArrowLeft fill="#3399FF" size={"25px"} />
             Back
           </div>
         </div>

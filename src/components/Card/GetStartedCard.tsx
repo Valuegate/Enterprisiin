@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
-import RadioButton from "../RadioButton/RadioButton";
-import { ReactNode, FC, useState } from "react";
+import { FC, useState } from "react";
 import WT from "../../assets/Work time-amico 1.png";
 import MM from "../../assets/Manage money-bro 1.png";
 
@@ -28,7 +27,7 @@ const GetStartedCard: FC<iGetStartedCard> = ({ getSelectedOption }) => {
           className={`bg-gray-light rounded mb-6 container ${
             activeContainer === "first"
               ? "border-color-light-blue bg-selection"
-              : ""
+              : "border-color-weird-black"
           }`}
           onClick={() => setActiveContainer("first")}
         >
@@ -66,7 +65,7 @@ const GetStartedCard: FC<iGetStartedCard> = ({ getSelectedOption }) => {
           className={`bg-gray-light rounded mb-6 container ${
             activeContainer === "second"
               ? "border-color-light-blue bg-selection"
-              : ""
+              : "border-color-weird-black"
           }`}
           onClick={() => setActiveContainer("second")}
         >
