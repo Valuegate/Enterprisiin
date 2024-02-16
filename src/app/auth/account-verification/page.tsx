@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Verify from "../../../assets/Screenshot 2023-07-28 at 12.31 1.png";
-import { IoMdArrowBack } from "react-icons/io";
+import { GoArrowLeft } from "react-icons/go";
 
 const EmailVerification = () => {
   return (
@@ -8,9 +8,9 @@ const EmailVerification = () => {
       <div className="px-10 md:px-5 flex flex-col md:mb-10">
         <div className="md:flex md:flex-row justify-between items-center w-full md:pt-6 pb-4">
           <div className="hidden md:block">
-            <IoMdArrowBack fill="#000000" size={"25px"} />
+            <GoArrowLeft fill="#000000" size={"25px"} />
           </div>
-          <h1 className="font-bold md:text-xl text-3xl md:text-center w-full">
+          <h1 className="font-bold md:font-semibold md:text-xl text-3xl md:text-center w-full">
             Account Verification
           </h1>
         </div>

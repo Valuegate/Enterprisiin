@@ -5,7 +5,7 @@ import { GoogleIcon } from "@/public/icons";
 import Link from "next/link";
 import PasswordInput from "@/public/components/PasswordInput/PasswordInput";
 import { useSearchParams } from "next/navigation";
-import { IoMdArrowBack } from "react-icons/io";
+import { GoArrowLeft } from "react-icons/go";
 import React, { Suspense } from "react";
 
 const Fallback = () => <div>Loading...</div>;
@@ -32,9 +32,9 @@ const Content = () => {
     <div className="px-10 md:px-5 flex flex-col md:mb-10">
       <div className="md:flex md:flex-row justify-between items-center w-full md:pt-6 pb-4">
         <div className="hidden md:block">
-          <IoMdArrowBack fill="#000000" size={"25px"} />
+          <GoArrowLeft fill="#000000" size={"25px"} />
         </div>
-        <h1 className="font-bold md:text-xl text-3xl md:text-center w-full">
+        <h1 className="font-bold md:font-semibold md:text-xl text-3xl md:text-center w-full">
           Welcome Back!
         </h1>
       </div>
