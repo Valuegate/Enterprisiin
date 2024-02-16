@@ -5,7 +5,7 @@ import { GoogleIcon } from "@/public/icons";
 import Link from "next/link";
 import PasswordInput from "@/public/components/PasswordInput/PasswordInput";
 import { useSearchParams } from "next/navigation";
-import { IoMdArrowBack } from "react-icons/io";
+import { GoArrowLeft } from "react-icons/go";
 import React, { Suspense } from "react";
 
 const Fallback = () => <div>Loading...</div>;
@@ -32,9 +32,9 @@ const Content = () => {
     <div className="px-10 md:px-5 flex flex-col md:mb-10">
       <div className="md:flex md:flex-row justify-between items-center w-full md:pt-6 pb-4">
         <div className="hidden md:block">
-          <IoMdArrowBack fill="#000000" size={"25px"} />
+          <GoArrowLeft fill="#000000" size={"25px"} />
         </div>
-        <h1 className="font-bold md:text-xl text-3xl md:text-center w-full">
+        <h1 className="font-bold md:font-semibold md:text-xl text-3xl md:text-center w-full">
           Welcome Back!
         </h1>
       </div>
@@ -69,7 +69,7 @@ const Content = () => {
             Remember me
           </label>
           <Link
-            href="../../auth/forgotpassword"
+            href="/auth/forgot-password"
             className="text-light-blue text-sm font-medium"
           >
             Forgot password?
@@ -79,7 +79,7 @@ const Content = () => {
 
       <div className="pb-12">
         <div className="mt-4">
-          <Link href="../../onboard/profileupload">
+          <Link href="/onboard">
             <button
               type="submit"
               className="border-r-amber-400 bg-light-blue rounded w-full h-12 text-white"
@@ -113,7 +113,7 @@ const Content = () => {
           <h1 className="text-center font-medium text-l text-light-black-5">
             Don&apos;t have an account?
           </h1>
-          <Link href="../../auth/create">
+          <Link href="/auth/create">
             <h1 className="text-center font-medium text-l text-light-blue">
               Sign Up
             </h1>

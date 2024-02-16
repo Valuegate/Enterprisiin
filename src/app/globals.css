@@ -65,13 +65,17 @@ input.custom {
 }
 
 .container {
-  border: 1px solid #e7e7e8;
-    /* padding: ; */
+  border: 1px solid #e7e7e8; 
+  /* padding: ; */
     transition: border-color 0.3s ease; 
 }
 
 .border-color-light-blue {
   border-color: #3399FF;
+}
+
+.border-color-weird-black {
+  border-color: #B5B5B5;
 }
 
 .custom-separator {
