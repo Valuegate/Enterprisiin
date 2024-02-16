@@ -20,7 +20,7 @@ interface iCreateNewListLayout {
 const CreateNewListLayout: FC<iCreateNewListLayout> = ({ children }) => {
   const menus = [
     { name: "New List", link: "", icon: OverviewIcon },
-    { name: "Help", link: "", icon: StoreIcon },
+    { name: "Help", link: "./helpandsupport", icon: StoreIcon },
   ];
 
   const [open, setOpen] = useState(true);
@@ -94,7 +94,7 @@ const CreateNewListLayout: FC<iCreateNewListLayout> = ({ children }) => {
       <div className="w-full pt-4 bg-light-black-12 h-screen">
         <nav className="flex justify-end items-center px-6 pb-4">
 
-          <div className="flex gap-4 items-center">
+          <div className="flex gap-4 items-center z-10">
             <div>
               <button className="rounded border w-[118px] h-[40px] border-light-black-1 text-base font-medium text-light-black-5">Save & Exit</button>
             </div>

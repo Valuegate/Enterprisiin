@@ -78,7 +78,7 @@ const GetStartedCard: FC<iGetStartedCard> = ({ getSelectedOption }) => {
             <div className="flex flex-col w-[80%]">
               <div className="flex justify-between items-center">
                 <h2 className="font-semibold text-lg md:text-[16px] mb-2">
-                  I&apos;m a Business Buyer
+                  I&apos;m a Business Seller
                 </h2>
 
                 <input

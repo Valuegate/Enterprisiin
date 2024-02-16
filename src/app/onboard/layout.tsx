@@ -10,7 +10,7 @@ const OnBoardLayout: FC<iOnBoardLayout> = ({ children }) => {
   return (
     <div className="w-full h-[100vh] bg-white">
       <div className="mb-12">
-        <nav>
+        <nav className="pl-4">
           <Link href="/">
           {/* <h1 className="text-2xl text-green font-semibold pt-4 pl-4">VALUE GATE</h1> */}
           <Logo/>

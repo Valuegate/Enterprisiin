@@ -87,7 +87,7 @@ const NotificationSettings = () => {
           <div className="pt-6 pb-20">
             <button
               type="submit"
-              className="bg-green rounded w-[138px] h-[40px] text-white"
+              className="bg-light-blue rounded w-[138px] h-[40px] text-white"
             >
               Save Changes
             </button>

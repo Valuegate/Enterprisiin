@@ -27,7 +27,7 @@ const Overview = () => {
                 <TooltipProvider>
                 <Tooltip  
                   content={
-                    <span className="flex text-center text-white font-medium text-xs">
+                    <span className="flex text-center text-white font-medium w-40 text-xs">
                       Your total balance reflects your account&apos;s current status and the date of last withdraw
                     </span>
                   }

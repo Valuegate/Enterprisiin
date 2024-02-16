@@ -39,7 +39,7 @@ const PasswordSettings = () => {
         <div className="pt-6 pb-20">
           <button
             type="submit"
-            className="border-r-amber-400 bg-green rounded w-[138px] h-[40px] text-white"
+            className="border-r-amber-400 bg-light-blue rounded w-[138px] h-[40px] text-white"
           >
             Save Changes
           </button>
