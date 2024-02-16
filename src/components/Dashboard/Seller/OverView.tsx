@@ -4,43 +4,28 @@ import DashboardCard from "@/public/components/DashboardCard/DashboardCard";
 import { Charts } from "@/public/components/Charts/Charts";
 import RequestCard from "@/public/components/RequestCard/RequestCard";
 import DraftCard from "@/public/components/DraftCard/DraftCard";
-import { Tooltip } from "@radix-ui/themes";
-import { TooltipProvider } from "@radix-ui/react-tooltip";
+
+function convertDateWithSlashes(date: Date) {
+  return `${date.getDay()}/${date.getMonth()}/${date.getFullYear()}`;
+}
 
 const Overview = () => {
   return (
     <>
-      <div className="px-6 pt-4 overflow-y-scroll h-[85vh]">
-        <h2 className="text-2xl font-bold text-black">Overview</h2>
-        <div className="flex justify-between pt-4">
-          <div className="w-80 bg-white rounded">
-            <div className="flex justify-between py-4 px-4">
-              <div className="">
-                <p className="text-base font-medium">Total Balance</p>
-                <div className="pt-4 text-2xl font-bold pb-2">₦400,000</div>
-                <p className="text-xs font-medium text-light-black-4">
-                  31/04/2023 last withdraw
-                </p>
-              </div>
-
-              <div className="">
-                <TooltipProvider>
-                  <Tooltip
-                    content={
-                      <span className="flex text-center text-white font-medium text-xs">
-                        Your total balance reflects your account&apos;s current
-                        status and the date of last withdraw
-                      </span>
-                    }
-                  >
-                    <div className="float-right">
-                      <InfoIcon />
-                    </div>
-                  </Tooltip>
-                </TooltipProvider>
-              </div>
-            </div>
-          </div>
+      <div className="px-6 pt-4 overflow-y-scroll h-[85vh] md:h-auto">
+        <h2 className="text-3xl md:text-[20px] md:leading-[30px] font-bold text-black md:mt-10">
+          Overview
+        </h2>
+        <div className="flex justify-around md:gap-6 md:justify-start mt-4 overflow-x-auto scrollbar-custom">
+          <DashboardCard
+            heading={"Total Balance"}
+            amount={"₦400,000"}
+            date={`${convertDateWithSlashes(new Date())} last withdrawn`}
+            info={
+              "Your total balance reflects your account's current status and the date of last withdraw"
+            }
+            className="w-80 md:w-72 bg-white rounded border-border-black border-[1.5px]"
+          />
           <DashboardCard
             heading={"Total Sold Businesses"}
             amount={"₦400,000"}
@@ -48,6 +33,7 @@ const Overview = () => {
             info={
               "The aggregate amount and total count of businesses you've successfully sold, earned loans and investments."
             }
+            className="w-80 md:w-72 bg-white rounded border-border-black border-[1.5px]"
           />
           <DashboardCard
             heading={"Buyer Requests"}
@@ -56,21 +42,22 @@ const Overview = () => {
             info={
               "These are the people who show interest in your business. Check them out and attend to them."
             }
+            className="w-80 md:w-72 bg-white rounded border-border-black border-[1.5px]"
           />
         </div>
 
-        <div className="flex justify-between pt-4">
+        <div className="flex justify-between mt-6 md:flex-col md:mb-10">
           <div className="">
-            <div className="pb-4">
-              <Charts />
+            <Charts />
+            <div className="md:block hidden my-6">
+              <RequestCard />
             </div>
-
-            <div className="pb-4">
+            <div className="md:mt-0 mt-6">
               <DraftCard />
             </div>
           </div>
 
-          <div>
+          <div className="md:hidden block">
             <RequestCard />
           </div>
         </div>

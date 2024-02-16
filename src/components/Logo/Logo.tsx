@@ -5,7 +5,7 @@ import logo from "@/public/assets/enterprisiin-logo.png";
 const Logo = () => {
   return (
     <>
-      <div className="flex items-center gap-1 md:hidden">
+      <div className="flex items-center gap-1 w-fit">
         <div>
           <Image src={logo} alt={""} />
         </div>

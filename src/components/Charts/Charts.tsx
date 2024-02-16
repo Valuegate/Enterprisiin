@@ -29,7 +29,7 @@ export const data = {
   datasets: [
     {
       label: "Requests",
-      data:  [],//labels.map(() => faker.datatype.number({ min: 0, max: 100 })),
+      data: [], //labels.map(() => faker.datatype.number({ min: 0, max: 100 })),
       borderColor: "#55ACEE",
       backgroundColor: "rgba(53, 162, 235, 0.5)",
     },
@@ -67,7 +67,7 @@ export function Charts() {
   };
 
   return (
-    <div className="chart-width bg-white rounded">
+    <div className="chart-width bg-white rounded border-border-black border-[1.5px] md:w-full">
       <div className="flex justify-between px-4 py-4">
         <h2 className="text-xl text-black font-bold">Statistics</h2>
         <div className="flex gap-2">
@@ -94,7 +94,5 @@ export function Charts() {
 
       <p className="pb-4 text-base text-gray text-center">Days</p>
     </div>
-
-    
   );
 }
