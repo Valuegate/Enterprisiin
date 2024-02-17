@@ -29,7 +29,7 @@ const Content = () => {
 
   return (
     <div className="px-10 md:px-5 flex flex-col md:mb-10">
-      <div className="md:flex md:flex-row justify-between items-center w-full md:pt-6 pb-4">
+      <div className="md:flex md:flex-row justify-between items-center w-full pt-24 md:pt-6 pb-4">
         <div className="hidden md:block">
           <GoArrowLeft fill="#000000" size={"25px"} />
         </div>
@@ -51,7 +51,7 @@ const Content = () => {
 
       <Button
         type="button"
-        className="bg-light-green-2 text-light-blue rounded w-full h-12 flex justify-center items-center gap-4 font-medium"
+        className="text-light-blue rounded w-full h-12 flex justify-center items-center gap-4 font-medium"
         // disabled={true}
         colorType="secondary"
         // loading={load}

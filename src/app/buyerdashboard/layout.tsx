@@ -18,6 +18,7 @@ import Link from "next/link";
 import React from "react";
 import { ReactNode, FC, useState } from "react";
 import ProfileDropdown from "@/public/components/ProfileDropdown/ProfileDropdown";
+import WhiteLogo from "@/public/components/WhiteLogo/WhiteLogo";
 
 interface iBuyerDashBoardLayout {
   children: ReactNode;
@@ -29,8 +30,7 @@ const BuyerDashBoardLayout: FC<iBuyerDashBoardLayout> = ({ children }) => {
     { name: "Marketplace", link: "./marketplace", icon: MarketplaceIcon },
     { name: "Message", link: "", icon: MessageIcon },
     { name: "Wallet", link: "", icon: WalletIcon },
-    { name: "Settings", link: "./settings", icon: SettingsIcon },
-    { name: "Overview", link: "./overview", icon: OverviewIcon, margin: true },
+    { name: "Settings", link: "./settings", icon: SettingsIcon, margin: true },
     { name: "Help & Support", link: "./helpandsupport", icon: HelpIcon },
     { name: "Logout", link: "", icon: LogoutIcon },
   ];
@@ -40,7 +40,7 @@ const BuyerDashBoardLayout: FC<iBuyerDashBoardLayout> = ({ children }) => {
   return (
     <div className="flex bg-light-black h-auto">
       <div
-        className={`bg-green h-screen ${
+        className={`bg-blue h-screen ${
           open ? "w-64" : "w-16"
         } duration-500 px-2`}
       >
@@ -53,7 +53,7 @@ const BuyerDashBoardLayout: FC<iBuyerDashBoardLayout> = ({ children }) => {
                 !open && "opacity-0 translate-x-28 overflow-hidden"
               }`}
             >
-              VALUE GATE
+              <WhiteLogo />
             </h2>
           </Link>
           <div className={`py-3 pr-4 flex justify-end ${
@@ -73,7 +73,7 @@ const BuyerDashBoardLayout: FC<iBuyerDashBoardLayout> = ({ children }) => {
               key={i}
               className={` ${
                 menu?.margin && "mb-52"
-              } group flex items-center text-sm text-white gap-3.5 font-medium p-2 hover:bg-light-green-8 rounded`}
+              } group flex items-center text-sm text-white gap-3.5 font-medium p-2 hover:bg-light-blue-2 rounded`}
             >
               <div>{React.createElement(menu?.icon)}</div>
               <h2

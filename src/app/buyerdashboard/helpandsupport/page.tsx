@@ -17,13 +17,13 @@ const HelpAndSupport = () => {
             aria-label="Manage your account"
           >
             <Tabs.Trigger
-              className="bg-white px-4 h-[45px] flex items-center text-base font-semibold select-none first:rounded-tl-md  last:rounded-tr-md data-[state=active]:text-light-green-9 data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] data-[state=active]:shadow-current data-[state=active]:focus:relative outline-none cursor-default"
+              className="bg-white px-4 h-[45px] flex items-center text-base font-semibold select-none first:rounded-tl-md  last:rounded-tr-md data-[state=active]:text-light-blue data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] data-[state=active]:shadow-current data-[state=active]:focus:relative outline-none cursor-default"
               value="tab1"
             >
               FAQs
             </Tabs.Trigger>
             <Tabs.Trigger
-              className="bg-white px-4 h-[45px] flex items-center text-base font-semibold select-none first:rounded-tl-md  last:rounded-tr-md data-[state=active]:text-light-green-9 data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] data-[state=active]:shadow-current data-[state=active]:focus:relative outline-none cursor-default"
+              className="bg-white px-4 h-[45px] flex items-center text-base font-semibold select-none first:rounded-tl-md  last:rounded-tr-md data-[state=active]:text-light-blue data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] data-[state=active]:shadow-current data-[state=active]:focus:relative outline-none cursor-default"
               value="tab2"
             >
               Contact Us

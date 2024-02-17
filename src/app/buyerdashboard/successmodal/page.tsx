@@ -1,7 +1,7 @@
 import React from "react";
 import * as AlertDialog from "@radix-ui/react-alert-dialog";
 import Image from "next/image";
-import SuccessMark from "@/public/assets/Vector (4).png";
+import SuccessMark from "@/public/assets/success-mark.png";
 import Link from "next/link";
 
 const SuccessModal = () => {
@@ -60,7 +60,7 @@ const SuccessModal = () => {
           <p className="px-20 font-medium text-base text-light-black-5 pb-8">Buy, Invest and Loan businesses as much as you can Buy, Invest and Loan businesses as much as you can</p>
           <div className="pb-10">
           <Link href={"../../buyerdashboard/marketplace"}>
-            <button className="bg-green font-medium text-base text-white w-[178px] h-[40px] rounded">
+            <button className="bg-light-blue font-medium text-base text-white w-[178px] h-[40px] rounded">
             Okay, thanks
             </button>
           </Link>

@@ -39,12 +39,12 @@ const MarketplaceCard = () => {
                     <span className="font-bold text-xl leading-6">400 M</span>
                   </div>
                   <div>
-                    <button className="rounded-[40px] w-[63px] h-[26px] items-center text-green font-medium text-xs bg-light-green-1 flex justify-center">For Sale</button>
+                    <button className="rounded-[40px] w-[63px] h-[26px] items-center text-[#C39E53] font-medium text-xs bg-[#FBF2E0] flex justify-center">For Sale</button>
                   </div>
               </div>
 
               <Link href={"../../buyerdashboard/expandablemarket"}>
-              <button className="rounded bg-green text-white text-base w-full h-[32px] font-medium">Connect</button>
+              <button className="rounded bg-light-blue-1 text-light-blue hover:bg-light-blue hover:text-white text-base w-full h-[32px] font-medium">Connect</button>
               </Link>
               </div>
             </div>
@@ -76,11 +76,11 @@ const MarketplaceCard = () => {
                     <span className="font-bold text-xl leading-6">400 M</span>
                   </div>
                   <div>
-                    <button className="rounded-[40px] w-[97px] h-[26px] items-center text-green font-medium text-xs bg-light-green-1 flex justify-center">Required Loan</button>
+                    <button className="rounded-[40px] w-[97px] h-[26px] items-center text-[#C39E53] font-medium text-xs bg-[#FBF2E0] flex justify-center">Required Loan</button>
                   </div>
               </div>
 
-              <button className="rounded bg-green text-white text-base w-full h-[32px] font-medium">Connect</button>
+              <button className="rounded bg-light-blue-1 text-light-blue hover:bg-light-blue hover:text-white text-base w-full h-[32px] font-medium">Connect</button>
               </div>
             </div>
 
@@ -114,10 +114,10 @@ const MarketplaceCard = () => {
                     <span className="font-bold text-xl leading-6">400 M</span>
                   </div>
                   <div>
-                    <button className="rounded-[40px] w-[96px] h-[26px] items-center text-green font-medium text-xs bg-light-green-1 flex justify-center">Asset for Sale</button>
+                    <button className="rounded-[40px] w-[96px] h-[26px] items-center text-[#C39E53] font-medium text-xs bg-[#FBF2E0] flex justify-center">Asset for Sale</button>
                   </div>
               </div>
-              <button className="rounded bg-green text-white text-base w-full h-[32px] font-medium">Connect</button>
+              <button className="rounded bg-light-blue-1 text-light-blue hover:bg-light-blue hover:text-white text-base w-full h-[32px] font-medium">Connect</button>
               </div>
             </div>
 
@@ -148,11 +148,11 @@ const MarketplaceCard = () => {
                     <span className="font-bold text-xl leading-6">400 M</span>
                   </div>
                   <div>
-                    <button className="rounded-[40px] w-[63px] h-[26px] items-center text-green font-medium text-xs bg-light-green-1 flex justify-center">For Sale</button>
+                    <button className="rounded-[40px] w-[63px] h-[26px] items-center text-[#C39E53] font-medium text-xs bg-[#FBF2E0] flex justify-center">For Sale</button>
                   </div>
               </div>
 
-              <button className="rounded bg-green text-white text-base w-full h-[32px] font-medium">Connect</button>
+              <button className="rounded bg-light-blue-1 text-light-blue hover:bg-light-blue hover:text-white text-base w-full h-[32px] font-medium">Connect</button>
               </div>
             </div>
 
