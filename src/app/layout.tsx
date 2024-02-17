@@ -22,16 +22,16 @@ export const metadata: Metadata = {
 };
 
 const mantineColors: MantineColorsTuple = [
-  "#eef5fc",
-  "#dbe6f2",
-  "#b3cce6",
-  "#88b1dc",
-  "#6599d3",
-  "#508ace",
-  "#4484cd",
-  "#3671b6",
-  "#2d65a3",
-  "#1d5791",
+  "#D6EBFF",
+  "#BBDDFF",
+  "#99CCFF",
+  "#77BBFF",
+  "#55AAFF",
+  "#2B80D5",
+  "#2266AA",
+  "#1A4D80",
+  "#113355",
+  "#0A1F33",
 ];
 
 const theme = createTheme({

@@ -10,7 +10,7 @@ const Logo = () => {
           <Image src={logo} alt={""} />
         </div>
         <div>
-          <h1 className="text-2xl text-light-blue font-semibold">
+          <h1 className="semi-1 text-blue-base md:text-[18.53px] md:leading-[27.8px]">
             enterprisiin
           </h1>
         </div>

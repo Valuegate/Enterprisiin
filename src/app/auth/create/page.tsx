@@ -28,48 +28,48 @@ const Content = () => {
   };
 
   return (
-    <div className="px-10 md:px-5 flex flex-col md:mb-10">
-      <div className="md:flex md:flex-row justify-between items-center w-full md:pt-6 pb-4">
-        <div className="hidden md:block">
-          <GoArrowLeft fill="#000000" size={"25px"} />
+    <div className="w-full flex justify-center">
+      <div className="flex flex-col w-[500px] md:w-full md:px-5 items-start">
+        <div className="md:flex md:flex-row justify-between items-center w-full md:pt-6 pb-6 md:pb-4 md:relative">
+          <div className="hidden md:block">
+            <GoArrowLeft fill="#000000" size={"25px"} />
+          </div>
+          <h1 className="font-bold md:text-[20px] md:leading-[30px] text-[32px] leading-[42px] md:text-center w-full md:absolute">
+            Create Account
+          </h1>
         </div>
-        <h1 className="font-bold md:font-semibold md:text-xl text-3xl md:text-center w-full">
-          Create Account
+
+        <p className="med-3 md:text-[14px] md:leading-[24px] text-light-black-4 pb-4 md:pb-10 md:text-center md:w-full">
+          {displayText(role as string)}
+        </p>
+        <InputField />
+
+        <div className="flex gap-4 justify-center items-center py-4 w-full">
+          <div className="bg-contrast-10 h-[1px] w-[50%]" />
+          <p className="text-center med-3">OR</p>
+          <div className="bg-contrast-10 h-[1px] w-[50%]" />
+        </div>
+
+        <Button
+          type="button"
+          className="text-blue-base rounded w-full h-12 flex justify-center items-center gap-4"
+          colorType="secondary"
+        >
+          <span>
+            <GoogleIcon color="#3399FF" />
+          </span>
+          Create with Google
+        </Button>
+
+        <h1 className="text-center flex justify-center gap-2 med-3 mt-5 w-full md:mb-5">
+          Already have an account?{" "}
+          <span>
+            <Link href="/auth/login">
+              <h1 className="text-center text-blue-base">Login</h1>
+            </Link>
+          </span>
         </h1>
       </div>
-
-      <p className="text-base md:text-sm font-medium text-light-black-4 pb-4 md:pb-10 md:text-center">
-        {displayText(role as string)}
-      </p>
-      <InputField />
-
-      <div className="flex gap-4 items-center pt-4 pb-4">
-        <hr className="border-none bg-light-black-1 h-[1px] w-full" />
-        <div className="text-center font-base text-xl ">OR</div>
-        <hr className="border-none bg-light-black-1 h-[1px] w-full" />
-      </div>
-
-      <Button
-        type="button"
-        className="bg-light-green-2 text-light-blue rounded w-full h-12 flex justify-center items-center gap-4 font-medium"
-        // disabled={true}
-        colorType="secondary"
-        // loading={load}
-      >
-        <span>
-          <GoogleIcon color="#3399FF" />
-        </span>
-        Create with Google
-      </Button>
-
-      <h1 className="text-center flex justify-center gap-2 font-medium mt-5 w-full">
-        Already have an account?{" "}
-        <span>
-          <Link href="/auth/login">
-            <h1 className="text-center font-semibold text-light-blue">Login</h1>
-          </Link>
-        </span>
-      </h1>
     </div>
   );
 };
