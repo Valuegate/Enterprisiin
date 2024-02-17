@@ -5,7 +5,7 @@ import Verify from "../../../assets/Screenshot 2023-07-28 at 12.31 1.png";
 const EmailSent = () => {
   return (
     <div className="w-full flex justify-center">
-      <div className="flex flex-col w-[500px] md:w-full md:px-5 items-start">
+      <div className="flex flex-col w-[395px] md:w-full md:px-5 items-start">
         <div className="md:flex md:flex-row justify-between items-center w-full md:pt-6 pb-6 md:pb-4 md:relative">
           <div className="hidden md:block">
             <GoArrowLeft fill="#000000" size={"25px"} />

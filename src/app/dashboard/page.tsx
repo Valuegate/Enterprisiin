@@ -86,11 +86,11 @@ const DashboardLayout = () => {
   const children: ReactNode[] = [<Overview key={"seller-overview"} />];
 
   return (
-    <div className="flex bg-pale-blue h-[100vh] md:h-auto ">
+    <div className="flex bg-background h-[100vh] md:h-auto">
       <div
-        className={`bg-blue h-screen ${
-          open ? "w-[20%]" : "w-[4%]"
-        } duration-500 text-gray-100 px-2 md:hidden`}
+        className={`bg-blue-90 h-screen ${
+          open ? "w-[20%] px-4" : "w-[4%] pr-3 pl-3"
+        } duration-500 text-gray-100  md:hidden`}
       >
         <div
           className={`flex justify-between items-center pt-4 ${
@@ -124,7 +124,7 @@ const DashboardLayout = () => {
           }`}
           href={"../createnewlist/newlist"}
         >
-          <button className="text-sm text-light-blue rounded w-full h-10 border flex justify-center items-center gap-2 font-medium bg-blue border-light-blue">
+          <button className="text-blue-base med-3 rounded w-full h-10 border border-blue-base flex justify-center items-center gap-2 font-medium bg-blue border-light-blue">
             <span>
               <AddIcon color="#3399FF" />
             </span>
@@ -143,7 +143,7 @@ const DashboardLayout = () => {
                 setIndex(i);
               }}
               className={` ${menu?.margin && "mb-32"} 
-              ${index === i ? "bg-light-blue text-white" : "text-white-5"}
+              ${index === i ? "bg-blue-80 text-blue-10" : "text-white"}
                 group flex items-center cursor-pointer text-sm gap-3.5 font-medium p-2 ${
                   index !== i && "hover:bg-light-blue-2"
                 }  rounded`}

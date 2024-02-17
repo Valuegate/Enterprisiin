@@ -10,7 +10,9 @@ const WhiteLogo = () => {
           <Image src={logo} alt={""} />
         </div>
         <div>
-          <h1 className="text-2xl text-white font-semibold">enterprisiin</h1>
+          <h1 className="semi-1 text-white md:text-[18.53px] md:leading-[27.8px]">
+            enterprisiin
+          </h1>
         </div>
       </div>
     </>
