@@ -9,12 +9,13 @@ import Button from "@/public/components/Button";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import SocialMedia from "@/public/components/onboarding-components/SocialMedia";
 import PasswordSetup from "@/public/components/onboarding-components/SetupPassword";
+import CompanyDetails from "@/public/components/onboarding-components/CompanyDetails";
 
 const OnboardPage = () => {
   const [index, setIndex] = useState<number>(0);
   const children: ReactNode[] = [
     <UploadProfilePicture key="uploadProfilePicture" />,
-    <SocialMedia key="socialMedia" />,
+    <CompanyDetails key="companyDetails" />,
     <PasswordSetup key="passwordSetup" />,
   ];
 
@@ -38,10 +39,10 @@ const OnboardPage = () => {
           <Button
             type="button"
             height="h-10"
-            width={`md:w-[35vw] w-auto`}
+            width={`md:w-[30vw] w-auto`}
             className={`border-r-amber-400 ${
               index === 0 && "hidden"
-            } rounded px-3 mt-5 flex justify-center items-center gap-1 font-medium text-light-blue`}
+            } rounded px-3 mt-5 flex justify-center items-center gap-1 text-blue-base`}
             colorType="secondary"
             handleClick={() => {
               setIndex((val) => val - 1);
@@ -53,12 +54,12 @@ const OnboardPage = () => {
           <Button
             type="button"
             height="h-10"
-            width={`md:w-[${index === 0 ? "90" : "35"}vw] w-auto`}
-            className={`border-r-amber-400 rounded px-3 mt-5 flex justify-center items-center gap-1 font-medium text-white`}
+            width={`md:w-[${index === 0 ? "90" : "30"}vw] w-auto`}
+            className={`border-r-amber-400 rounded px-3 mt-5 flex justify-center items-center gap-1 text-white`}
             colorType="primary"
             handleClick={() => {
               if (index == children.length - 1) {
-                window.location.assign("/sellerdashboard/overview");
+                window.location.assign("/dashboard");
               } else {
                 setIndex((val) => val + 1);
               }

@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700&display=swap');
-@import '../../node_modules/@radix-ui/themes/styles.css';
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700&display=swap");
+@import "../../node_modules/@radix-ui/themes/styles.css";
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -27,8 +27,8 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb)); */
-    font-family: 'Public Sans', sans-serif;
-    overflow-x: hidden;
+  font-family: "Public Sans", sans-serif;
+  overflow-x: hidden;
 }
 
 .placeholder-italic::placeholder {
@@ -61,27 +61,31 @@ input.custom {
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  color: #5A5F5C;
+  color: #5a5f5c;
   padding-left: 20rem;
   padding-right: 20rem;
 }
 
 .container {
-  border: 1px solid #e7e7e8; 
+  border: 1px solid #e7e7e8;
   /* padding: ; */
-    transition: border-color 0.3s ease; 
+  transition: border-color 0.3s ease;
+}
+
+.tweak {
+  min-width: 0px;
 }
 
 .border-color-light-blue {
-  border-color: #3399FF;
+  border-color: #3399ff;
 }
 
 .border-color-weird-black {
-  border-color: #B5B5B5;
+  border-color: #b5b5b5;
 }
 
 .custom-separator {
-  background-color: #CECFCE;
+  background-color: #cecfce;
   height: 30px;
   width: 2px;
 }
@@ -94,13 +98,14 @@ input.custom {
   border-radius: 4px;
 }
 
-input:focus, .search:focus {
+input:focus,
+.search:focus {
   outline: none;
   border: none;
 }
 
 .custom-accordion-item {
-  background-color: #F8F8F8 !important;
+  background-color: #f8f8f8 !important;
   border: none;
 }
 
@@ -117,13 +122,13 @@ input:focus, .search:focus {
   font-weight: 700;
   font-size: 24px;
   line-height: 36px;
-  color: #080F0B;
+  color: #080f0b;
 }
 
 .close {
   width: 13px;
   height: 13px;
-  color: #080F0B;
+  color: #080f0b;
 }
 
 .scrollbar-custom {
@@ -143,14 +148,106 @@ input:focus, .search:focus {
   background-color: transparent;
 }
 
-
 .bg-background-image {
   background-image: url("../assets/background-image.png");
-  background-size: cover;
-  /* margin-top: 1rem;
-  margin-bottom: 1rem; */
-  height: 100vh;
-  width: 100%;
+  background-size: contain;
+  height: 95vh;
+  width: 50vw;
   overflow: hidden;
+}
 
+.reg-1 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.reg-2 {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.reg-3 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.reg-4 {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.med-1 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.med-2 {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.med-3 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.med-4 {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.semi-1 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.semi-2 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.semi-3 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.semi-4 {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.bold-1 {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.bold-2 {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.bold-3 {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.bold-4 {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 18px;
 }

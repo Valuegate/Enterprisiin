@@ -1,6 +1,6 @@
 import { InfoIcon } from "@/public/icons";
 import Image from "next/image";
-import { ReactNode, FC } from "react";
+import { FC } from "react";
 import Cloud from "@/public/assets/Frame 35643.png";
 import { Tooltip } from "@radix-ui/themes";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
@@ -10,19 +10,23 @@ interface iDashboardCard {
   amount: string;
   date: string;
   info: string;
-  // img.src: boolean;
+  className: string;
 }
 
-const DashboardCard: FC<iDashboardCard> = ({ heading, amount, date, info }) => {
+const DashboardCard: FC<iDashboardCard> = ({
+  heading,
+  amount,
+  date,
+  info,
+  className,
+}) => {
   return (
-    <div className="w-80 bg-white rounded">
-      <div className="flex justify-between py-4 px-4">
-        <div className="">
-          <p className="text-base w-[105%] font-medium">{heading}</p>
-          <div className="pt-4 text-2xl font-bold pb-2">{amount}</div>
-          <p className="text-xs font-medium text-light-black-4">{date}</p>
-        </div>
-        <div className="">
+    <div className={className}>
+      <div className="flex flex-col py-4 px-4 w-80 md:w-72">
+        <div className="w-full flex justify-between items-center">
+          <p className="text-lg md:text-md text-black-70 font-medium">
+            {heading}
+          </p>
           <TooltipProvider>
             <Tooltip
               content={
@@ -36,10 +40,19 @@ const DashboardCard: FC<iDashboardCard> = ({ heading, amount, date, info }) => {
               </div>
             </Tooltip>
           </TooltipProvider>
-          <div className="pt-8">
-            <Image src={Cloud} alt={""} />
-          </div>
         </div>
+
+        <div className="w-full flex justify-between items-center mt-3">
+          <p className="pb-2 pt-3 text-3xl md:text-2xl font-bold">{amount}</p>
+          <Image src={Cloud} alt={""} />
+        </div>
+
+        <div className="">
+          <p className="text-md md:text-base font-medium text-black-50">
+            {date}
+          </p>
+        </div>
+        <div className="cursor-pointer"></div>
       </div>
     </div>
   );

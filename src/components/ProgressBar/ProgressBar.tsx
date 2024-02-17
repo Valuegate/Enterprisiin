@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface ProgressBarProps {
   progress: number;
@@ -6,9 +6,9 @@ interface ProgressBarProps {
 
 const ProgressBar: React.FC<ProgressBarProps> = ({ progress }) => {
   return (
-    <div className="w-full bg-light-green-1 h-0.5 rounded">
+    <div className="w-full h-0.5 rounded">
       <div
-        className="h-full bg-light-blue rounded"
+        className="h-full bg-blue-base rounded"
         style={{ width: `${progress}%` }}
       ></div>
     </div>

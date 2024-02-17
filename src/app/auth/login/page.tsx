@@ -22,6 +22,9 @@ const Content = () => {
   const searchParams = useSearchParams();
   const role = searchParams.get("role");
 
+  const [isEmailFilled, setEmailFilled] = useState<boolean>(false);
+  const [isPasswordFilled, setPasswordFilled] = useState<boolean>(false);
+
   const displayText = (role: string): string => {
     return role === "Buyer"
       ? "Ready to buy? Let's reconnect!"
@@ -29,79 +32,89 @@ const Content = () => {
   };
 
   return (
-    <div className="px-10 md:px-5 flex flex-col md:mb-10">
-      <div className="md:flex md:flex-row justify-between items-center w-full md:pt-6 pb-4">
-        <div className="hidden md:block">
-          <GoArrowLeft fill="#000000" size={"25px"} />
+    <div className="w-full flex justify-center">
+      <div className="flex flex-col w-[500px] md:w-full md:px-5 items-start">
+        <div className="md:flex md:flex-row justify-between items-center w-full md:pt-6 pb-6 md:pb-4 md:relative">
+          <div className="hidden md:block">
+            <GoArrowLeft fill="#000000" size={"25px"} />
+          </div>
+          <h1 className="font-bold md:text-[20px] md:leading-[30px] text-[32px] leading-[42px] md:text-center w-full md:absolute">
+            Welcome Back!
+          </h1>
         </div>
-        <h1 className="font-bold md:font-semibold md:text-xl text-3xl md:text-center w-full">
-          Welcome Back!
-        </h1>
-      </div>
-      <p className="text-base md:text-sm font-medium text-light-black-4 pb-4 md:pb-10 md:text-center">
-        {displayText(role as string)}
-      </p>
+        <p className="med-3 md:text-[14px] md:leading-[24px] text-light-black-4 pb-4 md:pb-10 md:text-center md:w-full">
+          {displayText(role as string)}
+        </p>
 
-      <div className="mb-4">
-        <label
-          className="block text-gray-700 font-medium text-md"
-          htmlFor="email"
-        >
-          Email Address
-        </label>
-        <input
-          type="email"
-          id="email"
-          placeholder="Enter your email address"
-          className="placeholder-italic placeholder:pl-0 mt-1 p-3 border-none bg-white-1 rounded w-full"
-        />
-      </div>
-
-      <PasswordInput label={"Password"} />
-
-      <div className="mb-8 mt-4">
-        <div className="flex items-center justify-between">
+        <div className="mb-4 w-full">
           <label
-            className="flex gap-2 items-center text-base text-light-black-4"
-            htmlFor="remember"
+            className="semi-3 md:text-[14px] md:leading-[22.4px]"
+            htmlFor="email"
           >
-            <input type="checkbox" id="remember" className="custom mr-1 " />
-            Remember me
+            Email Address
           </label>
-          <Link
-            href="/auth/forgot-password"
-            className="text-light-blue text-sm font-medium"
-          >
-            Forgot password?
-          </Link>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email address"
+            onChange={(e) => {
+              setEmailFilled(e.target.value.length !== 0);
+            }}
+            className="placeholder-italic mt-1 p-3 placeholder:pl-0 border-none bg-input placeholder:text-contrast-30 pl:text-[16px] pl:leading-[24px] md:placeholder:text-[14px] md:placeholder:leading-[22.4px]  rounded w-full"
+          />
         </div>
-      </div>
 
-      <div className="pb-12">
-        <div className="mt-4">
-          <Link href="/onboard">
-            <button
-              type="submit"
-              className="border-r-amber-400 bg-light-blue rounded w-full h-12 text-white"
+        <PasswordInput
+          label={"Password"}
+          onChange={(val) => setPasswordFilled(val.target.value.length !== 0)}
+        />
+
+        <div className="mb-8 mt-4 w-full">
+          <div className="flex items-center justify-between">
+            <label
+              className="flex gap-2 items-center med-3 md:text-[14px] md:leading-[22.5px]"
+              htmlFor="remember"
             >
-              Login
-            </button>
-          </Link>
+              <input
+                type="checkbox"
+                id="remember"
+                className="custom mr-2 md:mr-1"
+              />
+              Remember me
+            </label>
+            <Link
+              href="/auth/forgot-password"
+              className="text-blue-base med-3 md:text-[14px] md:leading-[22.5px]"
+            >
+              Forgot password?
+            </Link>
+          </div>
         </div>
 
-        <div className="flex gap-4 items-center pt-4 pb-4">
-          <hr className="border-none bg-light-black-1 h-[1px] w-full" />
-          <div className="text-center font-base text-xl ">OR</div>
-          <hr className="border-none bg-light-black-1 h-[1px] w-full" />
+        <div className="pb-2 mt-4 w-full">
+          <button
+            type="submit"
+            className={`${
+              isEmailFilled && isPasswordFilled ? "bg-blue-base" : "bg-blue-20"
+            } rounded w-full h-12 text-white font-medium text-[16px] leading-[24px] md:leading-[25.6px]`}
+            onClick={() => {
+              window.location.href = "/onboard";
+            }}
+          >
+            Login
+          </button>
+        </div>
+
+        <div className="flex gap-4 justify-center items-center py-4 w-full">
+          <div className="bg-contrast-10 h-[1px] w-[50%]" />
+          <p className="text-center med-3">OR</p>
+          <div className="bg-contrast-10 h-[1px] w-[50%]" />
         </div>
 
         <Button
           type="button"
-          className="rounded w-full text-light-blue flex justify-center items-center gap-4 font-medium"
-          // disabled={true}
+          className="text-blue-base rounded w-full h-12 flex justify-center items-center gap-4"
           colorType="secondary"
-          // loading={load}
-          //   handleClick={() => setLoad(!load)}
         >
           <span>
             <GoogleIcon color="#3399FF" />
@@ -109,15 +122,15 @@ const Content = () => {
           Create with Google
         </Button>
 
-        <div className="flex justify-center gap-1 pt-8">
-          <h1 className="text-center font-medium text-l text-light-black-5">
-            Don&apos;t have an account?
+        <div className="flex justify-center gap-1 pt-4 w-full">
+          <h1 className="text-center flex justify-center gap-2 med-3 mt-5 w-full md:mb-5">
+            Don&apos;t have an account?{" "}
+            <span>
+              <Link href="/auth/create">
+                <h1 className="text-center text-blue-base">Sign Up</h1>
+              </Link>
+            </span>
           </h1>
-          <Link href="/auth/create">
-            <h1 className="text-center font-medium text-l text-light-blue">
-              Sign Up
-            </h1>
-          </Link>
         </div>
       </div>
     </div>

@@ -4,38 +4,39 @@ import Verify from "../../../assets/Screenshot 2023-07-28 at 12.31 1.png";
 
 const EmailSent = () => {
   return (
-    <>
-      <div className="px-10 md:px-5 flex flex-col md:mb-10">
-        <div className="md:flex md:flex-row justify-between items-center w-full md:pt-6 pb-4">
+    <div className="w-full flex justify-center">
+      <div className="flex flex-col w-[500px] md:w-full md:px-5 items-start">
+        <div className="md:flex md:flex-row justify-between items-center w-full md:pt-6 pb-6 md:pb-4 md:relative">
           <div className="hidden md:block">
             <GoArrowLeft fill="#000000" size={"25px"} />
           </div>
-          <h1 className="font-bold md:font-semibold md:text-xl text-3xl md:text-center w-full">
+          <h1 className="font-bold md:text-[20px] md:leading-[30px] text-[32px] leading-[42px] md:text-center w-full md:absolute">
             Email Verification
           </h1>
         </div>
-        <p className="text-base md:text-sm font-medium text-light-black-4 pb-4 md:pb-10 md:text-center">
-          Account activation link has been sent to the email address{" "}
+        <p className="med-3 md:text-[14px] md:leading-[24px] text-light-black-4 pb-4 md:pb-10 md:text-center md:w-full">
+          We&apos;ve just sent you an email with a link to verify your email
+          account{" "}
           <span className="font-bold">ajeigbetaiwomatthew@gmail.com</span>{" "}
           provided
         </p>
 
-        <div className="flex justify-center mt-5">
+        <div className="flex justify-center mt-5 w-full">
           <Image src={Verify} alt={""} />
         </div>
-        <p className="text-center mt-5 md:mt-10 text-light-black-4 text-base md:text-sm">
+        <p className="text-center mt-5 md:mt-10 med-3 md:text-[14px] md:leading-[22.5px] w-full">
           Didn&apos;t get email?
         </p>
-        <div className="mt-10 md:mt-24">
+        <div className="mt-10 md:mt-24 w-full">
           <button
             type="submit"
-            className="border-r-amber-400 bg-light-blue rounded w-full h-12 text-white"
+            className="rounded w-full h-12 text-white font-medium text-[16px] leading-[24px] md:leading-[25.6px] bg-blue-base"
           >
             Resend
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

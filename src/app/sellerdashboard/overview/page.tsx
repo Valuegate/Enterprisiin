@@ -1,11 +1,11 @@
-"use client"
+"use client";
 import { InfoIcon } from "@/public/icons";
 import DashboardCard from "@/public/components/DashboardCard/DashboardCard";
 import { Charts } from "@/public/components/Charts/Charts";
 import RequestCard from "@/public/components/RequestCard/RequestCard";
 import DraftCard from "@/public/components/DraftCard/DraftCard";
 import { Tooltip } from "@radix-ui/themes";
-import { TooltipProvider } from '@radix-ui/react-tooltip';
+import { TooltipProvider } from "@radix-ui/react-tooltip";
 
 const Overview = () => {
   return (
@@ -25,17 +25,18 @@ const Overview = () => {
 
               <div className="">
                 <TooltipProvider>
-                <Tooltip  
-                  content={
-                    <span className="flex text-center text-white font-medium w-40 text-xs">
-                      Your total balance reflects your account&apos;s current status and the date of last withdraw
-                    </span>
-                  }
-                >
-                  <div className="float-right">
-                    <InfoIcon />
-                  </div>
-                </Tooltip>
+                  <Tooltip
+                    content={
+                      <span className="flex text-center text-white font-medium w-40 text-xs">
+                        Your total balance reflects your account&apos;s current
+                        status and the date of last withdraw
+                      </span>
+                    }
+                  >
+                    <div className="float-right">
+                      <InfoIcon />
+                    </div>
+                  </Tooltip>
                 </TooltipProvider>
               </div>
             </div>
@@ -43,11 +44,21 @@ const Overview = () => {
           <DashboardCard
             heading={"Total Sold Businesses"}
             amount={"₦400,000"}
-            date={"09 businesses"} info={"The aggregate amount and total count of businesses you've successfully sold, earned loans and investments."}          />
+            className="w-80 md:w-72 bg-white rounded border-border-black border-[1.5px]"
+            date={"09 businesses"}
+            info={
+              "The aggregate amount and total count of businesses you've successfully sold, earned loans and investments."
+            }
+          />
           <DashboardCard
             heading={"Buyer Requests"}
             amount={"02"}
-            date={"31/04/2023"} info={"These are the people who show interest in your business. Check them out and attend to them."}          />
+            className="w-80 md:w-72 bg-white rounded border-border-black border-[1.5px]"
+            date={"31/04/2023"}
+            info={
+              "These are the people who show interest in your business. Check them out and attend to them."
+            }
+          />
         </div>
 
         <div className="flex justify-between pt-4">

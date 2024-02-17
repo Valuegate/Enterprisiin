@@ -5,12 +5,12 @@ import logo from "@/public/assets/enterprisiin-logo.png";
 const Logo = () => {
   return (
     <>
-      <div className="flex items-center gap-1 md:hidden">
+      <div className="flex items-center gap-1 w-fit">
         <div>
           <Image src={logo} alt={""} />
         </div>
         <div>
-          <h1 className="text-2xl text-light-blue font-semibold">
+          <h1 className="semi-1 text-blue-base md:text-[18.53px] md:leading-[27.8px]">
             enterprisiin
           </h1>
         </div>
