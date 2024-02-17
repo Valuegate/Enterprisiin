@@ -29,12 +29,12 @@ const Button: React.FC<IButtonProps> = ({
 }) => {
   const getButtonColorType = (type: string): string => {
     const colorMap: Record<string, string> = {
-      primary: "bg-light-blue",
-      secondary: "bg-light-blue-1",
+      primary: "bg-blue-base",
+      secondary: "bg-blue-10",
       warning: "bg-yellow-200",
       danger: "bg-red-400",
     };
-    return colorMap[type] || "bg-purple-500";
+    return colorMap[type] || "bg-blue-100";
   };
   return (
     <button
@@ -44,9 +44,10 @@ const Button: React.FC<IButtonProps> = ({
       onClick={handleClick}
       className={joinClasses(
         `${width} ${height}`,
-        disabled && "bg-gray-400",
+        disabled && "bg-blue-20",
         getButtonColorType(colorType || "primary"),
-        className
+        className,
+        "font-medium text-[16px] leading-[24px] md:leading-[25.6px]"
       )}
     >
       {loading ? "Loading..." : children}

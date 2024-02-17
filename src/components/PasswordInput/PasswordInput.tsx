@@ -1,19 +1,23 @@
 "use client";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
-import { useState } from "react";
+import { ChangeEventHandler, useState } from "react";
 import { ReactNode, FC } from "react";
 
 interface iPasswordInput {
   label: ReactNode;
+  onChange: ChangeEventHandler<HTMLInputElement>;
 }
 
-const PasswordInput: FC<iPasswordInput> = ({ label }) => {
+const PasswordInput: FC<iPasswordInput> = ({
+  label,
+  onChange = (val) => {},
+}) => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <>
+    <div className="w-full">
       <label
-        className="block text-gray-700 pb-1 font-medium text-md"
+        className="semi-3 md:text-[14px] md:leading-[22.4px]"
         htmlFor="password"
       >
         {label}
@@ -23,20 +27,21 @@ const PasswordInput: FC<iPasswordInput> = ({ label }) => {
           type={showPassword ? "text" : "password"}
           id="password"
           placeholder="Enter password"
-          className="placeholder-italic placeholder:pl-0 p-3 border-none bg-white-1 rounded w-full"
+          onChange={onChange}
+          className="placeholder-italic mt-1 p-3 placeholder:pl-0 border-none bg-input placeholder:text-contrast-30 pl:text-[16px] pl:leading-[24px] md:placeholder:text-[14px] md:placeholder:leading-[22.4px]  rounded w-full"
         />
         <button
           className="absolute inset-y-0 right-2 flex items-center px-2 cursor-pointer"
           onClick={() => setShowPassword(!showPassword)}
         >
           {showPassword ? (
-            <IoMdEyeOff size={"20px"} />
+            <IoMdEyeOff size={"20px"} fill="#2266AA" />
           ) : (
-            <IoMdEye size={"20px"} />
+            <IoMdEye size={"20px"} fill="#2266AA" />
           )}
         </button>
       </div>
-    </>
+    </div>
   );
 };
 

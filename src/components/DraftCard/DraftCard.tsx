@@ -72,14 +72,12 @@ const DraftCard = () => {
                 <div className="bg-gray-light-1 md:bg-white rounded">
                   <div className="relative pt-4 mb-4 md:pt-0 md:pb-0">
                     <div className="flex gap-4 items-center float-right absolute right-4 md:hidden">
-                      <Button
-                        type="button"
+                      <div
                         className={`${
                           draft.active
                             ? "bg-light-green-20 text-light-green"
-                            : "bg-gray-light-1 text-black-70"
+                            : "bg-light-black-3 text-black-70"
                         } rounded-[40px] h-[34px] flex justify-center items-center gap-2 px-3 text-base font-medium`}
-                        colorType="primary"
                       >
                         <span
                           className={`${
@@ -87,7 +85,7 @@ const DraftCard = () => {
                           }  rounded-full w-2 h-2`}
                         ></span>
                         {draft.active ? "Active" : "Archived"}
-                      </Button>
+                      </div>
 
                       <MoreIcon />
                     </div>

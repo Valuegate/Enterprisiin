@@ -12,11 +12,11 @@ const PasswordSetup = () => {
           password.
         </p>
       </div>
-      <div className="mt-12 mb-6 px-[30%] md:px-0">
+      <div className="mt-12 md:mt-0 mb-6 px-[30%] md:px-0">
         <div className="mb-2">
-          <PasswordInput label={"Password"} />
+          <PasswordInput label={"Password"} onChange={(val) => {}} />
         </div>
-        <PasswordInput label={"Confirm Password"} />
+        <PasswordInput label={"Confirm Password"} onChange={(val) => {}} />
       </div>
     </div>
   );

@@ -3,6 +3,8 @@ import Image from "next/image";
 import { FC, useState } from "react";
 import WT from "../../assets/Work time-amico 1.png";
 import MM from "../../assets/Manage money-bro 1.png";
+import WTA from "../../assets/Work time-amico Active.png";
+import MMA from "../../assets/Manage money-bro Active.png";
 
 interface iGetStartedCard {
   getSelectedOption: (data: string) => void;
@@ -24,21 +26,27 @@ const GetStartedCard: FC<iGetStartedCard> = ({ getSelectedOption }) => {
     <>
       <label htmlFor="buyer">
         <div
-          className={`bg-gray-light rounded mb-6 container ${
+          className={`rounded mb-6 w-full border-[1.5px] ${
             activeContainer === "first"
-              ? "border-color-light-blue bg-selection"
-              : "border-color-weird-black"
+              ? "border-blue-base bg-selection"
+              : "border-contrast-20 bg-contrast-10"
           }`}
           onClick={() => setActiveContainer("first")}
         >
           <div className="flex gap-4 pt-4 pb-4 justify-between items-start px-4">
-            <div className="bg-white border border-white rounded-full flex items-center justify-center w-[50px] h-[50px]">
-              <Image src={WT} alt={"Work time-amico"} width={40} height={40} />
+            <div className="bg-white rounded-full flex items-center justify-center w-[50px] h-[50px] md:h-[45px] md:w-[45px]">
+              <Image
+                src={activeContainer === "first" ? WTA : WT}
+                alt={"Work time-amico"}
+                width={40}
+                height={40}
+                className="w-[40px] h-[40px] md:h-[32px] md:w-[32px]"
+              />
             </div>
 
-            <div className="flex flex-col w-[80%]">
+            <div className="flex flex-col w-[80%] gap-2">
               <div className="flex justify-between items-center">
-                <h2 className="font-semibold text-lg md:text-[16px] mb-2">
+                <h2 className="font-semibold text-[20px] leading-[36px] md:text-[16px] md:leading-[25.6px]">
                   I&apos;m a Business Buyer
                 </h2>
 
@@ -52,7 +60,7 @@ const GetStartedCard: FC<iGetStartedCard> = ({ getSelectedOption }) => {
                   onChange={handleOptionChange}
                 />
               </div>
-              <p className="font-medium text-light-black-4 text-base md:text-[14px] md:leading-6 leading-8 mb-2">
+              <p className="font-medium text-[16px] leading-8 mb-2 md:text-[14px] md:leading-[22.4px]">
                 Become the new owner by acquiring assets, domains and companies.
               </p>
             </div>
@@ -62,21 +70,27 @@ const GetStartedCard: FC<iGetStartedCard> = ({ getSelectedOption }) => {
 
       <label htmlFor="seller">
         <div
-          className={`bg-gray-light rounded mb-6 container ${
+          className={`bg-gray-light rounded mb-6 border-[1.5px] ${
             activeContainer === "second"
-              ? "border-color-light-blue bg-selection"
-              : "border-color-weird-black"
+              ? "border-blue-base bg-selection"
+              : "border-contrast-20 bg-contrast-10"
           }`}
           onClick={() => setActiveContainer("second")}
         >
           <div className="flex gap-4 pt-4 pb-4 justify-between items-start px-4">
-            <div className="bg-white border border-white rounded-full flex items-center justify-center w-[50px] h-[50px]">
-              <Image src={MM} alt={"Work time-amico"} width={40} height={40} />
+            <div className="bg-white rounded-full flex items-center justify-center w-[50px] h-[50px] md:h-[45px] md:w-[45px]">
+              <Image
+                src={activeContainer === "second" ? MMA : MM}
+                alt={"Work time-amico"}
+                width={40}
+                height={40}
+                className="w-[40px] h-[40px] md:h-[32px] md:w-[32px]"
+              />
             </div>
 
-            <div className="flex flex-col w-[80%]">
+            <div className="flex flex-col w-[80%] gap-2">
               <div className="flex justify-between items-center">
-                <h2 className="font-semibold text-lg md:text-[16px] mb-2">
+                <h2 className="font-semibold text-[20px] leading-[36px] md:text-[16px] md:leading-[25.6px]">
                   I&apos;m a Business Seller
                 </h2>
 
@@ -90,7 +104,7 @@ const GetStartedCard: FC<iGetStartedCard> = ({ getSelectedOption }) => {
                   onChange={handleOptionChange}
                 />
               </div>
-              <p className="font-medium text-light-black-4 text-base md:text-[14px] md:leading-6 leading-8 mb-2">
+              <p className="font-medium text-[16px] leading-8 mb-2 md:text-[14px] md:leading-[22.4px]">
                 Sell out, request loan and investment in your assets, companies
                 and domains.
               </p>
