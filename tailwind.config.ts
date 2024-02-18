@@ -65,7 +65,9 @@ module.exports = {
       "contrast-80": "#242424",
       "contrast-90": "#181818",
       "contrast-100": "#0E0E0E",
-      "input": "#DADADA"
+      "input": "#DADADA",
+      "green-base": "#E3F4E4",
+      "green-100": "#00A707",
     },
     // extend: {
     //   spacing: {

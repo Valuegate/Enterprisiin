@@ -21,10 +21,10 @@ const DashboardCard: FC<iDashboardCard> = ({
   className,
 }) => {
   return (
-    <div className={className}>
-      <div className="flex flex-col py-4 px-4 w-80 md:w-72">
+    <div className={`${className} shadow-sm`}>
+      <div className="flex flex-col py-4 px-4 w-full md:w-[320px]">
         <div className="w-full flex justify-between items-center">
-          <p className="text-lg md:text-md text-black-70 font-medium">
+          <p className="text-[20px] leading-[36px] md:text-[16px] md:leading-[28px] text-contrast-70 font-medium">
             {heading}
           </p>
           <TooltipProvider>
@@ -43,12 +43,14 @@ const DashboardCard: FC<iDashboardCard> = ({
         </div>
 
         <div className="w-full flex justify-between items-center mt-3">
-          <p className="pb-2 pt-3 text-3xl md:text-2xl font-bold">{amount}</p>
+          <p className="pb-2 pt-3 font-bold text-[32px] leading-[36px] md:text-[24px] text-contrast-100">
+            {amount}
+          </p>
           <Image src={Cloud} alt={""} />
         </div>
 
         <div className="">
-          <p className="text-md md:text-base font-medium text-black-50">
+          <p className="med-3 md:text-[14px] md:leading-[24px] text-contrast-50">
             {date}
           </p>
         </div>

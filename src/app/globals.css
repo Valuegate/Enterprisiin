@@ -83,9 +83,9 @@ input.custom {
 }
 
 .custom-separator {
-  background-color: #cecfce;
+  background-color: #dadada;
   height: 30px;
-  width: 2px;
+  width: 1.5px;
 }
 
 .chart-width {

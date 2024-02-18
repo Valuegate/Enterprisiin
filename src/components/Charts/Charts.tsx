@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { FC } from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -24,7 +24,7 @@ ChartJS.register(
 
 const labels = ["05", "06", "07", "08", "09", 10, 11, 12, 13, 14, 15, 16, 17];
 
-export const data = {
+const data = {
   labels,
   datasets: [
     {
@@ -48,7 +48,7 @@ export const data = {
   ],
 };
 
-export function Charts() {
+const Charts = () => {
   const options = {
     responsive: true,
     plugins: {
@@ -67,32 +67,44 @@ export function Charts() {
   };
 
   return (
-    <div className="chart-width bg-white rounded border-border-black border-[1.5px] md:w-full">
-      <div className="flex justify-between px-4 py-4">
-        <h2 className="text-xl text-black font-bold">Statistics</h2>
+    <div
+      className={`bg-white rounded border-contrast-10 border-[1.5px] w-full shadow-sm`}
+    >
+      <div className="flex justify-between px-4 py-4 h-[74px] md:h-[98px] md:flex-col md:items-start md:justify-center items-center border-b-[1.5px] border-contrast-10">
+        <h2 className="bold-1 md:text-[20px] md:leading-[30px] text-contrast-100">
+          Statistics
+        </h2>
         <div className="flex gap-2">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-light-blue"></span>
-            <p className="text-base text-gray">Requests</p>
+            <span className="w-2 h-2 rounded-full bg-[#55ACEE]"></span>
+            <p className="text-contrast-base med-3 md:text-[14px] md:leading-[24px]">
+              Requests
+            </p>
           </div>
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-orange"></span>
-            <p className="text-base text-gray">Clicks</p>
+            <span className="w-2 h-2 rounded-full bg-[#FF5341]"></span>
+            <p className="text-contrast-base med-3 md:text-[14px] md:leading-[24px]">
+              Clicks
+            </p>
           </div>
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-light-yellow"></span>
-            <p className="text-base text-gray">Likes</p>
+            <span className="w-2 h-2 rounded-full bg-[#FF8820]"></span>
+            <p className="text-contrast-base med-3 md:text-[14px] md:leading-[24px]">
+              Likes
+            </p>
           </div>
         </div>
       </div>
 
-      <hr className="mb-4 border-none bg-light-black-1 h-[1px]" />
-
-      <div className="px-4 pb-4">
+      <div className="px-4 py-6">
         <Line options={options} data={data} />
       </div>
 
-      <p className="pb-4 text-base text-gray text-center">Days</p>
+      <p className="pb-4 med-3 md:text-[14px] md:leading-[24px] text-contrast-base text-center">
+        Days
+      </p>
     </div>
   );
-}
+};
+
+export default Charts;
