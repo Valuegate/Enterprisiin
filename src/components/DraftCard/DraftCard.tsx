@@ -2,7 +2,10 @@ import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 import Auto from "@/public/assets/Rectangle 101.png";
 import { LocationIcon, MoreIcon } from "@/public/icons";
-import Button from "../Button";
+
+function formatNumberWithCommas(number: number) {
+  return number.toLocaleString("en-US");
+}
 
 interface iDraft {
   image: string | StaticImageData;
@@ -121,7 +124,7 @@ const DraftCard = () => {
                           <p className="font-normal text-[12px] leading-[24px] text-green-100 ">
                             NGN{" "}
                             <span className="font-bold text-[18px]">
-                              {draft.price}
+                              {formatNumberWithCommas(draft.price)}
                             </span>
                           </p>
                         </div>
@@ -164,7 +167,7 @@ const DraftCard = () => {
                           <p className="font-normal text-[12px] leading-[24px] text-green-100 md:block hidden w-full md:text-right">
                             NGN{" "}
                             <span className="font-bold text-[18px]">
-                              {draft.price}
+                              {formatNumberWithCommas(draft.price)}
                             </span>
                           </p>
                         </div>
