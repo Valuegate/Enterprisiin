@@ -55,7 +55,7 @@ const Marketplace = () => {
                   className="flex justify-center items-center w-[143px] h-[40px] border-none rounded bg-light-black text-center text-base"
                   onClick={handleButtonClick}
                 >
-                  Sort by:<span className="text-light-green-9">All</span>
+                  Sort by:<span className="text-[#474747]">All</span>
                   <MdOutlineArrowDropDown
                     className={`w-8 h-8 fill-current ${
                       isOpen ? "rotate-180" : ""
@@ -73,21 +73,21 @@ const Marketplace = () => {
                     >
                       <Link
                         href="#"
-                        className="block px-4 py-2 text-base leading-8 text-light-black-5 hover:bg-green hover:text-white hover:rounded"
+                        className="block px-4 py-2 text-base leading-8 text-light-black-5 hover:bg-light-blue hover:text-white hover:rounded"
                         role="menuitem"
                       >
                         Alphabetical
                       </Link>
                       <Link
                         href="#"
-                        className="block px-4 py-2 text-base leading-8 text-light-black-5 hover:bg-green hover:text-white hover:rounded"
+                        className="block px-4 py-2 text-base leading-8 text-light-black-5 hover:bg-light-blue hover:text-white hover:rounded"
                         role="menuitem"
                       >
                         Date Created
                       </Link>
                       <Link
                         href="#"
-                        className="block px-4 py-2 text-base leading-8 text-light-black-5 hover:bg-green hover:text-white hover:rounded"
+                        className="block px-4 py-2 text-base leading-8 text-light-black-5 hover:bg-light-blue hover:text-white hover:rounded"
                         role="menuitem"
                       >
                         Last modified
@@ -104,8 +104,8 @@ const Marketplace = () => {
 
             <div className="">
               <div className="flex gap-2">
-                <div className="rounded w-[40px] h-[40px] items-center bg-light-black-15 flex justify-center ">
-                  <OverviewIcon color="#2C4C3B" />
+                <div className="rounded w-[40px] h-[40px] items-center bg-light-blue-1 flex justify-center ">
+                  <OverviewIcon color="#3399FF" />
                 </div>
                 <div className="rounded w-[40px] h-[40px] items-center bg-light-black flex justify-center ">
                   <RxHamburgerMenu color="#2C4C3B" />

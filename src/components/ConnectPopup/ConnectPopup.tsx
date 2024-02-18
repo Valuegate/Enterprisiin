@@ -78,35 +78,35 @@ const ConnectPopup = () => {
                     >
                       <Link
                         href="#"
-                        className="block px-4 py-1 text-base leading-8 text-light-black-5 hover:bg-green hover:text-white hover:rounded"
+                        className="block px-4 py-1 text-base leading-8 text-light-black-5 hover:bg-light-blue hover:text-white hover:rounded"
                         role="menuitem"
                       >
                         All
                       </Link>
                       <Link
                         href="#"
-                        className="block px-4 py-1 text-base leading-8 text-light-black-5 hover:bg-green hover:text-white hover:rounded"
+                        className="block px-4 py-1 text-base leading-8 text-light-black-5 hover:bg-light-blue hover:text-white hover:rounded"
                         role="menuitem"
                       >
                         Business for Sale
                       </Link>
                       <Link
                         href="#"
-                        className="block px-4 py-1 text-base leading-8 text-light-black-5 hover:bg-green hover:text-white hover:rounded"
+                        className="block px-4 py-1 text-base leading-8 text-light-black-5 hover:bg-light-blue hover:text-white hover:rounded"
                         role="menuitem"
                       >
                         Business Investment
                       </Link>
                       <Link
                         href="#"
-                        className="block px-4 py-1 text-base leading-8 text-light-black-5 hover:bg-green hover:text-white hover:rounded"
+                        className="block px-4 py-1 text-base leading-8 text-light-black-5 hover:bg-light-blue hover:text-white hover:rounded"
                         role="menuitem"
                       >
                         Business Loan
                       </Link>
                       <Link
                         href="#"
-                        className="block px-4 py-1 text-base leading-8 text-light-black-5 hover:bg-green hover:text-white hover:rounded"
+                        className="block px-4 py-1 text-base leading-8 text-light-black-5 hover:bg-light-blue hover:text-white hover:rounded"
                         role="menuitem"
                       >
                         Asset for Sale
@@ -148,7 +148,7 @@ const ConnectPopup = () => {
                     <input
                       type="checkbox"
                       id="remember"
-                      className="custom mr-2 text-green w-4 h-4"
+                      className="custom mr-2 w-4 h-4"
                     />
                     I agree the Terms & Conditions of this proposal
                   </label>
@@ -159,7 +159,7 @@ const ConnectPopup = () => {
                   <Link href={"../../buyerdashboard/successmodal"}>
                     <button
                       type="submit"
-                      className="bg-green w-full h-[40px] rounded flex justify-center items-center font-medium text-base text-white"
+                      className="bg-light-blue w-full h-[40px] rounded flex justify-center items-center font-medium text-base text-white"
                     >
                       Send
                     </button>
@@ -174,7 +174,7 @@ const ConnectPopup = () => {
       <Group>
         <button
           onClick={open}
-          className="bg-green w-full h-[40px] rounded flex justify-center items-center font-medium text-base text-white"
+          className="bg-light-blue w-full h-[40px] rounded flex justify-center items-center font-medium text-base text-white"
         >
           Connect
         </button>

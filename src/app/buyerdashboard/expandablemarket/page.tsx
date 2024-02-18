@@ -52,14 +52,14 @@ const ExpandableMarket = () => {
             <div className="flex gap-4 items-center">
               <Button
                 type="button"
-                className="bg-light-black-15 rounded-[8px] w-[118px] h-[34px] flex justify-center items-center gap-2 text-base font-medium text-green"
+                className="rounded-[8px] w-[118px] h-[34px] flex justify-center items-center gap-2 text-base font-medium text-light-blue bg-light-blue-1"
                 // disabled={true}
-                colorType="primary"
+                // colorType="primary"
                 // loading={load}
                 //   handleClick={() => setLoad(!load)}
               >
                 <span className="">
-                  <DownloadIcon />
+                  <DownloadIcon color="#3399FF" />
                 </span>
                 Download
               </Button>
@@ -90,7 +90,7 @@ const ExpandableMarket = () => {
                     >
                       <Link
                         href="#"
-                        className="block px-4 py-1 text-base leading-8 text-light-black-5 hover:bg-green hover:text-white hover:rounded"
+                        className="block px-4 py-1 text-base leading-8 text-light-black-5 hover:bg-light-blue hover:text-white hover:rounded"
                         role="menuitem"
                       >
                         Terminate Proposal

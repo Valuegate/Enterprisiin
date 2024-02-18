@@ -26,7 +26,7 @@ const StoreCard: FC<iStoreCard> = ({ heading, amount, date, info }) => {
           <TooltipProvider>
             <Tooltip
               content={
-                <span className="flex text-center text-white font-medium text-xs">
+                <span className="flex text-center text-white font-medium w-40 text-xs">
                   {info}
                 </span>
               }

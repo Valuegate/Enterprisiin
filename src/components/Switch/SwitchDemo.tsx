@@ -8,7 +8,7 @@ const SwitchDemo = () => (
         Airplane mode
       </label> */}
       <Switch.Root
-        className="w-[28px] h-[20px] bg-light-green-1 rounded-full relative data-[state=checked]:bg-green outline-none cursor-default"
+        className="w-[28px] h-[20px] bg-light-green-1 rounded-full relative data-[state=checked]:bg-light-blue outline-none cursor-default"
         id="notification"
         style={{ WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)' }}
       >

@@ -20,14 +20,14 @@ const OnboardPage = () => {
   ];
 
   return (
-    <div className="w-full h-[100vh] bg-white px-5 py-5">
-      <div className="mb-12 md:hidden">
+    <div className="w-full bg-white px-5 py-5">
+      {/* <div className="mb-12 md:hidden">
         <nav>
           <Link href="/">
             <Logo />
           </Link>
         </nav>
-      </div>
+      </div> */}
       <div className="w-full">{children[index]}</div>
       <div className="mt-20 flex flex-col top-auto fixed bottom-0 right-0 pb-4 w-full items-end">
         <ProgressBar progress={(index + 1) * 33.33333} />

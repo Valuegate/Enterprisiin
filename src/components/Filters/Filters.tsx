@@ -90,35 +90,35 @@ const Filters = () => {
                     >
                       <Link
                         href="#"
-                        className="block px-4 py-1 text-base leading-8 text-light-black-5 hover:bg-green hover:text-white hover:rounded"
+                        className="block px-4 py-1 text-base leading-8 text-light-black-5 hover:bg-light-blue hover:text-white hover:rounded"
                         role="menuitem"
                       >
                         All
                       </Link>
                       <Link
                         href="#"
-                        className="block px-4 py-1 text-base leading-8 text-light-black-5 hover:bg-green hover:text-white hover:rounded"
+                        className="block px-4 py-1 text-base leading-8 text-light-black-5 hover:bg-light-blue hover:text-white hover:rounded"
                         role="menuitem"
                       >
                         Business for Sale
                       </Link>
                       <Link
                         href="#"
-                        className="block px-4 py-1 text-base leading-8 text-light-black-5 hover:bg-green hover:text-white hover:rounded"
+                        className="block px-4 py-1 text-base leading-8 text-light-black-5 hover:bg-light-blue hover:text-white hover:rounded"
                         role="menuitem"
                       >
                         Business Investment
                       </Link>
                       <Link
                         href="#"
-                        className="block px-4 py-1 text-base leading-8 text-light-black-5 hover:bg-green hover:text-white hover:rounded"
+                        className="block px-4 py-1 text-base leading-8 text-light-black-5 hover:bg-light-blue hover:text-white hover:rounded"
                         role="menuitem"
                       >
                         Business Loan
                       </Link>
                       <Link
                         href="#"
-                        className="block px-4 py-1 text-base leading-8 text-light-black-5 hover:bg-green hover:text-white hover:rounded"
+                        className="block px-4 py-1 text-base leading-8 text-light-black-5 hover:bg-light-blue hover:text-white hover:rounded"
                         role="menuitem"
                       >
                         Asset for Sale
@@ -167,7 +167,7 @@ const Filters = () => {
                 Amount Range
               </p>
               <RangeSlider
-              color="teal"
+              color="#3399FF"
                 py="xl"
                 scale={(v) => 2 ** v}
                 step={1}
@@ -184,8 +184,8 @@ const Filters = () => {
             </div>
 
             <div className="flex justify-between">
-                <button className="w-[193px] h-[40px] bg-light-black-15 flex items-center rounded justify-center text-green text-base">Restart</button>
-                <button className="w-[193px] h-[40px] bg-green flex items-center rounded justify-center text-white text-base">Apply</button>
+                <button className="w-[193px] h-[40px] bg-light-blue-1 flex items-center rounded justify-center text-light-blue text-base">Restart</button>
+                <button className="w-[193px] h-[40px] bg-light-blue flex items-center rounded justify-center text-white text-base">Apply</button>
             </div>
           </Modal.Body>
         </Modal.Content>
@@ -194,9 +194,9 @@ const Filters = () => {
       <Group>
         <button
           onClick={open}
-          className="rounded w-[124px] h-[40px] items-center text-green font-medium text-base bg-light-black-15 flex justify-center gap-1 "
+          className="rounded w-[124px] h-[40px] items-center text-white font-medium text-base bg-light-blue flex justify-center gap-1 "
         >
-          <BiFilter className="w-[24px] h-[24px]" />
+          <BiFilter className="w-[24px] h-[24px] text-white" />
           Filters
         </button>
       </Group>

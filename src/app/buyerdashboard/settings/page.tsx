@@ -19,25 +19,25 @@ const Settings = () => {
             aria-label="Manage your account"
           >
             <Tabs.Trigger
-              className="bg-white px-4 h-[45px] flex items-center text-base font-semibold select-none first:rounded-tl-md  last:rounded-tr-md data-[state=active]:text-light-green-9 data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] data-[state=active]:shadow-current data-[state=active]:focus:relative outline-none cursor-default"
+              className="bg-white px-4 h-[45px] flex items-center text-base font-semibold select-none first:rounded-tl-md  last:rounded-tr-md data-[state=active]:text-light-blue data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] data-[state=active]:shadow-current data-[state=active]:focus:relative outline-none cursor-default"
               value="tab1"
             >
               Account
             </Tabs.Trigger>
             <Tabs.Trigger
-              className="bg-white px-4 h-[45px] flex items-center text-base font-semibold select-none first:rounded-tl-md  last:rounded-tr-md data-[state=active]:text-light-green-9 data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] data-[state=active]:shadow-current data-[state=active]:focus:relative outline-none cursor-default"
+              className="bg-white px-4 h-[45px] flex items-center text-base font-semibold select-none first:rounded-tl-md  last:rounded-tr-md data-[state=active]:text-light-blue data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] data-[state=active]:shadow-current data-[state=active]:focus:relative outline-none cursor-default"
               value="tab2"
             >
               Password
             </Tabs.Trigger>
-            <Tabs.Trigger
-              className="bg-white px-4 h-[45px] flex items-center text-base font-semibold select-none first:rounded-tl-md  last:rounded-tr-md data-[state=active]:text-light-green-9 data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] data-[state=active]:shadow-current data-[state=active]:focus:relative outline-none cursor-default"
+            {/* <Tabs.Trigger
+              className="bg-white px-4 h-[45px] flex items-center text-base font-semibold select-none first:rounded-tl-md  last:rounded-tr-md data-[state=active]:text-light-blue data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] data-[state=active]:shadow-current data-[state=active]:focus:relative outline-none cursor-default"
               value="tab3"
             >
               Bank
-            </Tabs.Trigger>
+            </Tabs.Trigger> */}
             <Tabs.Trigger
-              className="bg-white px-4 h-[45px] flex items-center text-base font-semibold select-none first:rounded-tl-md  last:rounded-tr-md data-[state=active]:text-light-green-9 data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] data-[state=active]:shadow-current data-[state=active]:focus:relative outline-none cursor-default"
+              className="bg-white px-4 h-[45px] flex items-center text-base font-semibold select-none first:rounded-tl-md  last:rounded-tr-md data-[state=active]:text-light-blue data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] data-[state=active]:shadow-current data-[state=active]:focus:relative outline-none cursor-default"
               value="tab4"
             >
               Notification
@@ -49,9 +49,9 @@ const Settings = () => {
           <Tabs.Content className="grow pt-8 bg-white rounded" value="tab2">
             <PasswordSettings />
           </Tabs.Content>
-          <Tabs.Content className="grow pt-8 bg-white rounded" value="tab3">
+          {/* <Tabs.Content className="grow pt-8 bg-white rounded" value="tab3">
             <BankSettings />
-          </Tabs.Content>
+          </Tabs.Content> */}
           <Tabs.Content
             className="grow pt-[30px] bg-white rounded"
             value="tab4"
