@@ -11,14 +11,14 @@ const AuthLayout: FC<iAuthLayout> = ({ children }) => {
   return (
     <div className="w-[100vw] h-[100vh] flex justify-between bg-background">
       <div className="w-[50vw] block md:hidden">
-        <div className="pt-5 relative pl-[40px]">
+        <div className="pt-5 relative ml-[40px]">
           <Image
             src={Banner}
             alt="banner"
-            className="w-[50vw] h-[95vh] object-contain absolute top-[2.5vh] bottom-[2.5vh] "
+            className="w-[50vw] h-[95vh] object-fill absolute top-[2.5vh] bottom-[2.5vh] "
           />
 
-          <div className=" z-10 absolute  flex flex-col justify-end w-full h-[86vh] text-center px-[20%]">
+          <div className=" z-10 absolute flex flex-col justify-end w-full h-[86vh] text-center px-[20%]">
             <h2 className="text-[40px] leading-[60px] text-white font-semibold">
               Discovering the Best <br /> Business for Your Future
             </h2>

@@ -2,7 +2,10 @@ import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 import Auto from "@/public/assets/Rectangle 101.png";
 import { LocationIcon, MoreIcon } from "@/public/icons";
-import Button from "../Button";
+
+function formatNumberWithCommas(number: number) {
+  return number.toLocaleString("en-US");
+}
 
 interface iDraft {
   image: string | StaticImageData;
@@ -56,32 +59,35 @@ const DraftCard = () => {
 
   return (
     <>
-      <div className="bg-white rounded border-border-black border-[1.5px] w-full">
-        <div className="flex justify-between px-4 py-4">
-          <h2 className="text-xl text-black font-bold">Drafts</h2>
+      <div className="bg-white rounded border-contrast-10 border-[1.5px] w-full shadow-sm">
+        <div className="flex justify-between px-4 h-[74px] md:h-[70px] items-center border-b-[1.5px] border-contrast-10">
+          <h2 className="bold-1 md:text-[20px] md:leading-[30px] text-contrast-100">
+            Drafts
+          </h2>
           <Link href={""}>
-            <p className="text-base text-gray cursor-pointer">View all</p>
+            <p className="text-blue-base med-3 md:text-[14px] md:leading-[24px] cursor-pointer">
+              View all
+            </p>
           </Link>
         </div>
-        <hr className="border-none mt-2 bg-light-black-1 h-[1px]" />
 
-        <div className="md:px-5 md:flex md:flex-col">
+        <div className="md:px-5 md:flex md:flex-col mt-6">
           {drafts.map((draft, i) => {
             return (
-              <div className="mt-5 px-4 md:px-0" key={i}>
-                <div className="bg-gray-light-1 md:bg-white rounded">
+              <div className="px-4 md:px-0" key={i}>
+                <div className="bg-input md:bg-white rounded">
                   <div className="relative pt-4 mb-4 md:pt-0 md:pb-0">
                     <div className="flex gap-4 items-center float-right absolute right-4 md:hidden">
                       <div
                         className={`${
                           draft.active
-                            ? "bg-light-green-20 text-light-green"
-                            : "bg-light-black-3 text-black-70"
-                        } rounded-[40px] h-[34px] flex justify-center items-center gap-2 px-3 text-base font-medium`}
+                            ? "bg-green-base text-green-100"
+                            : "bg-contrast-20 text-contrast-base"
+                        } rounded-[40px] h-[34px] flex justify-center items-center gap-2 px-3  med-3`}
                       >
                         <span
                           className={`${
-                            draft.active ? "bg-light-green" : "bg-black-70"
+                            draft.active ? "bg-green-100" : "bg-contrast-base"
                           }  rounded-full w-2 h-2`}
                         ></span>
                         {draft.active ? "Active" : "Archived"}
@@ -100,70 +106,70 @@ const DraftCard = () => {
                         <div
                           className={`md:block hidden absolute top-0 right-0 ${
                             draft.active
-                              ? "bg-light-green-20 text-light-green"
-                              : "bg-gray-light-1 text-black-70"
+                              ? "bg-green-base text-green-100"
+                              : "bg-contrast-20 text-contrast-base"
                           } rounded-tr-[10px] px-3`}
                         >
                           {draft.active ? "Active" : "Archived"}
                         </div>
                       </div>
-                      <div className="md:flex md:flex-col md:border-border-black md:border-[1.5px] md:border-t-0 md:px-4 rounded-b-[10px] mb-4">
-                        <h2 className="font-bold md:text-lg text-xl mb-2 text-light-black-6 md:mt-2">
-                          {draft.title.substring(0, 25)}...
+                      <div className="md:flex md:flex-col md:border-contrast-10 md:border-[1.5px] md:border-t-0 md:px-4 rounded-b-[10px] mb-4">
+                        <h2 className="bold-2 md:text-[16px] md:leading-[28px] mb-2 text-contrast-100 md:mt-2">
+                          {draft.title.substring(0, 30)}...
                         </h2>
                         <div className="flex items-center gap-2 pb-2 md:hidden">
-                          <p className="font-medium md:text-sm text-xs text-light-black-4">
+                          <p className="font-medium text-[12px] leading-[18px] text-contrast-base">
                             Sale Amount:
                           </p>
-                          <p className="text-light-green font-normal md:text-sm text-xs">
+                          <p className="font-normal text-[12px] leading-[24px] text-green-100 ">
                             NGN{" "}
-                            <span className="font-bold md:text-lg text-xl  leading-6">
-                              {draft.price}
+                            <span className="font-bold text-[18px]">
+                              {formatNumberWithCommas(draft.price)}
                             </span>
                           </p>
                         </div>
                         <div className="flex items-center gap-2 md:mb-4">
                           <div className="flex items-center gap-1">
-                            <div className="bg-light-green-1 border border-light-green-1 rounded-full p-[5px] w-8 h-8 md:w-6 md:h-6 md:p-[2px]">
+                            <div className="bg-contrast-20 rounded-full p-[6px] w-8 h-8 md:w-6 md:h-6 md:p-[2px]">
                               <LocationIcon />
                             </div>
-                            <div className="font-medium text-base text-light-black-5">
+                            <div className="font-bold text-contrast-80 text-[16px] md:text-[14px]">
                               {draft.requests}{" "}
-                              <span className="font-normal text-xs text-light-black-4 md:hidden">
+                              <span className="font-medium text-[14px] text-contrast-base md:hidden">
                                 Requests
                               </span>
                             </div>
                           </div>
                           <div className="custom-separator md:hidden"></div>
                           <div className="flex items-center gap-1">
-                            <div className="bg-light-green-1 border border-light-green-1 rounded-full p-[5px] w-8 h-8 md:w-6 md:h-6 md:p-[2px]">
+                            <div className="bg-contrast-20 rounded-full p-[6px] w-8 h-8 md:w-6 md:h-6 md:p-[2px]">
                               <LocationIcon />
                             </div>
-                            <div className="font-medium text-base text-light-black-5">
+                            <div className="font-bold text-contrast-80 text-[16px] md:text-[14px]">
                               {draft.clicks}{" "}
-                              <span className="font-normal text-xs text-light-black-4 md:hidden">
+                              <span className="font-medium text-[14px] text-contrast-base md:hidden">
                                 Clicks
                               </span>
                             </div>
                           </div>
                           <div className="custom-separator md:hidden"></div>
                           <div className="flex items-center gap-1">
-                            <div className="bg-light-green-1 border border-light-green-1 rounded-full p-[5px] w-8 h-8 md:w-6 md:h-6 md:p-[2px]">
+                            <div className="bg-contrast-20 rounded-full p-[6px] w-8 h-8 md:w-6 md:h-6 md:p-[2px]">
                               <LocationIcon />
                             </div>
-                            <div className="font-medium text-base text-light-black-5">
+                            <div className="font-bold text-contrast-80 text-[16px] md:text-[14px]">
                               {draft.likes}{" "}
-                              <span className="font-normal text-xs text-light-black-4 md:hidden">
+                              <span className="font-medium text-[14px] text-contrast-base md:hidden">
                                 Likes
                               </span>
                             </div>
                           </div>
-                          <div className="text-light-green font-normal md:block hidden md:text-sm text-xs w-full md:text-right">
+                          <p className="font-normal text-[12px] leading-[24px] text-green-100 md:block hidden w-full md:text-right">
                             NGN{" "}
-                            <span className="font-bold md:text-lg text-xl  leading-6">
-                              {draft.price}
+                            <span className="font-bold text-[18px]">
+                              {formatNumberWithCommas(draft.price)}
                             </span>
-                          </div>
+                          </p>
                         </div>
                       </div>
                     </div>

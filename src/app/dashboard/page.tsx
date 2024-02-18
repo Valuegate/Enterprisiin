@@ -86,26 +86,25 @@ const DashboardLayout = () => {
   const children: ReactNode[] = [<Overview key={"seller-overview"} />];
 
   return (
-    <div className="flex bg-pale-blue h-[100vh] md:h-auto ">
+    <div className="flex bg-background h-[100vh] md:h-auto">
       <div
-        className={`bg-blue h-screen ${
-          open ? "w-[20%]" : "w-[4%]"
-        } duration-500 text-gray-100 px-2 md:hidden`}
+        className={`bg-blue-90 h-screen ${
+          open ? "w-[20%] px-4" : "w-[4%] pr-3 pl-3"
+        } duration-500 text-gray-100  md:hidden`}
       >
         <div
           className={`flex justify-between items-center pt-4 ${
             !open && "relative"
           }`}
         >
-          <Link href={"./overview"}>
-            <div
-              className={`whitespace-pre duration-500 text-2xl text-white font-semibold pl-2 ${
-                !open && "opacity-0 translate-x-28 overflow-hidden"
-              }`}
-            >
-              <WhiteLogo />
-            </div>
-          </Link>
+          <div
+            onClick={() => setIndex(0)}
+            className={`whitespace-pre duration-500 text-2xl cursor-pointer text-white font-semibold pl-2 ${
+              !open && "opacity-0 translate-x-28 overflow-hidden"
+            }`}
+          >
+            <WhiteLogo />
+          </div>
           <div
             className={`py-3 pr-4 flex justify-end ${
               !open && "absolute left-2"
@@ -119,12 +118,12 @@ const DashboardLayout = () => {
         </div>
 
         <Link
-          className={`whitespace-pre duration-500 flex mt-6 text-2xl text-white font-semibold ${
+          className={`whitespace-pre duration-500 flex mt-10 text-2xl text-white font-semibold ${
             !open && "opacity-0 translate-x-28 overflow-hidden"
           }`}
           href={"../createnewlist/newlist"}
         >
-          <button className="text-sm text-light-blue rounded w-full h-10 border flex justify-center items-center gap-2 font-medium bg-blue border-light-blue">
+          <button className="text-blue-base med-3 rounded w-full h-10 border border-blue-base flex justify-center items-center gap-2 font-medium bg-blue border-light-blue">
             <span>
               <AddIcon color="#3399FF" />
             </span>
@@ -132,7 +131,7 @@ const DashboardLayout = () => {
           </button>
         </Link>
 
-        <div className="mt-10 flex flex-col gap-1 relative">
+        <div className="mt-8 flex flex-col gap-1 relative">
           {menus?.map((menu, i) => (
             <motion.div
               whileHover={{
@@ -143,7 +142,7 @@ const DashboardLayout = () => {
                 setIndex(i);
               }}
               className={` ${menu?.margin && "mb-32"} 
-              ${index === i ? "bg-light-blue text-white" : "text-white-5"}
+              ${index === i ? "bg-blue-80 text-blue-10" : "text-white"}
                 group flex items-center cursor-pointer text-sm gap-3.5 font-medium p-2 ${
                   index !== i && "hover:bg-light-blue-2"
                 }  rounded`}
@@ -171,19 +170,17 @@ const DashboardLayout = () => {
         </div>
       </div>
 
-      <div className="hidden md:flex h-[8vh] bg-pale-blue justify-between items-center w-full fixed md:px-5 z-10 top-0">
+      <div className="hidden md:flex h-[8vh] bg-background justify-between items-center w-full fixed md:px-5 z-10 top-0">
         <Logo />
         <FaBarsStaggered size={"24px"} />
       </div>
-      <div className="w-full pt-4 bg-pale-blue h-screen ">
-        <nav className="flex justify-between items-center px-6 md:hidden">
+      <div className="w-full pt-4 h-screen">
+        <nav className="flex justify-between items-center px-[40px] md:hidden">
           <div className="">
             <h1 className="text-2xl font-bold pb-1">
               Welcome Back, John Doe! 👋
             </h1>
-            <p className="text-base font-medium text-black-40">
-              {convertDate(new Date())}
-            </p>
+            <p className="med-3 text-contrast-40">{convertDate(new Date())}</p>
           </div>
 
           <div className="flex gap-4 items-center">
@@ -194,7 +191,7 @@ const DashboardLayout = () => {
               <input
                 type="text"
                 placeholder="Search..."
-                className="search py-2 pl-10 pr-4 font-medium border-none bg-white-1 rounded focus:ring-none focus:border-none"
+                className="placeholder-italic search mt-1 py-2 pr-4 placeholder:pl-10 w-[268px] h-[40px] border-none focus:ring-none focus:border-none bg-input placeholder:text-contrast-30 pl:text-[16px] pl:leading-[24px] md:placeholder:text-[14px] md:placeholder:leading-[22.4px] rounded "
               />
             </div>
             <div className="">
@@ -206,9 +203,9 @@ const DashboardLayout = () => {
             <ProfileDropdown />
           </div>
         </nav>
-        <hr className="mt-2 border-none bg-light-black-1 h-[1px] md:hidden" />
-        <div className="bg-pale-blue">{children[index]}</div>
-        <div className="hidden md:flex justify-around fixed w-[56vw] items-center  py-2 h-14 rounded-xl shadow-gray shadow-lg bg-blue bottom-[5vh] right-[22vw] left-[22vw]">
+        <hr className="mt-2 border-none bg-contrast-10 h-[1px] md:hidden" />
+        <div className="">{children[index]}</div>
+        <div className="hidden md:flex justify-around fixed w-[56vw] items-center py-2 h-14 rounded-xl shadow-gray shadow-lg bg-blue-90 bottom-[5vh] right-[22vw] left-[22vw]">
           <div>{React.createElement(menus[0].icon)}</div>
           <AddIcon color="#FFFFFF" />
           <div>{React.createElement(menus[1].icon)}</div>
