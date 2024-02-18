@@ -1,16 +1,25 @@
-import Link from 'next/link';
-import React, { useState, useRef, useEffect, FC } from 'react';
-import { MdOutlineArrowDropDown } from 'react-icons/md';
+import Link from "next/link";
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  FC,
+  MouseEventHandler,
+} from "react";
+import { MdOutlineArrowDropDown } from "react-icons/md";
 
 interface iDropdownButton {
-    title: string;
-    menu1: string;
-    menu2: string;
-    menu3: string;
-    menu4?: string;
-  }
+  title: string;
+  value: string | null;
+  menus: iMenuItem[];
+}
 
-const DropdownButton: FC<iDropdownButton> = ({ title, menu1, menu2, menu3, menu4 }) => {
+interface iMenuItem {
+  name: string;
+  onClick: MouseEventHandler;
+}
+
+const DropdownButton: FC<iDropdownButton> = ({ value, menus, title }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -18,45 +27,64 @@ const DropdownButton: FC<iDropdownButton> = ({ title, menu1, menu2, menu3, menu4
     setIsOpen(!isOpen);
   };
 
-  const handleOutsideClick = (event: { target: any; }) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+  const handleOutsideClick = (event: { target: any }) => {
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target as Node)
+    ) {
       setIsOpen(false);
     }
   };
 
   useEffect(() => {
-    window.addEventListener('click', handleOutsideClick);
+    window.addEventListener("click", handleOutsideClick);
 
     return () => {
-      window.removeEventListener('click', handleOutsideClick);
+      window.removeEventListener("click", handleOutsideClick);
     };
   }, []);
 
   return (
-    <div className="relative inline-block text-center" ref={dropdownRef}>
+    <div
+      className="relative inline-block text-center bg-contrast-10 rounded"
+      ref={dropdownRef}
+    >
       <button
-        className="flex justify-center items-center w-[143px] h-[40px] border-none rounded bg-light-black text-center text-base"
+        className="flex justify-center items-center px-3 h-[40px] rounded text-center med-3 text-contrast-base md:w-[100%]"
         onClick={handleButtonClick}
       >
-        {title}<span className='text-light-green-9'>All</span>
-        <MdOutlineArrowDropDown className={`w-8 h-8 fill-current ${isOpen ? "rotate-180" : ""}`} />
+        {title}
+        {value !== null && (
+          <span className="font-[600] text-contrast-80 pl-1">{value}</span>
+        )}
+        <MdOutlineArrowDropDown
+          className={`w-8 h-8 fill-current ${isOpen && "rotate-180"}`}
+        />
       </button>
 
       {isOpen && (
         <div className="origin-top-right absolute right-0 mt-2 w-[220px] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-          <div className="py-4 px-2 text-left" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-            <Link href="#" className="block px-4 py-2 text-base leading-8 text-light-black-5 hover:bg-light-blue hover:text-white hover:rounded" role="menuitem">
-            {menu1}
-            </Link>
-            <Link href="#" className="block px-4 py-2 text-base leading-8 text-light-black-5 hover:bg-light-blue hover:text-white hover:rounded" role="menuitem">
-            {menu2}
-            </Link>
-            <Link href="#" className="block px-4 py-2 text-base leading-8 text-light-black-5 hover:bg-light-blue hover:text-white hover:rounded" role="menuitem">
-            {menu3}
-            </Link>
-            <Link href="#" className="block px-4 py-2 text-base leading-8 text-light-black-5 hover:bg-light-blue hover:text-white hover:rounded" role="menuitem">
-            {menu4}
-            </Link>
+          <div
+            className="py-4 px-2 text-left"
+            role="menu"
+            aria-orientation="vertical"
+            aria-labelledby="options-menu"
+          >
+            {menus.map((menu, i) => {
+              return (
+                <div
+                  role="menuitem"
+                  className="block cursor-pointer px-4 py-2 text-base leading-8 text-light-black-5 hover:bg-blue-base hover:text-white hover:rounded"
+                  onClick={(e) => {
+                    menu.onClick(e);
+                    handleButtonClick();
+                  }}
+                  key={i}
+                >
+                  {menu.name}
+                </div>
+              );
+            })}
           </div>
         </div>
       )}
