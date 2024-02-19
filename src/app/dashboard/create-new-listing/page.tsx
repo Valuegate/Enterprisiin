@@ -2,15 +2,9 @@
 import {
   AddIcon,
   HelpIcon,
-  LogoutIcon,
-  MessageIcon,
-  MicrophoneIcon,
   NotificationIcon,
   OverviewIcon,
   SearchIcon,
-  SettingsIcon,
-  StoreIcon,
-  WalletIcon,
 } from "@/public/icons";
 import { TbWindowMaximize } from "react-icons/tb";
 import Link from "next/link";
@@ -19,13 +13,14 @@ import { ReactNode, FC, useState } from "react";
 import ProfileDropdown from "@/public/components/ProfileDropdown/ProfileDropdown";
 import Logo from "@/public/components/Logo/Logo";
 import WhiteLogo from "@/public/components/WhiteLogo/WhiteLogo";
-import Overview from "@/public/components/Dashboard/Seller/OverView";
+import Overview from "@/public/components/Dashboard/Seller/Overview";
 
-// import { motion } from "framer-motion";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 import { FaBarsStaggered } from "react-icons/fa6";
-import Store from "@/public/components/Dashboard/Seller/Store";
+
+import Button from "@/public/components/Button";
+import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
 function convertDate(date: string | Date) {
   let dateObject = new Date(date);
@@ -69,29 +64,19 @@ function getOrdinalSuffix(day: number) {
   }
 }
 
-const DashboardLayout = () => {
-  const [isSeller, setSeller] = useState<boolean>(true);
-  const [index, setIndex] = useState<number>(1);
+const CreateNewListing = () => {
+  const [index, setIndex] = useState<number>(0);
   const [open, setOpen] = useState(true);
 
   const menus = [
-    { name: "Overview", icon: OverviewIcon },
-    { name: "Store", icon: StoreIcon },
-    { name: "Message", icon: MessageIcon },
-    { name: "Wallet", icon: WalletIcon },
-    { name: "Consult", icon: MicrophoneIcon },
-    { name: "Settings", icon: SettingsIcon, margin: true },
-    { name: "Help & Support", icon: HelpIcon },
-    { name: "Logout", icon: LogoutIcon },
+    { name: "New List", link: "", icon: OverviewIcon },
+    { name: "Help", link: "./helpandsupport", icon: HelpIcon },
   ];
 
-  const children: ReactNode[] = [
-    <Overview key={"seller-overview"} />,
-    <Store key={"store"} />,
-  ];
+  const children: ReactNode[] = [];
 
   return (
-    <div className="flex bg-background h-[100vh] md:h-full">
+    <div className="flex bg-background h-[100vh] md:h-auto">
       <div
         className={`bg-blue-90 h-screen ${
           open ? "w-[20%] px-4" : "w-[4%] pr-3 pl-3"
@@ -122,19 +107,13 @@ const DashboardLayout = () => {
           </div>
         </div>
 
-        <Link
-          className={`whitespace-pre duration-500 flex mt-10 text-2xl text-white font-semibold ${
+        <p
+          className={`whitespace-pre duration-500 flex mt-10 med-1 text-white ${
             !open && "opacity-0 translate-x-28 overflow-hidden"
           }`}
-          href={"/dashboard/create-new-listing"}
         >
-          <button className="text-blue-base med-3 rounded w-full h-10 border border-blue-base flex justify-center items-center gap-2 font-medium bg-blue border-light-blue">
-            <span>
-              <AddIcon color="#3399FF" />
-            </span>
-            Create New List
-          </button>
-        </Link>
+          Create New List
+        </p>
 
         <div className="mt-8 flex flex-col gap-1 relative">
           {menus?.map((menu, i) => (
@@ -146,7 +125,7 @@ const DashboardLayout = () => {
               onClick={() => {
                 setIndex(i);
               }}
-              className={` ${menu?.margin && "mb-32"} 
+              className={`
               ${index === i ? "bg-blue-80 text-blue-10" : "text-[#ffffff88]"}
                 group flex items-center cursor-pointer text-sm gap-3.5 font-medium p-2 ${
                   index !== i && "hover:bg-light-blue-2"
@@ -179,25 +158,11 @@ const DashboardLayout = () => {
         <Logo />
         <FaBarsStaggered size={"24px"} />
       </div>
-      <div className="w-full">
-        <nav className="flex justify-between items-center px-[40px] md:hidden h-[10vh] border-b-[1px] border-contrast-10">
-          <div className="">
-            <h1 className="text-2xl font-bold pb-1">
-              Welcome Back, John Doe! 👋
-            </h1>
-            <p className="med-3 text-contrast-40">{convertDate(new Date())}</p>
-          </div>
-
+      <div className="w-full pt-4">
+        <nav className="flex justify-end items-center px-[40px] md:hidden py-2">
           <div className="flex gap-4 items-center">
-            <div className="relative flex items-center">
-              <span className="absolute left-4">
-                <SearchIcon />
-              </span>
-              <input
-                type="text"
-                placeholder="Search..."
-                className="placeholder-italic search mt-1 py-2 pr-4 placeholder:pl-10 w-[268px] h-[40px] border-none focus:ring-none focus:border-none bg-input placeholder:text-contrast-30 pl:text-[16px] pl:leading-[24px] md:placeholder:text-[14px] md:placeholder:leading-[22.4px] rounded "
-              />
+            <div className="px-3 py-2 border-[1.5px] border-contrast-10 rounded med-3">
+              Save & Exit
             </div>
             <div className="">
               <NotificationIcon />
@@ -208,26 +173,57 @@ const DashboardLayout = () => {
             <ProfileDropdown />
           </div>
         </nav>
-
+        <hr className="mt-2 border-none bg-contrast-10 h-[1px] md:hidden" />
         <div className="">{children[index]}</div>
-        <div className="hidden md:flex justify-around fixed w-[56vw] items-center py-2 h-14 rounded-xl shadow-gray shadow-lg bg-blue-90 bottom-[5vh] right-[22vw] left-[22vw]">
-          <div onClick={() => setIndex(0)}>
-            {React.createElement(menus[0].icon)}
-          </div>
+        <div className="mt-20 flex flex-col top-auto fixed bottom-0 right-0 pb-4 w-full items-end">
+          {/** Line */}
           <div
-            onClick={() => {
-              window.location.assign("/dashboard/create-new-listing");
-            }}
+            className={`px-5 flex w-full ${
+              index === 0 ? "justify-end" : "justify-between"
+            }`}
           >
-            <AddIcon color="#FFFFFF" />
+            <Button
+              type="button"
+              height="h-10"
+              width={`md:w-[30vw] w-auto`}
+              className={`border-r-amber-400 ${
+                index === 0 && "hidden"
+              } rounded px-3 mt-5 flex justify-center items-center gap-1 text-blue-base`}
+              colorType="secondary"
+              handleClick={() => {
+                setIndex((val) => val - 1);
+              }}
+            >
+              <IoIosArrowBack size={"20px"} />
+              Back
+            </Button>
+            <Button
+              type="button"
+              height="h-10"
+              width={`md:w-[${index === 0 ? "90" : "30"}vw] w-auto`}
+              className={`border-r-amber-400 rounded px-3 mt-5 flex justify-center items-center gap-1 text-white`}
+              colorType="primary"
+              handleClick={() => {
+                if (index == children.length - 1) {
+                  window.location.assign("/dashboard");
+                } else {
+                  setIndex((val) => val + 1);
+                }
+              }}
+            >
+              Next
+              <IoIosArrowForward size={"20px"} />
+            </Button>
           </div>
-          <div onClick={() => setIndex(1)}>
-            {React.createElement(menus[1].icon)}
-          </div>
+        </div>
+        <div className="hidden md:flex justify-around fixed w-[56vw] items-center py-2 h-14 rounded-xl shadow-gray shadow-lg bg-blue-90 bottom-[5vh] right-[22vw] left-[22vw]">
+          <div>{React.createElement(menus[0].icon)}</div>
+
+          <div>{React.createElement(menus[1].icon)}</div>
         </div>
       </div>
     </div>
   );
 };
 
-export default DashboardLayout;
+export default CreateNewListing;
