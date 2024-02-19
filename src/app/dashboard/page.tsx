@@ -90,7 +90,7 @@ const DashboardLayout = () => {
   ];
 
   return (
-    <div className="flex bg-background h-[100vh] md:h-auto">
+    <div className="flex bg-background h-[100vh] md:h-full">
       <div
         className={`bg-blue-90 h-screen ${
           open ? "w-[20%] px-4" : "w-[4%] pr-3 pl-3"
@@ -178,8 +178,8 @@ const DashboardLayout = () => {
         <Logo />
         <FaBarsStaggered size={"24px"} />
       </div>
-      <div className="w-full pt-4 h-screen">
-        <nav className="flex justify-between items-center px-[40px] md:hidden">
+      <div className="w-full">
+        <nav className="flex justify-between items-center px-[40px] md:hidden h-[10vh] border-b-[1px] border-contrast-10">
           <div className="">
             <h1 className="text-2xl font-bold pb-1">
               Welcome Back, John Doe! 👋
@@ -207,7 +207,7 @@ const DashboardLayout = () => {
             <ProfileDropdown />
           </div>
         </nav>
-        <hr className="mt-2 border-none bg-contrast-10 h-[1px] md:hidden" />
+
         <div className="">{children[index]}</div>
         <div className="hidden md:flex justify-around fixed w-[56vw] items-center py-2 h-14 rounded-xl shadow-gray shadow-lg bg-blue-90 bottom-[5vh] right-[22vw] left-[22vw]">
           <div onClick={() => setIndex(0)}>

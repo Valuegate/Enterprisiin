@@ -1,17 +1,19 @@
-import { LoveIcon, LocationIcon, MoreIcon } from "../../icons";
-import Button from "../Button";
-import Image from "next/image";
-import Autos from "@/public/assets/Rectangle 101.png";
-import { FC } from "react";
-import React, { useState, useRef, useEffect } from "react";
-import { MdOutlineArrowDropDown } from "react-icons/md";
-import Link from "next/link";
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  FC,
+  MouseEventHandler,
+} from "react";
 import DropdownButton from "../DropdownButton/DropdownButton";
-import AutosCard from "../AutosCard/AutosCard";
+import DraftCard, { iDraft, iDraftData } from "./DraftCard";
 
-interface iDraftsCard {}
+export interface iShopDraftSectionData {
+  drafts: iDraft[];
+  onSelectDraft: any;
+}
 
-const DraftsCard: FC<iDraftsCard> = ({}) => {
+const ShopDrafts: FC<iShopDraftSectionData> = ({ drafts, onSelectDraft }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -98,50 +100,23 @@ const DraftsCard: FC<iDraftsCard> = ({}) => {
           </div>
         </div>
 
-        <div className="px-4 pb-12">
-          <div className="pt-4">
-            <AutosCard
-              amount={""}
-              request={"0"}
-              click={"0"}
-              like={"0"}
-              status={"Active"}
-            />
-          </div>
-          <div className="pt-4">
-            <AutosCard
-              amount={""}
-              request={"20"}
-              click={"30,730"}
-              like={"100"}
-              status={"Archived"}
-              percentage="/ 40%"
-            />
-          </div>
-          <div className="pt-4">
-            <AutosCard
-              amount={""}
-              request={"20"}
-              click={"30,730"}
-              like={"100"}
-              status={"Archived"}
-              percentage="/ 40%"
-            />
-          </div>
-          <div className="pt-4">
-            <AutosCard
-              amount={""}
-              request={"20"}
-              click={"30,730"}
-              like={"100"}
-              status={"Archived"}
-              percentage="/ 40%"
-            />
-          </div>
+        <div className="px-4 pt-6 pb-2 flex flex-col">
+          {drafts.map((draft, i) => {
+            return (
+              <DraftCard
+                draft={draft}
+                showDescription={true}
+                key={i}
+                onClick={(e) => {
+                  onSelectDraft(i);
+                }}
+              />
+            );
+          })}
         </div>
       </div>
     </>
   );
 };
 
-export default DraftsCard;
+export default ShopDrafts;

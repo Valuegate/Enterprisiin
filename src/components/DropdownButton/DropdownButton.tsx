@@ -46,14 +46,14 @@ const DropdownButton: FC<iDropdownButton> = ({ value, menus, title }) => {
 
   return (
     <div
-      className="relative inline-block text-center bg-contrast-10 rounded"
+      className="relative inline-block text-center bg-contrast-10 rounded md:w-[165px]"
       ref={dropdownRef}
     >
       <button
         className="flex justify-center items-center px-3 h-[40px] rounded text-center med-3 text-contrast-base md:w-[100%]"
         onClick={handleButtonClick}
       >
-        {title}
+        <span className={`${value !== null && "hidden"}`}>{title}</span>
         {value !== null && (
           <span className="font-[600] text-contrast-80 pl-1">{value}</span>
         )}
@@ -63,7 +63,7 @@ const DropdownButton: FC<iDropdownButton> = ({ value, menus, title }) => {
       </button>
 
       {isOpen && (
-        <div className="origin-top-right absolute right-0 mt-2 w-[220px] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+        <div className="origin-top-right absolute right-0 mt-2 w-[220px] rounded-md shadow-lg z-10 bg-white ring-[1.5px] ring-contrast-10 ring-opacity-5">
           <div
             className="py-4 px-2 text-left"
             role="menu"

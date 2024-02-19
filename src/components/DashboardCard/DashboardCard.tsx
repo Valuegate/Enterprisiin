@@ -10,18 +10,18 @@ import { useDisclosure } from "@mantine/hooks";
 import { Modal } from "@mantine/core";
 
 interface iDashboardCard {
-  heading: string;
-  amount: string;
-  date: string;
-  info: string;
+  leading: string;
+  content: string;
+  trailing: string;
+  tooltip: string;
   className: string;
 }
 
 const DashboardCard: FC<iDashboardCard> = ({
-  heading,
-  amount,
-  date,
-  info,
+  leading: heading,
+  content: amount,
+  trailing: date,
+  tooltip: info,
   className,
 }) => {
   const [opened, { open, close }] = useDisclosure(false);
