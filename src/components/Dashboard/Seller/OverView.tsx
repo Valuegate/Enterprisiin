@@ -2,7 +2,7 @@
 import DashboardCard from "@/public/components/DashboardCard/DashboardCard";
 import Charts from "@/public/components/Charts/Charts";
 import RequestCard from "@/public/components/RequestCard/RequestCard";
-import DraftCard from "@/public/components/DraftCard/DraftCard";
+import OverviewDrafts from "@/public/components/Drafts/OverviewDrafts";
 
 function convertDateWithSlashes(date: Date) {
   return `${date.getDay()}/${date.getMonth()}/${date.getFullYear()}`;
@@ -11,34 +11,34 @@ function convertDateWithSlashes(date: Date) {
 const Overview = () => {
   return (
     <>
-      <div className="pt-4 overflow-y-scroll h-[85vh] md:h-auto px-[40px] md:px-5">
+      <div className="pt-4 overflow-y-scroll h-[90vh] md:h-auto px-[40px] md:px-5 pb-10">
         <h2 className="text-3xl md:text-[20px] md:leading-[30px] font-bold text-black md:mt-10 mt-2">
           Overview
         </h2>
         <div className="flex justify-between md:gap-6 md:justify-start mt-4 md:overflow-x-auto scrollbar-custom">
           <DashboardCard
-            heading={"Total Balance"}
-            amount={"₦400,000"}
-            date={`${convertDateWithSlashes(new Date())} last withdrawn`}
-            info={
+            leading={"Total Balance"}
+            content={"₦400,000"}
+            trailing={`${convertDateWithSlashes(new Date())} last withdrawn`}
+            tooltip={
               "Your total balance reflects your account's current status and the date of last withdraw"
             }
             className="w-[32%] md:w-[320px] bg-white rounded border-contrast-10 border-[1.5px]"
           />
           <DashboardCard
-            heading={"Total Sold Businesses"}
-            amount={"₦400,000"}
-            date={"09 businesses"}
-            info={
+            leading={"Total Sold Businesses"}
+            content={"₦400,000"}
+            trailing={"09 businesses"}
+            tooltip={
               "The aggregate amount and total count of businesses you've successfully sold, earned loans and investments."
             }
             className="w-[32%] md:w-[320px] bg-white rounded border-contrast-10 border-[1.5px]"
           />
           <DashboardCard
-            heading={"Buyer Requests"}
-            amount={"02"}
-            date={"31/04/2023"}
-            info={
+            leading={"Buyer Requests"}
+            content={"02"}
+            trailing={"31/04/2023"}
+            tooltip={
               "These are the people who show interest in your business. Check them out and attend to them."
             }
             className="w-[32%] md:w-[320px] bg-white rounded border-contrast-10 border-[1.5px]"
@@ -54,7 +54,7 @@ const Overview = () => {
               <RequestCard />
             </div>
             <div className="md:mt-0 mt-6">
-              <DraftCard />
+              <OverviewDrafts />
             </div>
           </div>
 

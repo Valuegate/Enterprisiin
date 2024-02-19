@@ -3,7 +3,7 @@ import { InfoIcon } from "@/public/icons";
 import DashboardCard from "@/public/components/DashboardCard/DashboardCard";
 import { Charts } from "@/public/components/Charts/Charts";
 import RequestCard from "@/public/components/RequestCard/RequestCard";
-import DraftCard from "@/public/components/DraftCard/DraftCard";
+import OverviewDrafts from "@/public/components/Drafts/OverviewDrafts";
 import { Tooltip } from "@radix-ui/themes";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
 
@@ -42,20 +42,20 @@ const Overview = () => {
             </div>
           </div>
           <DashboardCard
-            heading={"Total Sold Businesses"}
-            amount={"₦400,000"}
+            leading={"Total Sold Businesses"}
+            content={"₦400,000"}
             className="w-80 md:w-72 bg-white rounded border-border-black border-[1.5px]"
-            date={"09 businesses"}
-            info={
+            trailing={"09 businesses"}
+            tooltip={
               "The aggregate amount and total count of businesses you've successfully sold, earned loans and investments."
             }
           />
           <DashboardCard
-            heading={"Buyer Requests"}
-            amount={"02"}
+            leading={"Buyer Requests"}
+            content={"02"}
             className="w-80 md:w-72 bg-white rounded border-border-black border-[1.5px]"
-            date={"31/04/2023"}
-            info={
+            trailing={"31/04/2023"}
+            tooltip={
               "These are the people who show interest in your business. Check them out and attend to them."
             }
           />
@@ -68,7 +68,7 @@ const Overview = () => {
             </div>
 
             <div className="pb-4">
-              <DraftCard />
+              <OverviewDrafts />
             </div>
           </div>
 
