@@ -36,7 +36,7 @@ const Store = () => {
         </div>
 
         <div className="pt-4">
-          <ShopDrafts />
+          <ShopDrafts drafts={[]} onSelectDraft={undefined} />
         </div>
       </div>
     </>
