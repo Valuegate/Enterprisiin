@@ -1,11 +1,11 @@
 "use client";
 import { InfoIcon } from "@/public/icons";
 import DashboardCard from "@/public/components/DashboardCard/DashboardCard";
-import { Charts } from "@/public/components/Charts/Charts";
 import RequestCard from "@/public/components/RequestCard/RequestCard";
 import OverviewDrafts from "@/public/components/Drafts/OverviewDrafts";
 import { Tooltip } from "@radix-ui/themes";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
+import Charts from "@/public/components/Charts/Charts";
 
 const Overview = () => {
   return (
