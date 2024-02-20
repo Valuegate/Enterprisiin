@@ -29,7 +29,7 @@ const GetStartedCard: FC<iGetStartedCard> = ({ getSelectedOption }) => {
           className={`rounded mb-6 w-full border-[1.5px] ${
             activeContainer === "first"
               ? "border-blue-base bg-selection"
-              : "border-contrast-20 bg-contrast-10"
+              : "border-contrast-10 bg-default"
           }`}
           onClick={() => setActiveContainer("first")}
         >
@@ -73,7 +73,7 @@ const GetStartedCard: FC<iGetStartedCard> = ({ getSelectedOption }) => {
           className={`bg-gray-light rounded mb-6 border-[1.5px] ${
             activeContainer === "second"
               ? "border-blue-base bg-selection"
-              : "border-contrast-20 bg-contrast-10"
+              : "border-contrast-10 bg-default"
           }`}
           onClick={() => setActiveContainer("second")}
         >
