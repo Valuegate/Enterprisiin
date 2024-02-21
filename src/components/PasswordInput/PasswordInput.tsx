@@ -28,7 +28,7 @@ const PasswordInput: FC<iPasswordInput> = ({
           id="password"
           placeholder="Enter password"
           onChange={onChange}
-          className="placeholder-italic mt-1 p-3 placeholder:pl-0 border-none bg-input placeholder:text-contrast-30 pl:text-[16px] pl:leading-[24px] md:placeholder:text-[14px] md:placeholder:leading-[22.4px]  rounded w-full"
+          className="placeholder-italic mt-1 p-3 placeholder:pl-0 border-none bg-default placeholder:text-contrast-30 pl:text-[16px] pl:leading-[24px] md:placeholder:text-[14px] md:placeholder:leading-[22.4px]  rounded w-full"
         />
         <button
           className="absolute inset-y-0 right-2 flex items-center px-2 cursor-pointer"

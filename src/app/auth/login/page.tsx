@@ -33,7 +33,7 @@ const Content = () => {
 
   return (
     <div className="w-full flex justify-center">
-      <div className="flex flex-col w-[395px] md:w-full md:px-5 items-start">
+      <div className="flex flex-col w-[450px] md:w-full md:px-5 items-start">
         <div className="md:flex md:flex-row justify-between items-center w-full md:pt-6 pb-6 md:pb-4 md:relative">
           <div className="hidden md:block">
             <GoArrowLeft fill="#000000" size={"25px"} />
@@ -60,7 +60,7 @@ const Content = () => {
             onChange={(e) => {
               setEmailFilled(e.target.value.length !== 0);
             }}
-            className="placeholder-italic mt-1 p-3 placeholder:pl-0 border-none bg-input placeholder:text-contrast-30 pl:text-[16px] pl:leading-[24px] md:placeholder:text-[14px] md:placeholder:leading-[22.4px]  rounded w-full"
+            className="placeholder-italic mt-1 p-3 placeholder:pl-0 border-none bg-default placeholder:text-contrast-30 pl:text-[16px] pl:leading-[24px] md:placeholder:text-[14px] md:placeholder:leading-[22.4px]  rounded w-full"
           />
         </div>
 

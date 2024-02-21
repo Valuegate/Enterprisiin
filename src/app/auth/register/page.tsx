@@ -40,7 +40,7 @@ const Register = () => {
         <Button
           type="button"
           className="border rounded w-full h-12 text-white md:mt-36"
-          colorType="primary"
+          colorType={userState === "" ? "secondary" : "primary"}
           handleClick={handleProceed}
         >
           Proceed
