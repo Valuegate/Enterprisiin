@@ -1,12 +1,9 @@
 "use client";
-import { LocationIcon, LoveIcon, OverviewIcon } from "@/public/icons";
-import Image from "next/image";
+import { OverviewIcon } from "@/public/icons";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { BiFilter } from "react-icons/bi";
-import { MdBakeryDining, MdOutlineArrowDropDown, MdOutlineBakeryDining } from "react-icons/md";
+import { MdOutlineArrowDropDown } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
-import Image1 from "@/public/assets/Rectangle 106.png";
 import MarketplaceCard from "@/public/components/MarketplaceCard/MarketplaceCard";
 import Filters from "@/public/components/Filters/Filters";
 
