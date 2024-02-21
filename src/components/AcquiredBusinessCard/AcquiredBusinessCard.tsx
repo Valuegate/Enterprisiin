@@ -48,13 +48,13 @@ const AcquiredBusinessCard: FC<iAcquiredBusinessCard> = ({}) => {
           <h2 className="text-xl text-black font-bold">Acquired Businesses</h2>
           <div className="flex gap-3">
             <div>
-              <DropdownButton
+              {/* <DropdownButton
                 title={"Sort by:"}
                 menu1={"Business for Sale"}
                 menu2={"Business Investment"}
                 menu3={"Business Loan"}
                 menu4={"Asset for Sale"}
-              />
+              /> */}
             </div>
 
             {/* <div><DropdownButton title={"Filter by:"} menu1={"Proposed"} menu2={"Accepted"} menu3={"Rejected"} menu4={undefined} /></div> */}

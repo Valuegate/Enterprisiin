@@ -16,12 +16,6 @@ const Register = () => {
     return router.push(`/auth/create?role=${userState}`);
   };
 
-  // const [isClicked, setIsClicked] = useState(false);
-
-  // const handleClick = () => {
-  //   setIsClicked(!isClicked);
-  // };
-
   return (
     <div className="w-full flex justify-center">
       <div className="flex flex-col w-[450px] md:w-full md:px-5 items-start">
