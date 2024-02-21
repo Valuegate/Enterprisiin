@@ -18,7 +18,7 @@ const Register = () => {
 
   return (
     <div className="w-full flex justify-center">
-      <div className="flex flex-col w-[395px] md:w-full md:px-5 items-start">
+      <div className="flex flex-col w-[450px] md:w-full md:px-5 items-start">
         <div className="md:flex md:flex-row justify-between items-center w-full md:pt-6 pb-6 md:pb-4 md:relative">
           <div className="hidden md:block">
             <GoArrowLeft fill="#000000" size={"25px"} />
@@ -34,7 +34,7 @@ const Register = () => {
         <Button
           type="button"
           className="border rounded w-full h-12 text-white md:mt-36"
-          colorType="primary"
+          colorType={userState === "" ? "secondary" : "primary"}
           handleClick={handleProceed}
         >
           Proceed

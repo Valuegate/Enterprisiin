@@ -20,7 +20,7 @@ const SocialInput: FC<iSocialInput> = ({ label, placeholderValue, id }) => {
         type="text"
         id={id as string}
         placeholder={placeholderValue as string}
-        className="placeholder-italic mt-1 p-3 placeholder:pl-0 border-none bg-input placeholder:text-contrast-30 pl:text-[16px] pl:leading-[24px] md:placeholder:text-[14px] md:placeholder:leading-[22.4px]  rounded w-full"
+        className="placeholder-italic mt-1 p-3 placeholder:pl-0 border-none bg-default placeholder:text-contrast-30 pl:text-[16px] pl:leading-[24px] md:placeholder:text-[14px] md:placeholder:leading-[22.4px]  rounded w-full"
       />
     </>
   );

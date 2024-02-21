@@ -22,7 +22,7 @@ import WhiteLogo from "@/public/components/WhiteLogo/WhiteLogo";
 import Overview from "@/public/components/Dashboard/Seller/OverView";
 
 // import { motion } from "framer-motion";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 import { FaBarsStaggered } from "react-icons/fa6";
 import Store from "@/public/components/Dashboard/Seller/Store";
@@ -71,7 +71,7 @@ function getOrdinalSuffix(day: number) {
 
 const DashboardLayout = () => {
   const [isSeller, setSeller] = useState<boolean>(true);
-  const [index, setIndex] = useState<number>(1);
+  const [index, setIndex] = useState<number>(0);
   const [open, setOpen] = useState(true);
 
   const menus = [
@@ -196,7 +196,7 @@ const DashboardLayout = () => {
               <input
                 type="text"
                 placeholder="Search..."
-                className="placeholder-italic search mt-1 py-2 pr-4 placeholder:pl-10 w-[268px] h-[40px] border-none focus:ring-none focus:border-none bg-input placeholder:text-contrast-30 pl:text-[16px] pl:leading-[24px] md:placeholder:text-[14px] md:placeholder:leading-[22.4px] rounded "
+                className="placeholder-italic search mt-1 py-2 pr-4 pl-10  w-[268px] h-[40px] border-none focus:ring-none focus:border-none bg-default placeholder:text-contrast-30 pl:text-[16px] pl:leading-[24px] md:placeholder:text-[14px] md:placeholder:leading-[22.4px] rounded "
               />
             </div>
             <div className="">

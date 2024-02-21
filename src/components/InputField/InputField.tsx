@@ -66,7 +66,7 @@ const InputField = () => {
                 onChange={(e) => {
                   setFirstNameFilled(e.target.value.length !== 0);
                 }}
-                className="placeholder-italic mt-1 p-3 placeholder:pl-0 border-none bg-input placeholder:text-contrast-30 pl:text-[16px] pl:leading-[24px] md:placeholder:text-[14px] md:placeholder:leading-[22.4px]  rounded w-full"
+                className="placeholder-italic mt-1 p-3 placeholder:pl-0 border-none bg-default placeholder:text-contrast-30 pl:text-[16px] pl:leading-[24px] md:placeholder:text-[14px] md:placeholder:leading-[22.4px]  rounded w-full"
               />
             </div>
             <div className="mb-4">
@@ -84,7 +84,7 @@ const InputField = () => {
                 onChange={(e) => {
                   setLastNameFilled(e.target.value.length !== 0);
                 }}
-                className="placeholder-italic placeholder:pl-0 mt-1 p-3 border-none bg-input placeholder:text-contrast-30 pl:text-[16px] pl:leading-[24px] md:placeholder:text-[14px] md:placeholder:leading-[22.4px] rounded w-full"
+                className="placeholder-italic placeholder:pl-0 mt-1 p-3 border-none bg-default placeholder:text-contrast-30 pl:text-[16px] pl:leading-[24px] md:placeholder:text-[14px] md:placeholder:leading-[22.4px] rounded w-full"
               />
             </div>
             <div className="mb-4">
@@ -99,7 +99,7 @@ const InputField = () => {
                 onChange={(e) => {
                   setEmailFilled(e.target.value.length !== 0);
                 }}
-                className="placeholder-italic placeholder:pl-0 mt-1 p-3 border-none bg-input placeholder:text-contrast-30 pl:text-[16px] pl:leading-[24px] md:placeholder:text-[14px] md:placeholder:leading-[22.4px] rounded w-full"
+                className="placeholder-italic placeholder:pl-0 mt-1 p-3 border-none bg-default placeholder:text-contrast-30 pl:text-[16px] pl:leading-[24px] md:placeholder:text-[14px] md:placeholder:leading-[22.4px] rounded w-full"
               />
             </div>
             <div className="mb-4">
@@ -114,7 +114,7 @@ const InputField = () => {
                 onChange={(e) => {
                   setNumberFilled(e.target.value.length !== 0);
                 }}
-                className="placeholder-italic placeholder:pl-0 mt-1 p-3 border-none bg-input placeholder:text-contrast-30 pl:text-[16px] pl:leading-[24px] md:placeholder:text-[14px] md:placeholder:leading-[22.4px] rounded w-full"
+                className="placeholder-italic placeholder:pl-0 mt-1 p-3 border-none bg-default placeholder:text-contrast-30 pl:text-[16px] pl:leading-[24px] md:placeholder:text-[14px] md:placeholder:leading-[22.4px] rounded w-full"
               />
             </div>
             <div className="">
