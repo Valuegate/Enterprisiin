@@ -27,7 +27,6 @@ import { motion } from "framer-motion";
 
 import { FaBarsStaggered } from "react-icons/fa6";
 import Store from "@/public/components/Dashboard/Seller/Store";
-import { IconProps } from "@/public/icons/types";
 
 function convertDate(date: string | Date) {
   let dateObject = new Date(date);
@@ -149,19 +148,21 @@ const DashboardLayout = () => {
           </div>
         </div>
 
-        <Link
-          className={`whitespace-pre duration-500 flex mt-10 text-2xl text-white font-semibold ${
-            !open && "opacity-0 translate-x-28 overflow-hidden"
-          }`}
-          href={"/dashboard/create-new-listing"}
-        >
-          <button className="text-blue-base med-3 rounded w-full h-10 border border-blue-base flex justify-center items-center gap-2 font-medium bg-blue border-light-blue">
-            <span>
-              <AddIcon color="#3399FF" />
-            </span>
-            Create New List
-          </button>
-        </Link>
+        {isSeller && (
+          <Link
+            className={`whitespace-pre duration-500 flex mt-10 text-2xl text-white font-semibold ${
+              !open && "opacity-0 translate-x-28 overflow-hidden"
+            }`}
+            href={"/dashboard/create-new-listing"}
+          >
+            <button className="text-blue-base med-3 rounded w-full h-10 border border-blue-base flex justify-center items-center gap-2 font-medium bg-blue border-light-blue">
+              <span>
+                <AddIcon color="#3399FF" />
+              </span>
+              Create New List
+            </button>
+          </Link>
+        )}
 
         <div className="mt-8 flex flex-col gap-1 relative">
           {menus?.map((menu, i) => (

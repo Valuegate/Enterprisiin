@@ -1,8 +1,5 @@
 import Link from "next/link";
-import Image, { StaticImageData } from "next/image";
 import Auto from "@/public/assets/Rectangle 101.png";
-import { LocationIcon, MoreIcon } from "@/public/icons";
-
 import DraftCard, { iDraft } from "@/public/components/Drafts/DraftCard";
 
 const OverviewDrafts = () => {
@@ -59,11 +56,9 @@ const OverviewDrafts = () => {
           <h2 className="bold-1 md:text-[20px] md:leading-[30px] text-contrast-100">
             Drafts
           </h2>
-          <Link href={""}>
-            <p className="text-blue-base med-3 md:text-[14px] md:leading-[24px] cursor-pointer">
-              View all
-            </p>
-          </Link>
+          <p className="text-blue-base med-3 md:text-[14px] md:leading-[24px] cursor-pointer">
+            View all
+          </p>
         </div>
 
         <div className="md:px-5 md:flex md:flex-col mt-6">

@@ -1,65 +1,176 @@
 "use client";
 import DashboardCard from "@/public/components/DashboardCard/DashboardCard";
-import Charts from "@/public/components/Charts/Charts";
-import RequestCard from "@/public/components/RequestCard/RequestCard";
-import OverviewDrafts from "@/public/components/Drafts/OverviewDrafts";
+import Auto from "@/public/assets/Rectangle 101.png";
+
+import Chart1 from "@/public/assets/Chart 1.png";
+import Chart2 from "@/public/assets/Chart 2.png";
+import Chart3 from "@/public/assets/Chart 3.png";
+import { StaticImageData } from "next/image";
+
+import { useState, useEffect } from "react";
 
 function convertDateWithSlashes(date: Date) {
   return `${date.getDay()}/${date.getMonth()}/${date.getFullYear()}`;
 }
 
+interface iBusinessData {
+  image: string | StaticImageData;
+  name: string;
+  description: string;
+  interest: string;
+  amount: number;
+  location: string;
+  liked: boolean;
+  businessStatus: string;
+  status: string;
+}
+
 const BuyerOverview = () => {
+  const [businesses, setBusinesses] = useState<iBusinessData[]>([]);
+  const [collapse, shouldCollapse] = useState<boolean>(false);
+
+  useEffect(() => {
+    setBusinesses([
+      {
+        image: Auto,
+        name: "Auto Repair and Service Oppotunity",
+        description:
+          "Paggico is a growing car wash that caters to the every need of your autombiles. Paggico is a growing car wash that caters to the every need of your autombiles",
+        amount: 400000,
+        location: "Oyo State, Nigeria",
+        businessStatus: "Business for sale",
+        interest: "Agriculture Web",
+        liked: true,
+        status: "Proposed",
+      },
+      {
+        image: Auto,
+        name: "Auto Repair and Service Oppotunity",
+        description:
+          "Paggico is a growing car wash that caters to the every need of your autombiles. Paggico is a growing car wash that caters to the every need of your autombiles",
+        amount: 400000,
+        location: "Oyo State, Nigeria",
+        businessStatus: "Investment required",
+        interest: "Agriculture Web",
+        liked: false,
+        status: "Accepted",
+      },
+      {
+        image: Auto,
+        name: "Auto Repair and Service Oppotunity",
+        description:
+          "Paggico is a growing car wash that caters to the every need of your autombiles. Paggico is a growing car wash that caters to the every need of your autombiles",
+        amount: 400000,
+        location: "Oyo State, Nigeria",
+        businessStatus: "Business for sale",
+        interest: "Loan required",
+        liked: false,
+        status: "Rejected",
+      },
+      {
+        image: Auto,
+        name: "Auto Repair and Service Oppotunity",
+        description:
+          "Paggico is a growing car wash that caters to the every need of your autombiles. Paggico is a growing car wash that caters to the every need of your autombiles",
+        amount: 400000,
+        location: "Oyo State, Nigeria",
+        businessStatus: "Business for sale",
+        interest: "Agriculture Web",
+        liked: true,
+        status: "Proposed",
+      },
+      {
+        image: Auto,
+        name: "Auto Repair and Service Oppotunity",
+        description:
+          "Paggico is a growing car wash that caters to the every need of your autombiles. Paggico is a growing car wash that caters to the every need of your autombiles",
+        amount: 400000,
+        location: "Oyo State, Nigeria",
+        businessStatus: "Investment required",
+        interest: "Agriculture Web",
+        liked: false,
+        status: "Accepted",
+      },
+      {
+        image: Auto,
+        name: "Auto Repair and Service Oppotunity",
+        description:
+          "Paggico is a growing car wash that caters to the every need of your autombiles. Paggico is a growing car wash that caters to the every need of your autombiles",
+        amount: 400000,
+        location: "Oyo State, Nigeria",
+        businessStatus: "Business for sale",
+        interest: "Loan required",
+        liked: false,
+        status: "Rejected",
+      },
+    ]);
+  }, []);
+
   return (
     <>
       <div className="pt-4 overflow-y-scroll h-[90vh] md:h-auto px-[40px] md:px-5 pb-10">
-        <h2 className="text-3xl md:text-[20px] md:leading-[30px] font-bold text-black md:mt-10 mt-2">
-          Overview
-        </h2>
-        <div className="flex justify-between md:gap-6 md:justify-start mt-4 md:overflow-x-auto scrollbar-custom">
-          <DashboardCard
-            leading={"Total Balance"}
-            content={"₦400,000"}
-            trailing={`${convertDateWithSlashes(new Date())} last withdrawn`}
-            tooltip={
-              "Your total balance reflects your account's current status and the date of last withdraw"
-            }
-            className="w-[32%] md:w-[320px] bg-white rounded border-contrast-10 border-[1.5px]"
-          />
-          <DashboardCard
-            leading={"Total Sold Acquisitions"}
-            content={"50"}
-            trailing={"09 businesses"}
-            tooltip={
-              "The aggregate amount and total count of businesses you've successfully sold, earned loans and investments."
-            }
-            className="w-[32%] md:w-[320px] bg-white rounded border-contrast-10 border-[1.5px]"
-          />
-          <DashboardCard
-            leading={"Total Proposed Businesses"}
-            content={"32"}
-            trailing={"09 businesses"}
-            tooltip={
-              "These are the people who show interest in your business. Check them out and attend to them."
-            }
-            className="w-[32%] md:w-[320px] bg-white rounded border-contrast-10 border-[1.5px]"
-          />
+        <div
+          className={`mb-6 overflow-hidden transition-all duration-500 ease-in-out ${
+            collapse ? "max-h-0" : "max-h-[1000px]"
+          }`}
+        >
+          <h2 className="text-3xl md:text-[20px] md:leading-[30px] font-bold text-black md:mt-10 mt-2">
+            Overview
+          </h2>
+          <div className="flex justify-between md:gap-6 md:justify-start mt-4 md:overflow-x-auto scrollbar-custom">
+            <DashboardCard
+              leading={"Total Balance"}
+              content={"₦400,000"}
+              trailing={`${convertDateWithSlashes(new Date())} last withdrawn`}
+              chart={Chart1}
+              tooltip={
+                "This shows the cumulative revenue generated by your company throughout its years of operation."
+              }
+              className="w-[32%] md:w-[320px] bg-white rounded border-contrast-10 border-[1.5px]"
+            />
+            <DashboardCard
+              leading={"Total Sold Acquisitions"}
+              content={"50"}
+              trailing={"09 businesses"}
+              chart={Chart2}
+              tooltip={
+                "This shows the total number of companies you have acquired."
+              }
+              className="w-[32%] md:w-[320px] bg-white rounded border-contrast-10 border-[1.5px]"
+            />
+            <DashboardCard
+              leading={"Total Proposed Businesses"}
+              content={"32"}
+              trailing={"09 businesses"}
+              chart={Chart3}
+              tooltip={"This shows your company's total years of operation."}
+              className="w-[32%] md:w-[320px] bg-white rounded border-contrast-10 border-[1.5px]"
+            />
+          </div>
         </div>
 
-        <div className="flex justify-between mt-6 md:flex-col md:mb-10 w-full">
-          <div className="w-[66%] md:w-full ">
-            <div className="">
-              <Charts />
-            </div>
-            <div className="md:block hidden my-6">
-              <RequestCard />
-            </div>
-            <div className="md:mt-0 mt-6">
-              <OverviewDrafts />
-            </div>
-          </div>
+        <div className="flex justify-between md:flex-col md:mb-10 w-full">
+          <div className="bg-white rounded border-contrast-10 border-[1.5px] w-full shadow-sm">
+            <div className="flex justify-between px-4 h-[74px] md:h-[70px] items-center border-b-[1.5px] border-contrast-10">
+              <h2 className="bold-1 md:text-[20px] md:leading-[30px] text-contrast-100">
+                Acquired Businesses
+              </h2>
 
-          <div className="md:hidden block w-[32%]">
-            <RequestCard />
+              <p
+                onClick={() => {
+                  shouldCollapse(!collapse);
+                }}
+                className="text-blue-base med-3 md:text-[14px] md:leading-[24px] cursor-pointer"
+              >
+                {collapse ? "View less" : "View all"}
+              </p>
+            </div>
+
+            <div className="md:px-5 md:flex md:flex-col mt-6">
+              {businesses.map((business, i) => {
+                return <div id={"" + i}></div>;
+              })}
+            </div>
           </div>
         </div>
       </div>

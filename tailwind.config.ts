@@ -70,15 +70,18 @@ module.exports = {
       "green-base": "#E3F4E4",
       "green-100": "#00A707",
     },
-    // extend: {
-    //   spacing: {
-    //     "8xl": "96rem",
-    //     "9xl": "128rem",
-    //   },
-    //   borderRadius: {
-    //     "4xl": "2rem",
-    //   },
-    // },
+    extend: {
+      // spacing: {
+      //   "8xl": "96rem",
+      //   "9xl": "128rem",
+      // },
+      // borderRadius: {
+      //   "4xl": "2rem",
+      // },
+      transitionProperty: {
+        'height': 'height',
+      },
+    },
   },
   plugins: [],
 };
