@@ -8,7 +8,7 @@ function convertDateWithSlashes(date: Date) {
   return `${date.getDay()}/${date.getMonth()}/${date.getFullYear()}`;
 }
 
-const Overview = () => {
+const BuyerOverview = () => {
   return (
     <>
       <div className="pt-4 overflow-y-scroll h-[90vh] md:h-auto px-[40px] md:px-5 pb-10">
@@ -26,8 +26,8 @@ const Overview = () => {
             className="w-[32%] md:w-[320px] bg-white rounded border-contrast-10 border-[1.5px]"
           />
           <DashboardCard
-            leading={"Total Sold Businesses"}
-            content={"₦400,000"}
+            leading={"Total Sold Acquisitions"}
+            content={"50"}
             trailing={"09 businesses"}
             tooltip={
               "The aggregate amount and total count of businesses you've successfully sold, earned loans and investments."
@@ -35,9 +35,9 @@ const Overview = () => {
             className="w-[32%] md:w-[320px] bg-white rounded border-contrast-10 border-[1.5px]"
           />
           <DashboardCard
-            leading={"Buyer Requests"}
-            content={"02"}
-            trailing={"31/04/2023"}
+            leading={"Total Proposed Businesses"}
+            content={"32"}
+            trailing={"09 businesses"}
             tooltip={
               "These are the people who show interest in your business. Check them out and attend to them."
             }
@@ -67,4 +67,4 @@ const Overview = () => {
   );
 };
 
-export default Overview;
+export default BuyerOverview;

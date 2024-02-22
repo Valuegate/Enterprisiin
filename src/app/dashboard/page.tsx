@@ -15,17 +15,19 @@ import {
 import { TbWindowMaximize } from "react-icons/tb";
 import Link from "next/link";
 import React from "react";
-import { ReactNode, FC, useState } from "react";
+import { ReactNode, useState, useEffect } from "react";
 import ProfileDropdown from "@/public/components/ProfileDropdown/ProfileDropdown";
 import Logo from "@/public/components/Logo/Logo";
 import WhiteLogo from "@/public/components/WhiteLogo/WhiteLogo";
-import Overview from "@/public/components/Dashboard/Seller/OverView";
+import SellerOverview from "@/public/components/Dashboard/Seller/SellerOverview";
+import BuyerOverview from "@/public/components/Dashboard/Buyer/BuyerOverview";
 
 // import { motion } from "framer-motion";
 import { motion } from "framer-motion";
 
 import { FaBarsStaggered } from "react-icons/fa6";
 import Store from "@/public/components/Dashboard/Seller/Store";
+import { IconProps } from "@/public/icons/types";
 
 function convertDate(date: string | Date) {
   let dateObject = new Date(date);
@@ -69,26 +71,51 @@ function getOrdinalSuffix(day: number) {
   }
 }
 
+interface iMenuItemContent {
+  name: string;
+  icon: any;
+  margin?: boolean | null;
+}
+
 const DashboardLayout = () => {
-  const [isSeller, setSeller] = useState<boolean>(true);
+  const [isSeller, setSeller] = useState<boolean>(false);
+  const [children, setChildren] = useState<ReactNode[]>([]);
+  const [menus, setMenus] = useState<iMenuItemContent[]>([]);
   const [index, setIndex] = useState<number>(0);
   const [open, setOpen] = useState(true);
 
-  const menus = [
-    { name: "Overview", icon: OverviewIcon },
-    { name: "Store", icon: StoreIcon },
-    { name: "Message", icon: MessageIcon },
-    { name: "Wallet", icon: WalletIcon },
-    { name: "Consult", icon: MicrophoneIcon },
-    { name: "Settings", icon: SettingsIcon, margin: true },
-    { name: "Help & Support", icon: HelpIcon },
-    { name: "Logout", icon: LogoutIcon },
-  ];
-
-  const children: ReactNode[] = [
-    <Overview key={"seller-overview"} />,
-    <Store key={"store"} />,
-  ];
+  useEffect(() => {
+    if (isSeller) {
+      setChildren([
+        <SellerOverview key={"seller-overview"} />,
+        <Store key={"store"} />,
+      ]);
+      setMenus([
+        { name: "Overview", icon: OverviewIcon },
+        { name: "Store", icon: StoreIcon },
+        { name: "Messages", icon: MessageIcon },
+        { name: "Wallet", icon: WalletIcon },
+        { name: "Consult", icon: MicrophoneIcon },
+        { name: "Settings", icon: SettingsIcon, margin: true },
+        { name: "Help & Support", icon: HelpIcon },
+        { name: "Logout", icon: LogoutIcon },
+      ]);
+    } else {
+      setChildren([
+        <BuyerOverview key={"buyer-overview"} />,
+        <Store key={"store"} />,
+      ]);
+      setMenus([
+        { name: "Overview", icon: OverviewIcon },
+        { name: "Marketplace", icon: StoreIcon },
+        { name: "Messages", icon: MessageIcon },
+        { name: "Wallet", icon: WalletIcon },
+        { name: "Settings", icon: SettingsIcon, margin: true },
+        { name: "Help & Support", icon: HelpIcon },
+        { name: "Logout", icon: LogoutIcon },
+      ]);
+    }
+  }, []);
 
   return (
     <div className="flex bg-background h-[100vh] md:h-full">
@@ -212,7 +239,7 @@ const DashboardLayout = () => {
         <div className="">{children[index]}</div>
         <div className="hidden md:flex justify-around fixed w-[56vw] items-center py-2 h-14 rounded-xl shadow-gray shadow-lg bg-blue-90 bottom-[5vh] right-[22vw] left-[22vw]">
           <div onClick={() => setIndex(0)}>
-            {React.createElement(menus[0].icon)}
+            {menus[0] !== undefined && React.createElement(menus[0].icon)}
           </div>
           <div
             onClick={() => {
@@ -222,7 +249,7 @@ const DashboardLayout = () => {
             <AddIcon color="#FFFFFF" />
           </div>
           <div onClick={() => setIndex(1)}>
-            {React.createElement(menus[1].icon)}
+            {menus[1] !== undefined && React.createElement(menus[1].icon)}
           </div>
         </div>
       </div>
