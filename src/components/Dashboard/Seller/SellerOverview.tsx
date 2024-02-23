@@ -4,11 +4,15 @@ import Charts from "@/public/components/Charts/Charts";
 import RequestCard from "@/public/components/RequestCard/RequestCard";
 import OverviewDrafts from "@/public/components/Drafts/OverviewDrafts";
 
+import Chart1 from "@/public/assets/Chart 1.png";
+import Chart2 from "@/public/assets/Chart 2.png";
+import Chart3 from "@/public/assets/Chart 3.png";
+
 function convertDateWithSlashes(date: Date) {
   return `${date.getDay()}/${date.getMonth()}/${date.getFullYear()}`;
 }
 
-const Overview = () => {
+const SellerOverview = () => {
   return (
     <>
       <div className="pt-4 overflow-y-scroll h-[90vh] md:h-auto px-[40px] md:px-5 pb-10">
@@ -23,12 +27,14 @@ const Overview = () => {
             tooltip={
               "Your total balance reflects your account's current status and the date of last withdraw"
             }
+            chart={Chart1}
             className="w-[32%] md:w-[320px] bg-white rounded border-contrast-10 border-[1.5px]"
           />
           <DashboardCard
             leading={"Total Sold Businesses"}
             content={"₦400,000"}
             trailing={"09 businesses"}
+            chart={Chart2}
             tooltip={
               "The aggregate amount and total count of businesses you've successfully sold, earned loans and investments."
             }
@@ -41,25 +47,14 @@ const Overview = () => {
             tooltip={
               "These are the people who show interest in your business. Check them out and attend to them."
             }
+            chart={Chart3}
             className="w-[32%] md:w-[320px] bg-white rounded border-contrast-10 border-[1.5px]"
           />
         </div>
 
         <div className="flex justify-between mt-6 md:flex-col md:mb-10 w-full">
-          <div className="w-[66%] md:w-full ">
-            <div className="">
-              <Charts />
-            </div>
-            <div className="md:block hidden my-6">
-              <RequestCard />
-            </div>
-            <div className="md:mt-0 mt-6">
-              <OverviewDrafts />
-            </div>
-          </div>
-
-          <div className="md:hidden block w-[32%]">
-            <RequestCard />
+          <div className="md:mt-0 mt-6">
+            <OverviewDrafts />
           </div>
         </div>
       </div>
@@ -67,4 +62,4 @@ const Overview = () => {
   );
 };
 
-export default Overview;
+export default SellerOverview;

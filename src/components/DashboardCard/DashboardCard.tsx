@@ -1,9 +1,8 @@
 "use client";
 
 import { InfoIcon } from "@/public/icons";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { FC } from "react";
-import Cloud from "@/public/assets/Frame 35643.png";
 import { Tooltip } from "@radix-ui/themes";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
 import { useDisclosure } from "@mantine/hooks";
@@ -15,6 +14,7 @@ interface iDashboardCard {
   trailing: string;
   tooltip: string;
   className: string;
+  chart: StaticImageData;
 }
 
 const DashboardCard: FC<iDashboardCard> = ({
@@ -23,6 +23,7 @@ const DashboardCard: FC<iDashboardCard> = ({
   trailing: date,
   tooltip: info,
   className,
+  chart: chart,
 }) => {
   const [opened, { open, close }] = useDisclosure(false);
 
@@ -55,7 +56,7 @@ const DashboardCard: FC<iDashboardCard> = ({
             <p className="pb-2 pt-3 font-bold text-[32px] leading-[36px] md:text-[24px] text-contrast-100">
               {amount}
             </p>
-            <Image src={Cloud} alt={""} />
+            <Image src={chart} alt={""} />
           </div>
 
           <div className="">

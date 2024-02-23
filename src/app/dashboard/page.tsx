@@ -15,11 +15,12 @@ import {
 import { TbWindowMaximize } from "react-icons/tb";
 import Link from "next/link";
 import React from "react";
-import { ReactNode, FC, useState } from "react";
+import { ReactNode, useState, useEffect } from "react";
 import ProfileDropdown from "@/public/components/ProfileDropdown/ProfileDropdown";
 import Logo from "@/public/components/Logo/Logo";
 import WhiteLogo from "@/public/components/WhiteLogo/WhiteLogo";
-import Overview from "@/public/components/Dashboard/Seller/OverView";
+import SellerOverview from "@/public/components/Dashboard/Seller/SellerOverview";
+import BuyerOverview from "@/public/components/Dashboard/Buyer/BuyerOverview";
 
 // import { motion } from "framer-motion";
 import { motion } from "framer-motion";
@@ -69,26 +70,51 @@ function getOrdinalSuffix(day: number) {
   }
 }
 
+interface iMenuItemContent {
+  name: string;
+  icon: any;
+  margin?: boolean | null;
+}
+
 const DashboardLayout = () => {
-  const [isSeller, setSeller] = useState<boolean>(true);
+  const [isSeller, setSeller] = useState<boolean>(false);
+  const [children, setChildren] = useState<ReactNode[]>([]);
+  const [menus, setMenus] = useState<iMenuItemContent[]>([]);
   const [index, setIndex] = useState<number>(0);
   const [open, setOpen] = useState(true);
 
-  const menus = [
-    { name: "Overview", icon: OverviewIcon },
-    { name: "Store", icon: StoreIcon },
-    { name: "Message", icon: MessageIcon },
-    { name: "Wallet", icon: WalletIcon },
-    { name: "Consult", icon: MicrophoneIcon },
-    { name: "Settings", icon: SettingsIcon, margin: true },
-    { name: "Help & Support", icon: HelpIcon },
-    { name: "Logout", icon: LogoutIcon },
-  ];
-
-  const children: ReactNode[] = [
-    <Overview key={"seller-overview"} />,
-    <Store key={"store"} />,
-  ];
+  useEffect(() => {
+    if (isSeller) {
+      setChildren([
+        <SellerOverview key={"seller-overview"} />,
+        <Store key={"store"} />,
+      ]);
+      setMenus([
+        { name: "Overview", icon: OverviewIcon },
+        { name: "Store", icon: StoreIcon },
+        { name: "Messages", icon: MessageIcon },
+        { name: "Wallet", icon: WalletIcon },
+        { name: "Consult", icon: MicrophoneIcon },
+        { name: "Settings", icon: SettingsIcon, margin: true },
+        { name: "Help & Support", icon: HelpIcon },
+        { name: "Logout", icon: LogoutIcon },
+      ]);
+    } else {
+      setChildren([
+        <BuyerOverview key={"buyer-overview"} />,
+        <Store key={"store"} />,
+      ]);
+      setMenus([
+        { name: "Overview", icon: OverviewIcon },
+        { name: "Marketplace", icon: StoreIcon },
+        { name: "Messages", icon: MessageIcon },
+        { name: "Wallet", icon: WalletIcon },
+        { name: "Settings", icon: SettingsIcon, margin: true },
+        { name: "Help & Support", icon: HelpIcon },
+        { name: "Logout", icon: LogoutIcon },
+      ]);
+    }
+  }, []);
 
   return (
     <div className="flex bg-background h-[100vh] md:h-full">
@@ -122,19 +148,21 @@ const DashboardLayout = () => {
           </div>
         </div>
 
-        <Link
-          className={`whitespace-pre duration-500 flex mt-10 text-2xl text-white font-semibold ${
-            !open && "opacity-0 translate-x-28 overflow-hidden"
-          }`}
-          href={"/dashboard/create-new-listing"}
-        >
-          <button className="text-blue-base med-3 rounded w-full h-10 border border-blue-base flex justify-center items-center gap-2 font-medium bg-blue border-light-blue">
-            <span>
-              <AddIcon color="#3399FF" />
-            </span>
-            Create New List
-          </button>
-        </Link>
+        {isSeller && (
+          <Link
+            className={`whitespace-pre duration-500 flex mt-10 text-2xl text-white font-semibold ${
+              !open && "opacity-0 translate-x-28 overflow-hidden"
+            }`}
+            href={"/dashboard/create-new-listing"}
+          >
+            <button className="text-blue-base med-3 rounded w-full h-10 border border-blue-base flex justify-center items-center gap-2 font-medium bg-blue border-light-blue">
+              <span>
+                <AddIcon color="#3399FF" />
+              </span>
+              Create New List
+            </button>
+          </Link>
+        )}
 
         <div className="mt-8 flex flex-col gap-1 relative">
           {menus?.map((menu, i) => (
@@ -212,7 +240,7 @@ const DashboardLayout = () => {
         <div className="">{children[index]}</div>
         <div className="hidden md:flex justify-around fixed w-[56vw] items-center py-2 h-14 rounded-xl shadow-gray shadow-lg bg-blue-90 bottom-[5vh] right-[22vw] left-[22vw]">
           <div onClick={() => setIndex(0)}>
-            {React.createElement(menus[0].icon)}
+            {menus[0] !== undefined && React.createElement(menus[0].icon)}
           </div>
           <div
             onClick={() => {
@@ -222,7 +250,7 @@ const DashboardLayout = () => {
             <AddIcon color="#FFFFFF" />
           </div>
           <div onClick={() => setIndex(1)}>
-            {React.createElement(menus[1].icon)}
+            {menus[1] !== undefined && React.createElement(menus[1].icon)}
           </div>
         </div>
       </div>
