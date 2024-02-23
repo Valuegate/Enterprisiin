@@ -14,18 +14,23 @@ import {
 } from "@/public/icons";
 import { TbWindowMaximize } from "react-icons/tb";
 import Link from "next/link";
-import React from "react";
+import Image from "next/image";
+import React, { MouseEventHandler } from "react";
 import { ReactNode, useState, useEffect } from "react";
 import ProfileDropdown from "@/public/components/ProfileDropdown/ProfileDropdown";
 import Logo from "@/public/components/Logo/Logo";
 import WhiteLogo from "@/public/components/WhiteLogo/WhiteLogo";
 import SellerOverview from "@/public/components/Dashboard/Seller/SellerOverview";
 import BuyerOverview from "@/public/components/Dashboard/Buyer/BuyerOverview";
+import PI from "../../assets/Ellipse 1.png";
+import { useDisclosure } from "@mantine/hooks";
+import { Drawer } from "@mantine/core";
 
 // import { motion } from "framer-motion";
 import { motion } from "framer-motion";
 
 import { FaBarsStaggered } from "react-icons/fa6";
+import { IoMdClose } from "react-icons/io";
 import Store from "@/public/components/Dashboard/Seller/Store";
 
 function convertDate(date: string | Date) {
@@ -76,12 +81,43 @@ interface iMenuItemContent {
   margin?: boolean | null;
 }
 
+interface iMobileDrawerLink {
+  name: string;
+  onClick: MouseEventHandler;
+}
+
 const DashboardLayout = () => {
   const [isSeller, setSeller] = useState<boolean>(false);
   const [children, setChildren] = useState<ReactNode[]>([]);
   const [menus, setMenus] = useState<iMenuItemContent[]>([]);
   const [index, setIndex] = useState<number>(0);
   const [open, setOpen] = useState(true);
+
+  const mobileLinks: iMobileDrawerLink[] = [
+    {
+      name: "Profile",
+      onClick: (e) => {},
+    },
+    {
+      name: "Notifications",
+      onClick: (e) => {},
+    },
+    {
+      name: "Settings",
+      onClick: (e) => {},
+    },
+    {
+      name: "Help & Support",
+      onClick: (e) => {},
+    },
+    {
+      name: "Logout",
+      onClick: (e) => {},
+    },
+  ];
+
+  const [openedDrawer, { open: openDrawer, close: closeDrawer }] =
+    useDisclosure(false);
 
   useEffect(() => {
     if (isSeller) {
@@ -118,6 +154,73 @@ const DashboardLayout = () => {
 
   return (
     <div className="flex bg-background h-[100vh] md:h-full">
+      <div className="hidden md:block">
+        <Drawer.Root
+          opened={openedDrawer}
+          onClose={closeDrawer}
+          position="right"
+          padding={"0px"}
+          top={"0px"}
+        >
+          <Drawer.Overlay />
+          <Drawer.Content>
+            <Drawer.Body>
+              <div className="flex flex-col w-full bg-background h-[100vh]">
+                <div className="flex justify-between items-center w-full px-5 py-5">
+                  <Logo />
+                  <div onClick={closeDrawer}>
+                    <IoMdClose size={"24px"} />
+                  </div>
+                </div>
+                <div className="relative flex items-center px-5">
+                  <span className="absolute left-8">
+                    <SearchIcon />
+                  </span>
+                  <input
+                    type="text"
+                    placeholder="Search..."
+                    className="placeholder-italic search font-medium mt-1 py-2 pr-4 pl-10 placeholder:pl-0 text-contrast-100  w-full h-[40px] border-none focus:ring-none focus:border-none bg-input placeholder:text-contrast-30 pl:text-[16px] pl:leading-[24px] rounded "
+                  />
+                </div>
+                <div className="flex flex-col items-center w-full mt-7 px-5">
+                  <Image
+                    src={PI}
+                    alt="Profile Image"
+                    className="w-24 h-24 rounded-full"
+                  />
+                  <p className="mt-4 font-bold text-[16px] leading-[28px] text-contrast-100">
+                    Adeniji Promise O.
+                  </p>
+                  <p className="font-medium text-[14px] leading-[24px] text-contrast-80">
+                    CEO (Valuegate Consulting)
+                  </p>
+                  <p className="text-[10px] leading-[18px] text-contrast-base">
+                    +234 801 234 5678
+                  </p>
+                  <div className="mt-6 w-full h-[1px] bg-contrast-10" />
+                </div>
+                <div className="mt-10 flex flex-col gap-5 items-start px-5">
+                  {mobileLinks.map((mobileLink, i) => {
+                    return (
+                      <p
+                        onClick={mobileLink.onClick}
+                        key={i}
+                        className={`font-medium text-[14px] leading-[24px] ${
+                          i === mobileLinks.length - 1
+                            ? "text-error"
+                            : "text-contrast-80"
+                        }`}
+                      >
+                        {mobileLink.name}
+                      </p>
+                    );
+                  })}
+                </div>
+              </div>
+            </Drawer.Body>
+          </Drawer.Content>
+        </Drawer.Root>
+      </div>
       <div
         className={`bg-blue-90 h-screen ${
           open ? "w-[20%] px-4" : "w-[4%] pr-3 pl-3"
@@ -205,7 +308,9 @@ const DashboardLayout = () => {
 
       <div className="hidden md:flex h-[8vh] bg-background justify-between items-center w-full fixed md:px-5 z-10 top-0">
         <Logo />
-        <FaBarsStaggered size={"24px"} />
+        <div onClick={openDrawer}>
+          <FaBarsStaggered size={"24px"} />
+        </div>
       </div>
       <div className="w-full">
         <nav className="flex justify-between items-center px-[40px] md:hidden h-[10vh] border-b-[1px] border-contrast-10">
@@ -224,7 +329,7 @@ const DashboardLayout = () => {
               <input
                 type="text"
                 placeholder="Search..."
-                className="placeholder-italic search mt-1 py-2 pr-4 pl-10  w-[268px] h-[40px] border-none focus:ring-none focus:border-none bg-default placeholder:text-contrast-30 pl:text-[16px] pl:leading-[24px] md:placeholder:text-[14px] md:placeholder:leading-[22.4px] rounded "
+                className="placeholder-italic search mt-1 py-2 pr-4 pl-10  w-[268px] h-[40px] border-none focus:ring-none focus:border-none bg-input placeholder:text-contrast-30 pl:text-[16px] pl:leading-[24px] md:placeholder:text-[14px] md:placeholder:leading-[22.4px] rounded "
               />
             </div>
             <div className="">

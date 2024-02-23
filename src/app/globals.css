@@ -45,7 +45,7 @@ body {
 } */
 
 input.custom {
-  accent-color: #3399FF;
+  accent-color: #3399ff;
   border-radius: 4px;
   accent-color: auto;
 }
@@ -86,8 +86,8 @@ input.custom {
 
 .custom-separator {
   background-color: #dadada;
-  height: 30px;
-  width: 1.5px;
+  height: 20px;
+  width: 2px;
 }
 
 .chart-width {
