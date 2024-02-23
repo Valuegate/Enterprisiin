@@ -21,7 +21,7 @@ import ProfileDropdown from "@/public/components/ProfileDropdown/ProfileDropdown
 import Logo from "@/public/components/Logo/Logo";
 import WhiteLogo from "@/public/components/WhiteLogo/WhiteLogo";
 import SellerOverview from "@/public/components/Dashboard/Seller/SellerOverview";
-import BuyerOverview from "@/public/components/Dashboard/Buyer/BuyerOverview";
+import BuyerOverview from "@/public/components/Dashboard/Buyer/Overview/BuyerOverview";
 import PI from "../../assets/Ellipse 1.png";
 import { useDisclosure } from "@mantine/hooks";
 import { Drawer } from "@mantine/core";
