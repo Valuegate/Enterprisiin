@@ -14,7 +14,7 @@ interface iDashboardCard {
   trailing: string;
   tooltip: string;
   className: string;
-  chart: StaticImageData;
+  chart?: StaticImageData;
 }
 
 const DashboardCard: FC<iDashboardCard> = ({
@@ -56,7 +56,7 @@ const DashboardCard: FC<iDashboardCard> = ({
             <p className="pb-2 pt-3 font-bold text-[32px] leading-[36px] md:text-[24px] text-contrast-100">
               {amount}
             </p>
-            <Image src={chart} alt={""} />
+            {chart && <Image src={chart} alt={""} />}
           </div>
 
           <div className="">
