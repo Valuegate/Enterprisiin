@@ -1,22 +1,15 @@
 "use client";
 import DashboardCard from "@/public/components/DashboardCard/DashboardCard";
-import Auto from "@/public/assets/Rectangle 101.png";
 
-import Chart1 from "@/public/assets/Chart 1.png";
-import Chart2 from "@/public/assets/Chart 2.png";
-import Chart3 from "@/public/assets/Chart 3.png";
-import Image, { StaticImageData } from "next/image";
-
-import { useState, useEffect, FC, MouseEventHandler } from "react";
-import DropdownButton from "../../../DropdownButton/DropdownButton";
-import { LocationIcon } from "@/public/icons";
-
-import { FaHeart } from "react-icons/fa6";
+import { FC } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 
 import { PROPOSED, ACCEPTED, iViewBusiness } from "./BusinessData";
 import BusinessDetails from "./BusinessDetails";
 import ProfileCard from "./ProfileCard";
+import Button from "@/public/components/Button";
+import { IoMdMore } from "react-icons/io";
+import { LuDownload } from "react-icons/lu";
 
 const ViewBusiness: FC<iViewBusiness> = ({ business, onExit }) => {
   return (
@@ -40,7 +33,17 @@ const ViewBusiness: FC<iViewBusiness> = ({ business, onExit }) => {
               {business.status}
             </div>
           </div>
-          <div className="flex gap-4 items-center med-3 md:hidden"></div>
+          <div className="flex gap-2 items-center med-3 md:hidden">
+            <Button
+              type="button"
+              className="text-blue-40 rounded w-full h-8 flex justify-center items-center gap-2 px-2 md:text-[14px] leading-[24px] text-[14px]"
+              colorType="secondary"
+            >
+              <LuDownload size={"16px"} />
+              Download
+            </Button>
+            <IoMdMore size={"32px"} />
+          </div>
         </div>
         <div className="flex justify-between md:gap-6 md:justify-start mt-6 md:overflow-x-auto scrollbar-custom">
           <DashboardCard

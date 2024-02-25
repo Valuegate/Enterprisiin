@@ -1,6 +1,16 @@
 import React, { useState } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Auto from "@/public/assets/Rectangle 101.png";
+import PDF from "@/public/assets/Rectangle 102.png";
+import ProfileCard from "./ProfileCard";
+
+import { FaFilePdf } from "react-icons/fa";
+
+import Ga1 from "@/public/assets/Gallery 1.jpg";
+import Ga2 from "@/public/assets/Gallery 2.jpg";
+import Ga3 from "@/public/assets/Gallery 3.jpg";
+import Ga4 from "@/public/assets/Gallery 4.jpg";
+import Ga5 from "@/public/assets/Gallery 5.jpg";
 
 const BusinessDetails = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
@@ -68,8 +78,10 @@ const BusinessDetails = () => {
           <OverviewContent />
         ) : activeTab === 1 ? (
           <AttachmentContent />
-        ) : (
+        ) : activeTab === 2 ? (
           <GalleryContent />
+        ) : (
+          <ProfileCard />
         )}
       </div>
     </div>
@@ -175,11 +187,76 @@ const OverviewContent = () => {
   );
 };
 
+interface iAttachmentData {
+  image: string | StaticImageData;
+  title: string;
+  pages: number;
+  size: string;
+}
+
 const AttachmentContent = () => {
-  return <div>Attachment</div>;
+  const attachments: iAttachmentData[] = Array(5).fill({
+    image: PDF,
+    title: "Company Financial Status",
+    pages: 60,
+    size: "296KB",
+  });
+
+  return (
+    <div className="flex flex-col">
+      <p className="bold-3 md:text-[14px] text-contrast-100">Documents</p>
+      <div className="mt-5 md:mt-4 flex flex-col md:gap-4 gap-5 w-full mb-16 md:mb-14">
+        {attachments.map((attachment, i) => {
+          return (
+            <div
+              key={i}
+              className="flex w-full bg-input rounded p-4 md:p-2 gap-5 md:gap-4"
+            >
+              <div className="w-[40%] md:w-[30%] md:h-14">
+                <Image
+                  src={attachment.image}
+                  alt="attachment"
+                  className="w-full md:h-full"
+                />
+              </div>
+              <div className="flex flex-col justify-center gap-2">
+                <p className="text-contrast font-semibold text-[20px] md:text-[14px] leading-[32px] md:leading-[24px]">
+                  {attachment.title}
+                </p>
+                <div className="flex leading-[24px] font-medium text-contrast-70 text-[16px] md:text-[14px]">
+                  <FaFilePdf fill="#FF0000" size={"20px"} />
+                  <span className="pl-1 pr-3 md:pr-2">PDF</span>
+                  <span>{attachment.pages} pages</span>
+                  <span className="font-normal text-[12px] md:text-[10px] text-contrast-30 pl-2">
+                    ({attachment.size})
+                  </span>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
 };
 
+interface iImageData {
+  image: StaticImageData | string;
+}
+
 const GalleryContent = () => {
-  return <div>Gallery</div>;
+  const images: StaticImageData[] = [Ga1, Ga2, Ga3, Ga4, Ga5];
+  return (
+    <div className="flex flex-col w-full">
+      <p className="bold-3 md:text-[14px] text-contrast-100">
+        Company Pictures
+      </p>
+      <div className="mt-4 mb-6 grid-cols-2 md:grid-cols-1 grid gap-6 md:gap-5 w-full">
+        {images.map((image, i) => {
+          return <Image key={i} src={image} className="w-full" alt="" />;
+        })}
+      </div>
+    </div>
+  );
 };
 export default BusinessDetails;

@@ -9,16 +9,20 @@ import Button from "@/public/components/Button";
 
 const ProfileCard = () => {
   return (
-    <div className="flex flex-col items-center bg-white w-full rounded border-contrast-10 border-[1.5px] shadow-sm">
-      <div className="mt-5 flex justify-end w-full pr-4">
+    <div className="flex flex-col items-center bg-white w-full md:border-none md:shadow-none rounded border-contrast-10 border-[1.5px] shadow-sm">
+      <div className="mt-5 md:mt-2 flex justify-end w-full pr-4 md:pr-2">
         <div className="flex items-center gap-1 bg-role-green-bg text-role-green px-2 py-1 rounded-full text-[14px] leading-[21px]">
           <MdDone />
           Verified
         </div>
       </div>
       <Image src={Owner} alt="owner" className="mt-6" />
-      <p className="mt-3 bold-2 text-contrast-100">Oyekunle Qudus</p>
-      <p className="med-3 text-contrast-70">Co-founder</p>
+      <p className="mt-3 bold-2 md:text-[14px] md:leading-[24px] text-contrast-100">
+        Oyekunle Qudus
+      </p>
+      <p className="med-3 text-contrast-70 md:text-[14px] md:leading-[20px]">
+        Co-founder
+      </p>
       <p className="text-[14px] leading-[21px] text-contrast-base font-normal">
         Oyo State, Nigeria
       </p>
@@ -35,10 +39,10 @@ const ProfileCard = () => {
             );
           })}
       </div>
-      <div className="mt-5 w-[80%] mb-12">
+      <div className="mt-5 w-[80%] md:w-full mb-12">
         <Button
           type="button"
-          className="text-blue-40 rounded w-full h-12 flex justify-center items-center gap-3"
+          className="text-blue-40 rounded w-full h-12 flex justify-center items-center gap-3 md:text-[14px] leading-[24px] text-[14px]"
           colorType="secondary"
         >
           <HiLockClosed size={"20px"} />
