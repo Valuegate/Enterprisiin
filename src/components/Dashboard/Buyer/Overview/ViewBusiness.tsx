@@ -15,11 +15,13 @@ import { FaHeart } from "react-icons/fa6";
 import { IoIosArrowBack } from "react-icons/io";
 
 import { PROPOSED, ACCEPTED, iViewBusiness } from "./BusinessData";
+import BusinessDetails from "./BusinessDetails";
+import ProfileCard from "./ProfileCard";
 
 const ViewBusiness: FC<iViewBusiness> = ({ business, onExit }) => {
   return (
     business && (
-      <div className="flex flex-col w-full px-6">
+      <div className="flex flex-col w-full px-6 h-[90vh] overflow-y-scroll">
         <div className="flex justify-between items-center w-full mt-4">
           <div className="flex gap-2 bold-2 items-center">
             <div onClick={onExit} className="cursor-pointer">
@@ -71,6 +73,14 @@ const ViewBusiness: FC<iViewBusiness> = ({ business, onExit }) => {
             }
             chart={undefined}
           />
+        </div>
+        <div className="flex justify-between mt-6 mb-20 w-full">
+          <div className="w-[63%]">
+            <BusinessDetails />
+          </div>
+          <div className="w-[35%]">
+            <ProfileCard />
+          </div>
         </div>
       </div>
     )
