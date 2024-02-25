@@ -21,7 +21,7 @@ import ProfileCard from "./ProfileCard";
 const ViewBusiness: FC<iViewBusiness> = ({ business, onExit }) => {
   return (
     business && (
-      <div className="flex flex-col w-full px-6 h-[90vh] overflow-y-scroll">
+      <div className="flex flex-col w-full px-6 h-[90vh] md:h-auto overflow-y-scroll">
         <div className="flex justify-between items-center w-full mt-4">
           <div className="flex gap-2 bold-2 items-center">
             <div onClick={onExit} className="cursor-pointer">
@@ -74,11 +74,11 @@ const ViewBusiness: FC<iViewBusiness> = ({ business, onExit }) => {
             chart={undefined}
           />
         </div>
-        <div className="flex justify-between mt-6 mb-20 w-full">
-          <div className="w-[63%]">
+        <div className="flex md:flex-col justify-between mt-6 mb-20 w-full">
+          <div className="w-[63%] md:w-full">
             <BusinessDetails />
           </div>
-          <div className="w-[35%]">
+          <div className="w-[35%] md:hidden">
             <ProfileCard />
           </div>
         </div>
