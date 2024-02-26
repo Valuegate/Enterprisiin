@@ -168,7 +168,7 @@ const BuyerOverview = () => {
 
             <div className="md:px-5 md:flex md:flex-col mt-6">
               {businesses.map((business, i) => {
-                return <div id={"" + i}></div>;
+                return <div key={i} id={"" + i}></div>;
               })}
             </div>
           </div>
