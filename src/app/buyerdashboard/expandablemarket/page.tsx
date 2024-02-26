@@ -52,7 +52,7 @@ const ExpandableMarket = () => {
             <div className="flex gap-4 items-center">
               <Button
                 type="button"
-                className="rounded-[8px] w-[118px] h-[34px] flex justify-center items-center gap-2 text-base font-medium text-light-blue bg-light-blue-1"
+                className="rounded-[8px] w-[118px] h-[34px] flex justify-center items-center gap-2 text-base font-medium text-blue-base bg-light-blue-1"
               >
                 <span className="">
                   <DownloadIcon color="#3399FF" />

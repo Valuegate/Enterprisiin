@@ -184,7 +184,7 @@ const Filters = () => {
             </div>
 
             <div className="flex justify-between">
-                <button className="w-[193px] h-[40px] bg-light-blue-1 flex items-center rounded justify-center text-light-blue text-base">Restart</button>
+                <button className="w-[193px] h-[40px] bg-light-blue-1 flex items-center rounded justify-center text-blue-base text-base">Restart</button>
                 <button className="w-[193px] h-[40px] bg-light-blue flex items-center rounded justify-center text-white text-base">Apply</button>
             </div>
           </Modal.Body>

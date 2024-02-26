@@ -13,7 +13,7 @@ import { ReactNode, FC, useState } from "react";
 import ProfileDropdown from "@/public/components/ProfileDropdown/ProfileDropdown";
 import Logo from "@/public/components/Logo/Logo";
 import WhiteLogo from "@/public/components/WhiteLogo/WhiteLogo";
-import Overview from "@/public/components/Dashboard/Seller/OverView";
+// import Overview from "@/public/components/Dashboard/Seller/OverView";
 
 import { motion } from "framer-motion";
 

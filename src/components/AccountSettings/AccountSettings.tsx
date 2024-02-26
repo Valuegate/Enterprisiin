@@ -28,7 +28,7 @@ const AccountSettings = () => {
       <div className="">
         <Button
           type="button"
-          className="border-r-amber-400 rounded w-[153px] h-[40px] flex justify-center items-center gap-2 font-semibold text-white"
+          className="border-r-amber-400 rounded px-3 py-2 flex justify-center items-center gap-2 font-semibold text-white"
           // disabled={true}
           colorType="primary"
           // loading={load}
@@ -82,10 +82,19 @@ const AccountSettings = () => {
           type={"tel"}
         />
 
+<Input
+          label={"BVN"}
+          placeholder={"0000 0000 0000"}
+          htmlFor={"number"}
+          id={"number"}
+          name={"number"}
+          type={"number"}
+        />
+
         <div className="pt-2 pb-4">
           <button
             type="submit"
-            className="border-r-amber-400 bg-light-blue rounded w-[138px] h-[40px] text-white"
+            className="border-r-amber-400 bg-blue-base rounded w-[138px] h-[40px] text-white"
           >
             Save Changes
           </button>
@@ -118,7 +127,7 @@ const AccountSettings = () => {
       <div className="pt-6 pb-4">
           <button
             type="submit"
-            className="border-r-amber-400 bg-light-blue rounded w-[138px] h-[40px] text-white"
+            className="border-r-amber-400 bg-blue-base rounded w-[138px] h-[40px] text-white"
           >
             Save Changes
           </button>

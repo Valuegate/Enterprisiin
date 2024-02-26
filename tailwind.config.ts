@@ -14,7 +14,6 @@ module.exports = {
       md: {
         max: "768px",
       },
-      
     },
     colors: {
       "blue-10": "#D6EBFF",
@@ -28,10 +27,10 @@ module.exports = {
       "blue-80": "#1A4D80",
       "blue-90": "#113355",
       "blue-100": "#0A1F33",
-      "background": "#F9FCFF",
-      "selection": "#EFF7FF",
-      "white": "#FFFFFF",
-      "white-20" : "rgba(255, 255, 255, 0.2)",
+      background: "#F9FCFF",
+      selection: "#EFF7FF",
+      white: "#FFFFFF",
+      "white-20": "rgba(255, 255, 255, 0.2)",
       "yellow-10": "#FBF2E0",
       "yellow-20": "#F8E9CB",
       "yellow-30": "#F5DFB1",
@@ -65,16 +64,17 @@ module.exports = {
       "contrast-80": "#242424",
       "contrast-90": "#181818",
       "contrast-100": "#0E0E0E",
-      "input": "#F4F4F4",
-      "default": "#F9F9F9",
+      input: "#F4F4F4",
+      default: "#F9F9F9",
       "green-base": "#E3F4E4",
       "green-100": "#00A707",
-      "error": "#FF0000",
+      error: "#FF0000",
       "role-red-bg": "#FFE9E9",
       "role-orange-bg": "#FFE7D6",
       "role-orange": "#DE7C32",
       "role-green-bg": "#CEEFD9",
       "role-green": "#0A9138",
+      "input-color": "#F4F4F4",
     },
     extend: {
       // spacing: {
@@ -85,7 +85,7 @@ module.exports = {
       //   "4xl": "2rem",
       // },
       transitionProperty: {
-        'height': 'height',
+        height: "height",
       },
     },
   },
