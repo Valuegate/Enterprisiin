@@ -53,8 +53,20 @@ const SellerOverview = () => {
         </div>
 
         <div className="flex justify-between mt-6 md:flex-col md:mb-10 w-full">
-          <div className="md:mt-0 mt-6">
-            <OverviewDrafts />
+          <div className="w-[66%] md:w-full ">
+            <div className="">
+              <Charts />
+            </div>
+            <div className="md:block hidden my-6">
+              <RequestCard />
+            </div>
+            <div className="md:mt-0 mt-6">
+              <OverviewDrafts />
+            </div>
+          </div>
+
+          <div className="md:hidden block w-[32%]">
+            <RequestCard />
           </div>
         </div>
       </div>
