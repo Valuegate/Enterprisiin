@@ -13,6 +13,9 @@ import { BiSolidDashboard } from "react-icons/bi";
 import { GrMenu } from "react-icons/gr";
 import Image, { StaticImageData } from "next/image";
 
+import { useDisclosure } from "@mantine/hooks";
+import { Modal, Select, MultiSelect } from "@mantine/core";
+
 interface iMarketBusinessData {
   image: string | StaticImageData;
   name: string;
@@ -23,9 +26,28 @@ interface iMarketBusinessData {
   status: string;
 }
 
+interface iFilterData {
+  type: string;
+  countries: string[];
+  states: string[];
+  industries: string[];
+  minPrice: number;
+  maxPrice: number;
+}
+
 const Marketplace = () => {
   const [currentBusiness, setCurrentBusiness] = useState<number>(-1);
   const [sortFilter, setSortFilter] = useState<string>("All");
+  const [filterData, setFilterData] = useState<iFilterData>({
+    countries: [],
+    industries: [],
+    states: [],
+    maxPrice: 0,
+    minPrice: 0,
+    type: "",
+  });
+  const [openedFilter, { open: openFilter, close: closeFilter }] =
+    useDisclosure(false);
   const businesses: iMarketBusinessData[] = Array(15).fill({
     image: Auto,
     name: "Aquatics and Sport Coaching Opportunity",
@@ -61,27 +83,21 @@ const Marketplace = () => {
                       },
                     },
                     {
-                      name: "Business for Sale",
+                      name: "Accepted",
                       onClick: (e) => {
-                        setSortFilter("Business for Sale");
+                        setSortFilter("Accepted");
                       },
                     },
                     {
-                      name: "Business Investment",
+                      name: "Proposed",
                       onClick: (e) => {
-                        setSortFilter("Business Investment");
+                        setSortFilter("Proposed");
                       },
                     },
                     {
-                      name: "Business Loan",
+                      name: "Rejected",
                       onClick: (e) => {
-                        setSortFilter("Business Loan");
-                      },
-                    },
-                    {
-                      name: "Asset for Sale",
-                      onClick: (e) => {
-                        setSortFilter("Asset for Sale");
+                        setSortFilter("Rejected");
                       },
                     },
                   ]}
@@ -93,6 +109,7 @@ const Marketplace = () => {
                   height="h-[40px]"
                   className="text-white rounded px-3 md:px-7 flex justify-center items-center gap-2"
                   colorType="primary"
+                  handleClick={openFilter}
                 >
                   <IoFilterOutline fill="#FFFFFF" />
                   Filters
@@ -128,6 +145,60 @@ const Marketplace = () => {
           <></>
         )}
       </div>
+      <Modal opened={openedFilter} centered onClose={closeFilter}>
+        <div className="flex flex-col">
+          <p className="bold-1 text-contrast-100">Filter</p>
+          <p className="med-3 text-contrast-base">
+            Buy, Invest and Loan businesses as much as you can
+          </p>
+          <div className="mt-6 flex flex-col items-start">
+            <p className="semi-3 text-contrast-80">Business Type</p>
+            <Select
+              data={[
+                "Business for Sale",
+                "Business Investment",
+                "Business Loan",
+                "Asset for Sale",
+              ]}
+              placeholder="Select"
+              width={300}
+              value={filterData.type}
+              onChange={(e) => {
+                setFilterData({ ...filterData, type: e! });
+              }}
+            />
+            <p className="semi-3 text-contrast-80 mt-4">Country</p>
+            <MultiSelect
+              placeholder="Select"
+              data={["Nigeria", "China", "India", "Algeria"]}
+              onChange={(e) => {
+                setFilterData({ ...filterData, countries: e });
+              }}
+            />
+            <p className="semi-3 text-contrast-80 mt-4">State</p>
+            <MultiSelect
+              placeholder="Select"
+              data={["Ogun", "Oyo", "Lagos", "Kaduna"]}
+              onChange={(e) => {
+                setFilterData({ ...filterData, states: e });
+              }}
+            />
+            <p className="semi-3 text-contrast-80 mt-4">Industry</p>
+            <MultiSelect
+              placeholder="Select"
+              data={[
+                "Building & Construction",
+                "Education",
+                "Agriculture",
+                "Technology",
+              ]}
+              onChange={(e) => {
+                setFilterData({ ...filterData, industries: e });
+              }}
+            />
+          </div>
+        </div>
+      </Modal>
     </>
   );
 };
