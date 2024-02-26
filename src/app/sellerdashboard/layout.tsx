@@ -70,7 +70,7 @@ const SellerDashBoardLayout: FC<iSellerDashBoardLayout> = ({ children }) => {
         <Link
           className={`whitespace-pre duration-500 flex mt-6 text-2xl text-white font-semibold ${!open && "opacity-0 translate-x-28 overflow-hidden"}`} href={"../createnewlist/newlist"}        >
           <button
-            className="text-sm text-light-blue rounded w-full h-10 border flex justify-center items-center gap-2 font-medium bg-blue border-light-blue"
+            className="text-sm text-blue-base rounded w-full h-10 border flex justify-center items-center gap-2 font-medium bg-blue border-light-blue"
             // disabled={true}
             // loading={load}
             //   handleClick={() => setLoad(!load)}

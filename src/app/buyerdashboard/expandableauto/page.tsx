@@ -52,7 +52,7 @@ const ExpandableAuto = () => {
             <div className="flex gap-4 items-center">
               <Button
                 type="button"
-                className="rounded-[8px] w-[118px] h-[34px] flex justify-center items-center gap-2 text-base font-medium text-light-blue bg-light-blue-1"
+                className="rounded-[8px] w-[118px] h-[34px] flex justify-center items-center gap-2 text-base font-medium text-blue-base bg-light-blue-1"
               >
                 <span className="">
                   <DownloadIcon color="#3399FF" />
@@ -137,19 +137,19 @@ const ExpandableAuto = () => {
                     aria-label="Manage your account"
                   >
                     <Tabs.Trigger
-                      className="bg-white text-light-black-4 px-4 h-[45px] flex items-center text-base font-medium select-none first:rounded-tl-md  last:rounded-tr-md data-[state=active]:text-light-blue data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] data-[state=active]:shadow-current data-[state=active]:focus:relative outline-none cursor-default"
+                      className="bg-white text-light-black-4 px-4 h-[45px] flex items-center text-base font-medium select-none first:rounded-tl-md  last:rounded-tr-md data-[state=active]:text-blue-base data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] data-[state=active]:shadow-current data-[state=active]:focus:relative outline-none cursor-default"
                       value="tab1"
                     >
                       Business Overview
                     </Tabs.Trigger>
                     <Tabs.Trigger
-                      className="bg-white text-light-black-4 px-4 h-[45px] flex items-center text-base font-medium select-none first:rounded-tl-md  last:rounded-tr-md data-[state=active]:text-light-blue data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] data-[state=active]:shadow-current data-[state=active]:focus:relative outline-none cursor-default"
+                      className="bg-white text-light-black-4 px-4 h-[45px] flex items-center text-base font-medium select-none first:rounded-tl-md  last:rounded-tr-md data-[state=active]:text-blue-base data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] data-[state=active]:shadow-current data-[state=active]:focus:relative outline-none cursor-default"
                       value="tab2"
                     >
                       Attachments
                     </Tabs.Trigger>
                     <Tabs.Trigger
-                      className="bg-white text-light-black-4 px-4 h-[45px] flex items-center text-base font-medium select-none first:rounded-tl-md  last:rounded-tr-md data-[state=active]:text-light-blue data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] data-[state=active]:shadow-current data-[state=active]:focus:relative outline-none cursor-default"
+                      className="bg-white text-light-black-4 px-4 h-[45px] flex items-center text-base font-medium select-none first:rounded-tl-md  last:rounded-tr-md data-[state=active]:text-blue-base data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] data-[state=active]:shadow-current data-[state=active]:focus:relative outline-none cursor-default"
                       value="tab3"
                     >
                       Business Gallery

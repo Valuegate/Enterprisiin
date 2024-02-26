@@ -69,6 +69,8 @@ module.exports = {
       "default": "#F9F9F9",
       "green-base": "#E3F4E4",
       "green-100": "#00A707",
+      "input-color": "#F4F4F4",
+      "error": "#FF0000",
     },
     extend: {
       // spacing: {

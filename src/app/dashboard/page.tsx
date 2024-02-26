@@ -27,6 +27,11 @@ import { motion } from "framer-motion";
 
 import { FaBarsStaggered } from "react-icons/fa6";
 import Store from "@/public/components/Dashboard/Seller/Store";
+import Settings from "@/public/components/Dashboard/Seller/Settings";
+import Messages from "@/public/components/Dashboard/Seller/Messages";
+import Wallet from "@/public/components/Dashboard/Seller/Wallet";
+import Consult from "@/public/components/Dashboard/Seller/Consult";
+import HelpAndSupport from "@/public/components/Dashboard/Seller/HelpAndSupport";
 
 function convertDate(date: string | Date) {
   let dateObject = new Date(date);
@@ -77,7 +82,7 @@ interface iMenuItemContent {
 }
 
 const DashboardLayout = () => {
-  const [isSeller, setSeller] = useState<boolean>(false);
+  const [isSeller, setSeller] = useState<boolean>(true);
   const [children, setChildren] = useState<ReactNode[]>([]);
   const [menus, setMenus] = useState<iMenuItemContent[]>([]);
   const [index, setIndex] = useState<number>(0);
@@ -88,6 +93,11 @@ const DashboardLayout = () => {
       setChildren([
         <SellerOverview key={"seller-overview"} />,
         <Store key={"store"} />,
+        <Messages key={"Messages"}/>,
+        <Wallet key={"Wallet"} />,
+        <Consult key={"Consult"} />,
+        <Settings key={"Settings"} />,
+        <HelpAndSupport key={"Help & Support"} />,
       ]);
       setMenus([
         { name: "Overview", icon: OverviewIcon },

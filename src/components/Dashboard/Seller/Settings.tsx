@@ -1,11 +1,13 @@
 "use client";
 import AccountSettings from "@/public/components/AccountSettings/AccountSettings";
+import BankSettings from "@/public/components/BankSettings/BankSettings";
 import NotificationSettings from "@/public/components/NotificationSettings/NotificationSettings";
 import PasswordSettings from "@/public/components/PasswordSettings/PasswordSettings";
 import * as Tabs from "@radix-ui/react-tabs";
 
 const Settings = () => {
   return (
+    <>
     <div className="px-6 pt-4 overflow-y-scroll h-[85vh] pb-8">
       <h2 className="text-3xl font-bold text-black pb-4">Settings</h2>
       <div className="w-full bg-white rounded">
@@ -29,6 +31,12 @@ const Settings = () => {
             >
               Password
             </Tabs.Trigger>
+            {/* <Tabs.Trigger
+              className="bg-white px-4 h-[45px] flex items-center text-base font-semibold select-none first:rounded-tl-md  last:rounded-tr-md data-[state=active]:text-blue-base data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] data-[state=active]:shadow-current data-[state=active]:focus:relative outline-none cursor-default"
+              value="tab3"
+            >
+              Bank
+            </Tabs.Trigger> */}
             <Tabs.Trigger
               className="bg-white px-4 h-[45px] flex items-center text-base font-semibold select-none first:rounded-tl-md  last:rounded-tr-md data-[state=active]:text-blue-base data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] data-[state=active]:shadow-current data-[state=active]:focus:relative outline-none cursor-default"
               value="tab4"
@@ -54,6 +62,7 @@ const Settings = () => {
         </Tabs.Root>
       </div>
     </div>
+    </>
   );
 };
 

@@ -1,7 +1,7 @@
 import React from "react";
 import * as AlertDialog from "@radix-ui/react-alert-dialog";
 import Image from "next/image";
-import Ask from "../../assets/Vector.png"
+import Ask from "@/public/assets/ask.png"
 
 const AlertButton = () => {
   return (
@@ -9,7 +9,7 @@ const AlertButton = () => {
       <AlertDialog.Trigger asChild>
         <button
           type="submit"
-          className="border-r-amber-400 bg-danger rounded w-[147px] h-[40px] text-white"
+          className="border-r-amber-400 bg-error rounded w-[147px] h-[40px] text-white"
         >
           Delete Account
         </button>
@@ -30,7 +30,7 @@ const AlertButton = () => {
             <AlertDialog.Cancel asChild>
             <button
             type="submit"
-            className="border-none bg-light-green-2 font-medium text-base rounded w-[132px] h-[40px] text-light-green-9"
+            className="border-none bg-blue-10 font-medium text-base rounded w-[132px] h-[40px] text-blue-base"
           >
             Cancel
           </button>
@@ -38,7 +38,7 @@ const AlertButton = () => {
             <AlertDialog.Action asChild>
               <button
                 type="submit"
-                className="border-none bg-light-blue font-medium text-base rounded w-[132px] h-[40px] text-white"
+                className="border-none bg-blue-base font-medium text-base rounded w-[132px] h-[40px] text-white"
               >
                 Yes, delete
               </button>
