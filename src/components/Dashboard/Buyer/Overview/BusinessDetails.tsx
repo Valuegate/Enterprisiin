@@ -240,10 +240,6 @@ const AttachmentContent = () => {
   );
 };
 
-interface iImageData {
-  image: StaticImageData | string;
-}
-
 const GalleryContent = () => {
   const images: StaticImageData[] = [Ga1, Ga2, Ga3, Ga4, Ga5];
   return (

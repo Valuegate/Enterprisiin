@@ -6,7 +6,7 @@ import Chart1 from "@/public/assets/Chart 1.png";
 import Chart2 from "@/public/assets/Chart 2.png";
 import Chart3 from "@/public/assets/Chart 3.png";
 
-import { useState, useEffect, FC, MouseEventHandler } from "react";
+import { useState, useEffect } from "react";
 import DropdownButton from "../../../DropdownButton/DropdownButton";
 import { iBusinessData, ACCEPTED, REJECTED, PROPOSED } from "./BusinessData";
 

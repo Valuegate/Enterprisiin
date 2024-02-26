@@ -3,7 +3,7 @@ import Image from "next/image";
 import { FC } from "react";
 import { LocationIcon } from "@/public/icons";
 import { FaHeart } from "react-icons/fa6";
-
+import { GrLocation } from "react-icons/gr";
 import { iBusinessCardData, ACCEPTED, PROPOSED } from "./BusinessData";
 
 const BusinessCard: FC<iBusinessCardData> = ({ business, onClick }) => {
@@ -69,8 +69,8 @@ const BusinessCard: FC<iBusinessCardData> = ({ business, onClick }) => {
               >
                 <div className="flex items-center gap-1 md:flex-col w-fit md:w-full md:items-start">
                   <div className="flex items-center gap-1">
-                    <div className="bg-contrast-20 rounded-full p-[6px] w-8 h-8 md:w-6 md:h-6 md:p-[2px]">
-                      <LocationIcon />
+                    <div className="bg-contrast-20 rounded-full p-[5px] md:p-[3px]">
+                      <GrLocation stroke="#474747" size={"20px"} />
                     </div>
                     <div className="font-bold text-contrast-70 med-3 md:text-[12px] md:leading-[16px]">
                       {business.location}
@@ -78,8 +78,8 @@ const BusinessCard: FC<iBusinessCardData> = ({ business, onClick }) => {
                   </div>
                   <div className="custom-separator md:hidden mx-1" />
                   <div className="flex items-center gap-1">
-                    <div className="bg-contrast-20 rounded-full p-[6px] w-8 h-8 md:w-6 md:h-6 md:p-[2px]">
-                      <LocationIcon />
+                    <div className="bg-contrast-20 rounded-full p-[5px] md:p-[3px]">
+                      <GrLocation stroke="#474747" size={"20px"} />
                     </div>
                     <div className="font-bold text-contrast-70 med-3 md:text-[12px] md:leading-[16px]">
                       {business.interest}
@@ -87,8 +87,8 @@ const BusinessCard: FC<iBusinessCardData> = ({ business, onClick }) => {
                   </div>
                   <div className="custom-separator md:hidden mx-1" />
                   <div className="flex items-center gap-1">
-                    <div className="bg-contrast-20 rounded-full p-[6px] w-8 h-8 md:w-6 md:h-6 md:p-[2px]">
-                      <LocationIcon />
+                    <div className="bg-contrast-20 rounded-full p-[5px] md:p-[3px]">
+                      <GrLocation stroke="#474747" size={"20px"} />
                     </div>
                     <div className="font-bold text-contrast-70 med-3 md:text-[12px] md:leading-[16px]">
                       {business.businessStatus}

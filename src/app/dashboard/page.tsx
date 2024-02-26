@@ -32,6 +32,7 @@ import { motion } from "framer-motion";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
 import Store from "@/public/components/Dashboard/Seller/Store";
+import Marketplace from "@/public/components/Dashboard/Buyer/Marketplace/Marketplace";
 
 function convertDate(date: string | Date) {
   let dateObject = new Date(date);
@@ -90,7 +91,7 @@ const DashboardLayout = () => {
   const [isSeller, setSeller] = useState<boolean>(false);
   const [children, setChildren] = useState<ReactNode[]>([]);
   const [menus, setMenus] = useState<iMenuItemContent[]>([]);
-  const [index, setIndex] = useState<number>(0);
+  const [index, setIndex] = useState<number>(1);
   const [open, setOpen] = useState(true);
 
   const mobileLinks: iMobileDrawerLink[] = [
@@ -138,7 +139,7 @@ const DashboardLayout = () => {
     } else {
       setChildren([
         <BuyerOverview key={"buyer-overview"} />,
-        <Store key={"store"} />,
+        <Marketplace key={"market-place"} />,
       ]);
       setMenus([
         { name: "Overview", icon: OverviewIcon },
