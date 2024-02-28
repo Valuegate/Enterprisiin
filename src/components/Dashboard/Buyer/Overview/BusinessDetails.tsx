@@ -22,26 +22,26 @@ const BusinessDetails = () => {
           onClick={() => {
             setActiveTab(0);
           }}
-          className={`med-3 h-[64px] md:text-[14px] md:leading-[24px] md:w-[150px] items-center flex cursor-pointer ${
+          className={`med-3 h-[64px] md:text-[14px] md:leading-[24px] items-center flex cursor-pointer ${
             activeTab === 0
               ? "text-blue-base border-b-[1px] border-blue-base"
               : "text-contrast-30"
           }`}
         >
-          <p className="pl-4 md:w-[150px]">Business Overview</p>
+          <p className="pl-4 pr-2 md:w-[160px]">Business Overview</p>
         </div>
         <div className="md:w-[90px]">
           <p
             onClick={() => {
               setActiveTab(1);
             }}
-            className={`med-3 h-[64px] md:w-[90px] md:text-[14px] md:leading-[24px] items-center flex cursor-pointer ${
+            className={`med-3 h-[64px] md:text-[14px] md:w-[100px] md:leading-[24px] items-center flex cursor-pointer ${
               activeTab === 1
                 ? "text-blue-base border-b-[1px] border-blue-base"
                 : "text-contrast-30"
             }`}
           >
-            Attachments
+            <p className="px-2">Attachments</p>
           </p>
         </div>
         <div className="md:w-[120px]">
@@ -49,16 +49,16 @@ const BusinessDetails = () => {
             onClick={() => {
               setActiveTab(2);
             }}
-            className={`med-3 h-[64px] md:w-[120px] md:text-[14px] md:leading-[24px] items-center flex cursor-pointer ${
+            className={`med-3 h-[64px] md:w-[130px] md:text-[14px] md:leading-[24px] items-center flex cursor-pointer ${
               activeTab === 2
                 ? "text-blue-base border-b-[1px] border-blue-base"
                 : "text-contrast-30"
             }`}
           >
-            Business Gallery
+            <p className="px-2">Business Gallery</p>
           </p>
         </div>
-        <div className="md:w-[60px] md:block hidden mr-6">
+        <div className="md:w-[60px] md:block hidden">
           <p
             onClick={() => {
               setActiveTab(3);
@@ -69,20 +69,15 @@ const BusinessDetails = () => {
                 : "text-contrast-30"
             }`}
           >
-            Profile
+            <p className="pl-2 pr-4">Profile</p>
           </p>
         </div>
       </div>
       <div className="mt-7 px-4 w-full">
-        {activeTab === 0 ? (
-          <OverviewContent />
-        ) : activeTab === 1 ? (
-          <AttachmentContent />
-        ) : activeTab === 2 ? (
-          <GalleryContent />
-        ) : (
-          <ProfileCard />
-        )}
+        {activeTab === 0 && <OverviewContent />}
+        {activeTab === 1 && <AttachmentContent />}
+        {activeTab === 2 && <GalleryContent />}
+        {activeTab === 3 && <ProfileCard />}
       </div>
     </div>
   );
