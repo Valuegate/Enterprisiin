@@ -32,11 +32,11 @@ import { motion } from "framer-motion";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
 import Store from "@/public/components/Dashboard/Seller/Store";
-import Settings from "@/public/components/Dashboard/Seller/Settings";
+import Settings from "@/public/components/Dashboard/Settings";
 import Messages from "@/public/components/Dashboard/Seller/Messages";
 import Wallet from "@/public/components/Dashboard/Seller/Wallet";
 import Consult from "@/public/components/Dashboard/Seller/Consult";
-import HelpAndSupport from "@/public/components/Dashboard/Seller/HelpAndSupport";
+import HelpAndSupport from "@/public/components/Dashboard/HelpAndSupport";
 import Marketplace from "@/public/components/Dashboard/Buyer/Marketplace/Marketplace";
 
 function convertDate(date: string | Date) {
