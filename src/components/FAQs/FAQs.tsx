@@ -27,6 +27,7 @@ const FAQs: FC<iFAQs> = ({ heading, subHeading, details }) => {
           {details.map((detail, i) => {
             return (
               <Accordion.Item
+                key={i}
                 value={"item" + (i + 1)}
                 className="custom-accordion-item"
               >
