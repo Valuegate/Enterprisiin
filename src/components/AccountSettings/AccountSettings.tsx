@@ -8,144 +8,140 @@ import AlertButtton from "@/public/components/AlertButton/AlertButton";
 
 const AccountSettings = () => {
   return (
-  <>
-    <div className="pl-4">
-      <h2 className="text-xl font-semibold text-black pb-4">
-        Profile Settings
-      </h2>
-      <p className="text-base font-medium text-light-black-5 pb-6">
-        Update your information and manage your account settings.
-      </p>
-      <div className="mb-4 ml-4">
-        <Image
-          className="cursor-pointer"
-          src={Upload}
-          alt={""}
-          width={120}
-          height={120}
-        />
-      </div>
-      <div className="">
-        <Button
-          type="button"
-          className="border-r-amber-400 rounded px-3 py-2 flex justify-center items-center gap-2 font-semibold text-white"
-          // disabled={true}
-          colorType="primary"
-          // loading={load}
-          //   handleClick={() => setLoad(!load)}
-        >
-          <span>
-            <UploadIcon />
-          </span>
-          Upload Photo
-        </Button>
-      </div>
+    <>
+      <div className="px-4">
+        <h2 className="text-[20px] md:text-[16px] leading-[36px] md:leading-[24px] font-bold text-contrast-100">
+          Profile Settings
+        </h2>
+        <p className="med-3 md:text-[14px] md:leading-[24px] text-contrast-base mb-5 mt-2">
+          Update your information and manage your account settings.
+        </p>
+        <div className="mb-4 flex flex-col items-center md:justify-center w-[150px] md:w-full">
+          <Image
+            className="cursor-pointer"
+            src={Upload}
+            alt={""}
+            width={120}
+            height={120}
+          />
+          <Button
+            type="button"
+            className="rounded mt-2 px-3 py-2 flex justify-center items-center gap-2 font-medium text-white"
+            height="h-10"
+            colorType="primary"
+          >
+            <span>
+              <UploadIcon />
+            </span>
+            Upload Photo
+          </Button>
+        </div>
 
-      <div className="pt-4 w-[400px]">
-        <Input
-          label={"Full Name"}
-          placeholder={"Enter your full name"}
-          htmlFor={"full-name"}
-          id={"full-name"}
-          name={"full-name"}
-          type={"text"}
-        />
-        {/* <Input label={"Company Name"} placeholder={"Enter your company name"} htmlFor={"company-name"} id={"company-name"} name={"company-name"} type={"text"} /> */}
-        <div className="mb-4">
+        <div className="mt-7 w-[400px] gap-4 md:w-full">
+          <Input
+            label={"Full Name"}
+            placeholder={"Enter your full name"}
+            htmlFor={"full-name"}
+            id={"full-name"}
+            name={"full-name"}
+            type={"text"}
+          />
           <SocialInput
             label={"Company Name"}
             placeholderValue={"Enter your company name"}
             id={"name"}
           />
-        </div>
-        <Input
-          label={"Official Email"}
-          placeholder={"Enter your official email"}
-          htmlFor={"email"}
-          id={"email"}
-          name={"email"}
-          type={"email"}
-        />
-        <div className="mb-4">
+          <div className="h-4" />
+          <Input
+            label={"Official Email"}
+            placeholder={"Enter your official email"}
+            htmlFor={"email"}
+            id={"email"}
+            name={"email"}
+            type={"email"}
+          />
           <SocialInput
             label={"Website (Optional)"}
             placeholderValue={"https://"}
             id={"website"}
           />
-        </div>
-        <Input
-          label={"Phone Number"}
-          placeholder={"+234"}
-          htmlFor={"phone"}
-          id={"phone"}
-          name={"phone"}
-          type={"tel"}
-        />
+          <div className="h-4" />
+          <Input
+            label={"Phone Number"}
+            placeholder={"+234"}
+            htmlFor={"phone"}
+            id={"phone"}
+            name={"phone"}
+            type={"tel"}
+          />
 
-<Input
-          label={"BVN"}
-          placeholder={"0000 0000 0000"}
-          htmlFor={"number"}
-          id={"number"}
-          name={"number"}
-          type={"number"}
-        />
+          <Input
+            label={"BVN"}
+            placeholder={"0000 0000 0000"}
+            htmlFor={"number"}
+            id={"number"}
+            name={"number"}
+            type={"number"}
+          />
+        </div>
+        <button
+          type="submit"
+          className="mt-8 bg-blue-base rounded w-[138px] h-[40px] text-white"
+        >
+          Save Changes
+        </button>
+      </div>
+
+      <div className="my-8 w-full h-[1px] bg-contrast-10" />
+
+      <div className="px-4">
+        <h2 className="text-[20px] md:text-[16px] leading-[36px] md:leading-[24px] font-bold text-contrast-100">
+          Social Media
+        </h2>
+        <p className="med-3 md:text-[14px] md:leading-[24px] text-contrast-base mb-5 mt-2">
+          Upload your social media links.
+        </p>
+
+        <div className="w-[400px] flex flex-col md:w-full ">
+          <SocialInput
+            label={"Linkedin"}
+            placeholderValue={"Https://"}
+            id={"linkedin"}
+          />
+          <div className="h-4" />
+          <SocialInput
+            label={"Twitter"}
+            placeholderValue={"Https://"}
+            id={"twitter"}
+          />
+          <div className="h-4" />
+          <SocialInput
+            label={"Facebook"}
+            placeholderValue={"Https://"}
+            id={"facebook"}
+          />
+        </div>
+        <div className="pt-6 pb-4">
+          <button
+            type="submit"
+            className="border-r-amber-400 bg-blue-base rounded w-[138px] h-[40px] text-white"
+          >
+            Save Changes
+          </button>
+        </div>
+      </div>
+
+      <div className="my-8 w-full h-[1px] bg-contrast-10" />
+
+      <div className="px-4">
+        <h2 className="text-[20px] md:text-[16px] leading-[36px] md:leading-[24px] font-bold text-contrast-100">
+          Delete Account
+        </h2>
+        <p className="med-3 md:text-[14px] md:leading-[24px] text-contrast-base mb-5 mt-2">
+          Deactivate and delete your account.
+        </p>
 
         <div className="pt-2 pb-4">
-          <button
-            type="submit"
-            className="border-r-amber-400 bg-blue-base rounded w-[138px] h-[40px] text-white"
-          >
-            Save Changes
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div className="py-6">
-    <hr className="border-none bg-light-black-1 h-[1px] w-full" />
-    </div>
-
-    <div className="pl-4">
-      <h2 className="text-xl font-semibold text-black pb-4">
-      Social Media
-      </h2>
-      <p className="text-base font-medium text-light-black-5 pb-6">
-      Upload your social media links.
-      </p>
-      <div className="w-[400px]">
-        <div className="mb-4">
-          <SocialInput label={"Linkedin"} placeholderValue={"Https://"} id={"linkedin"} />
-        </div>
-        <div className="mb-4">
-          <SocialInput label={"Twitter"} placeholderValue={"Https://"} id={"twitter"} />
-        </div>
-        <div className="">
-          <SocialInput label={"Facebook"} placeholderValue={"Https://"} id={"facebook"} />
-        </div>
-      </div>
-      <div className="pt-6 pb-4">
-          <button
-            type="submit"
-            className="border-r-amber-400 bg-blue-base rounded w-[138px] h-[40px] text-white"
-          >
-            Save Changes
-          </button>
-        </div>
-      </div>
-
-      <div className="py-6">
-    <hr className="border-none bg-light-black-1 h-[1px] w-full" />
-    </div>
-
-    <div className="pl-4">
-      <h2 className="text-xl font-semibold text-black pb-4">
-      Delete Account
-      </h2>
-      <p className="text-base font-medium text-light-black-5 pb-6">
-      Deactivate and delete your account.
-      </p>
-      <div className="pt-2 pb-10">
           <AlertButtton />
         </div>
       </div>

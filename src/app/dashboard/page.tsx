@@ -93,10 +93,10 @@ interface iMobileDrawerLink {
 }
 
 const DashboardLayout = () => {
-  const [isSeller, setSeller] = useState<boolean>(true);
+  const [isSeller, setSeller] = useState<boolean>(false);
   const [children, setChildren] = useState<ReactNode[]>([]);
   const [menus, setMenus] = useState<iMenuItemContent[]>([]);
-  const [index, setIndex] = useState<number>(1);
+  const [index, setIndex] = useState<number>(4);
   const [open, setOpen] = useState(true);
 
   const mobileLinks: iMobileDrawerLink[] = [
@@ -150,6 +150,10 @@ const DashboardLayout = () => {
       setChildren([
         <BuyerOverview key={"buyer-overview"} />,
         <Marketplace key={"market-place"} />,
+        <Messages key={"Messages"} />,
+        <Wallet key={"Wallet"} />,
+        <Settings key={"Settings"} />,
+        <HelpAndSupport key={"Help & Support"} />,
       ]);
       setMenus([
         { name: "Overview", icon: OverviewIcon },
