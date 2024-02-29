@@ -31,7 +31,7 @@ import { motion } from "framer-motion";
 
 import { FaBarsStaggered } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
-import Store from "@/public/components/Dashboard/Seller/Store";
+import Store from "@/public/components/Dashboard/Seller/Store/StorePage";
 import Settings from "@/public/components/Dashboard/Settings";
 import Messages from "@/public/components/Dashboard/Seller/Messages";
 import Wallet from "@/public/components/Dashboard/Seller/Wallet";
@@ -93,7 +93,7 @@ interface iMobileDrawerLink {
 }
 
 const DashboardLayout = () => {
-  const [isSeller, setSeller] = useState<boolean>(false);
+  const [isSeller, setSeller] = useState<boolean>(true);
   const [children, setChildren] = useState<ReactNode[]>([]);
   const [menus, setMenus] = useState<iMenuItemContent[]>([]);
   const [index, setIndex] = useState<number>(4);

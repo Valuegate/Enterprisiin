@@ -75,6 +75,8 @@ module.exports = {
       "role-green-bg": "#CEEFD9",
       "role-green": "#0A9138",
       "input-color": "#F4F4F4",
+      "light-dark": "#E9EDEB",
+      "light-dark-1": "#2C4C3B"
     },
     extend: {
       // spacing: {
