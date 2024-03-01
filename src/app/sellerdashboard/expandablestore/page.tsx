@@ -1,5 +1,4 @@
 "use client";
-import StoreCard from "@/public/components/StoreCard/StoreCard";
 import { ArrowLeftIcon } from "@/public/icons/arrow-left-icon";
 import { TbPencil } from "react-icons/tb";
 import * as Tabs from "@radix-ui/react-tabs";
@@ -29,7 +28,7 @@ const ExpandableStore = () => {
         </div>
 
         <div className="flex justify-between">
-          <StoreCard
+          {/* <StoreCard
             heading={"Full Sale"}
             amount={"₦400,000"}
             date={"Lagos, Nigeria."}
@@ -50,11 +49,11 @@ const ExpandableStore = () => {
             amount={"₦400,000"}
             date={"15 - 20 employees "}
             info={"This shows your company's total years of operation"}
-          />
+          /> */}
         </div>
 
         <div className="flex justify-between pt-4">
-          <StoreCard
+          {/* <StoreCard
             heading={"Requests"}
             amount={"20"}
             date={""}
@@ -75,7 +74,7 @@ const ExpandableStore = () => {
             amount={"100"}
             date={""}
             info={"This shows your company's total years of operation"}
-          />
+          /> */}
         </div>
 
         <div className="flex justify-between pt-4 pb-16">

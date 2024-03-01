@@ -31,7 +31,7 @@ import { motion } from "framer-motion";
 
 import { FaBarsStaggered } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
-import Store from "@/public/components/Dashboard/Seller/Store";
+import Store from "@/public/components/Dashboard/Seller/Store/StorePage";
 import Settings from "@/public/components/Dashboard/Settings";
 import Messages from "@/public/components/Dashboard/Message/Messages";
 import Wallet from "@/public/components/Dashboard/Wallet";
