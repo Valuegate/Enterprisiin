@@ -1,5 +1,4 @@
 "use client";
-import StoreCard from "@/public/components/StoreCard/StoreCard";
 import { ArrowLeftIcon } from "@/public/icons/arrow-left-icon";
 import * as Tabs from "@radix-ui/react-tabs";
 import BusinessOverview from "@/public/components/BusinessOverview/BusinessOverview";
@@ -101,7 +100,7 @@ const ExpandableMarket = () => {
         </div>
 
         <div className="flex justify-between">
-          <StoreCard
+          {/* <StoreCard
             heading={"Full Sale"}
             amount={"₦400,000"}
             date={"Lagos, Nigeria."}
@@ -122,7 +121,7 @@ const ExpandableMarket = () => {
             amount={"₦400,000"}
             date={"15 - 20 employees "}
             info={"This shows your company's total years of operation"}
-          />
+          /> */}
         </div>
 
         <div className="flex justify-between pt-4 pb-16">
