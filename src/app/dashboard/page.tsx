@@ -35,7 +35,7 @@ import Store from "@/public/components/Dashboard/Seller/Store/StorePage";
 import Settings from "@/public/components/Dashboard/Settings";
 import Messages from "@/public/components/Dashboard/Seller/Messages";
 import Wallet from "@/public/components/Dashboard/Seller/Wallet";
-import Consult from "@/public/components/Dashboard/Seller/Consult";
+import Consult from "@/public/components/Dashboard/Seller/Consult/Consult";
 import HelpAndSupport from "@/public/components/Dashboard/HelpAndSupport";
 import Marketplace from "@/public/components/Dashboard/Buyer/Marketplace/Marketplace";
 
@@ -168,7 +168,7 @@ const DashboardLayout = () => {
   }, []);
 
   return (
-    <div className="flex bg-background h-[100vh] md:h-full">
+    <div className="flex bg-background h-[100vh] md:h-full overflow-hidden">
       <div className="hidden md:block">
         <Drawer.Root
           opened={openedDrawer}
