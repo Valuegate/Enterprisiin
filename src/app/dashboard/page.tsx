@@ -93,7 +93,7 @@ interface iMobileDrawerLink {
 }
 
 const DashboardLayout = () => {
-  const [isSeller, setSeller] = useState<boolean>(false);
+  const [isSeller, setSeller] = useState<boolean>(true);
   const [children, setChildren] = useState<ReactNode[]>([]);
   const [menus, setMenus] = useState<iMenuItemContent[]>([]);
   const [index, setIndex] = useState<number>(2);
@@ -168,7 +168,7 @@ const DashboardLayout = () => {
   }, []);
 
   return (
-    <div className="flex bg-background h-[100vh] md:h-full">
+    <div className="flex bg-background h-[100vh] md:h-full overflow-hidden">
       <div className="hidden md:block">
         <Drawer.Root
           opened={openedDrawer}

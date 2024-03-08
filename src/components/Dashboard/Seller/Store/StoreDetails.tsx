@@ -12,7 +12,7 @@ import Ga3 from "@/public/assets/Gallery 3.jpg";
 import Ga4 from "@/public/assets/Gallery 4.jpg";
 import Ga5 from "@/public/assets/Gallery 5.jpg";
 
-const BusinessDetails = () => {
+const StoreDetails = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
 
   return (
@@ -250,4 +250,4 @@ const GalleryContent = () => {
     </div>
   );
 };
-export default BusinessDetails;
+export default StoreDetails;

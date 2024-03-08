@@ -3,9 +3,10 @@ import { ArrowLeftIcon } from "@/public/icons/arrow-left-icon";
 import { TbPencil } from "react-icons/tb";
 import * as Tabs from "@radix-ui/react-tabs";
 import BusinessOverview from "@/public/components/BusinessOverview/BusinessOverview";
-import RequestCardIcon from "@/public/components/RequestCardIcon/RequestCardIcon";
+// import RequestCardIcon from "@/public/components/RequestCardIcon/RequestCardIcon";
 import Attachments from "@/public/components/Attachments/Attachments";
 import BusinessGallery from "@/public/components/BusinessGallery/BusinessGallery";
+import RequestCardIcon from "@/public/components/RequestCardIcon/RequestCardIcon";
 
 const ExpandableStore = () => {
   return (
