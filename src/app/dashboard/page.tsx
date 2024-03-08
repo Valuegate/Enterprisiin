@@ -33,9 +33,9 @@ import { FaBarsStaggered } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
 import Store from "@/public/components/Dashboard/Seller/Store/StorePage";
 import Settings from "@/public/components/Dashboard/Settings";
-import Messages from "@/public/components/Dashboard/Seller/Messages";
-import Wallet from "@/public/components/Dashboard/Seller/Wallet";
-import Consult from "@/public/components/Dashboard/Seller/Consult/Consult";
+import Messages from "@/public/components/Dashboard/Message/Messages";
+import Wallet from "@/public/components/Dashboard/Wallet";
+import Consult from "@/public/components/Dashboard/Seller/Consult";
 import HelpAndSupport from "@/public/components/Dashboard/HelpAndSupport";
 import Marketplace from "@/public/components/Dashboard/Buyer/Marketplace/Marketplace";
 
@@ -96,7 +96,7 @@ const DashboardLayout = () => {
   const [isSeller, setSeller] = useState<boolean>(true);
   const [children, setChildren] = useState<ReactNode[]>([]);
   const [menus, setMenus] = useState<iMenuItemContent[]>([]);
-  const [index, setIndex] = useState<number>(4);
+  const [index, setIndex] = useState<number>(2);
   const [open, setOpen] = useState(true);
 
   const mobileLinks: iMobileDrawerLink[] = [
