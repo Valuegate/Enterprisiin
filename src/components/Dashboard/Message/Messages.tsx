@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, FC } from "react";
 import Person from "@/public/assets/Ellipse 4 (1).png";
-import { iConversation } from "./Data";
+import { iConversation, iMessagesProps } from "./Data";
 
 import ChatList from "./ChatList";
 import Inbox from "./Inbox";
 
-const Messages = () => {
+const Messages:FC<iMessagesProps> = ({seller}) => {
   const conversations: iConversation[] = Array(20).fill({
     image: Person,
     sellerName: "Ochogwu Matthew",
@@ -23,6 +23,8 @@ const Messages = () => {
     <div className="px-6 pt-4 h-[90vh] md:h-auto pb-6 flex items-end">
       <ChatList
         conversations={conversations}
+        currentMessage={currentMessage}
+        seller={seller}
         setCurrentMessage={(i) => setCurrentMessage(i)}
       />
       <div className="w-full bg-white h-[80vh] rounded shadow-sm border-[1.5px] border-contrast-10 flex flex-col">

@@ -35,7 +35,7 @@ import Store from "@/public/components/Dashboard/Seller/Store/StorePage";
 import Settings from "@/public/components/Dashboard/Settings";
 import Messages from "@/public/components/Dashboard/Message/Messages";
 import Wallet from "@/public/components/Dashboard/Wallet";
-import Consult from "@/public/components/Dashboard/Seller/Consult";
+import Consult from "@/public/components/Dashboard/Seller/Consult/Consult";
 import HelpAndSupport from "@/public/components/Dashboard/HelpAndSupport";
 import Marketplace from "@/public/components/Dashboard/Buyer/Marketplace/Marketplace";
 
@@ -130,7 +130,7 @@ const DashboardLayout = () => {
       setChildren([
         <SellerOverview key={"seller-overview"} />,
         <Store key={"store"} />,
-        <Messages key={"Messages"} />,
+        <Messages key={"Messages"} seller={true} />,
         <Wallet key={"Wallet"} />,
         <Consult key={"Consult"} />,
         <Settings key={"Settings"} />,
@@ -150,7 +150,7 @@ const DashboardLayout = () => {
       setChildren([
         <BuyerOverview key={"buyer-overview"} />,
         <Marketplace key={"market-place"} />,
-        <Messages key={"Messages"} />,
+        <Messages key={"Messages"} seller={false}/>,
         <Wallet key={"Wallet"} />,
         <Settings key={"Settings"} />,
         <HelpAndSupport key={"Help & Support"} />,
