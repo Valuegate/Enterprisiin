@@ -38,6 +38,7 @@ import Wallet from "@/public/components/Dashboard/Wallet/Wallet";
 import Consult from "@/public/components/Dashboard/Seller/Consult/Consult";
 import HelpAndSupport from "@/public/components/Dashboard/HelpAndSupport";
 import Marketplace from "@/public/components/Dashboard/Buyer/Marketplace/Marketplace";
+import SellerMessages from '@/public/components/Dashboard/Seller/SellerMessage/SellerMessages';
 
 function convertDate(date: string | Date) {
   let dateObject = new Date(date);
@@ -130,7 +131,11 @@ const DashboardLayout = () => {
       setChildren([
         <SellerOverview key={"seller-overview"} />,
         <Store key={"store"} />,
+<<<<<<< HEAD
         <Messages key={"Messages"} seller={true} />,
+=======
+        <SellerMessages key={"SellerMessages"} />,
+>>>>>>> 454431ebebc9218e1cd70e42344285c1e456bedb
         <Wallet key={"Wallet"} />,
         <Consult key={"Consult"} />,
         <Settings key={"Settings"} />,
