@@ -27,7 +27,7 @@ const Messages:FC<iMessagesProps> = ({seller}) => {
         seller={seller}
         setCurrentMessage={(i) => setCurrentMessage(i)}
       />
-      <div className="w-full bg-white h-[80vh] rounded shadow-sm border-[1.5px] border-contrast-10 flex flex-col">
+      <div className="w-full bg-white h-[80vh] rounded shadow-sm border-[1.5px] border-contrast-10 flex flex-col md:hidden">
         {currentMessage !== -1 ? (
           <Inbox conversation={conversations[currentMessage]} />
         ) : (
