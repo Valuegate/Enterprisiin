@@ -9,7 +9,7 @@ const ChatList: FC<iConversationListData> = ({
 }) => {
   return (
     <div className="flex flex-col w-[390px] h-full">
-      <div className="h-[18.6vh]">
+      <div className="h-[24vh]">
         <h2 className="text-3xl md:text-[20px] md:leading-[30px] font-bold text-black md:mt-10 mt-2">
           Messages
         </h2>

@@ -94,7 +94,7 @@ interface iMobileDrawerLink {
 }
 
 const DashboardLayout = () => {
-  const [isSeller, setSeller] = useState<boolean>(true);
+  const [isSeller, setSeller] = useState<boolean>(false);
   const [children, setChildren] = useState<ReactNode[]>([]);
   const [menus, setMenus] = useState<iMenuItemContent[]>([]);
   const [index, setIndex] = useState<number>(2);
