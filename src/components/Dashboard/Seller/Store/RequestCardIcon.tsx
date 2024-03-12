@@ -1,12 +1,14 @@
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 import Link from "next/link";
 import { SuccessIcon, RejectIcon } from "@/public/icons";
 import { BiSolidMessageAltDetail } from "react-icons/bi";
 
+import Pic from "@/public/assets/Ellipse 1.png";
+
 interface Request {
   id: number;
   name: string;
-  avatar: string;
+  avatar: string | StaticImageData;
   message: string;
   time: string;
   showIcon: boolean;
@@ -17,7 +19,7 @@ const requests: Request[] = [
   {
     id: 1,
     name: "Adeniji Promise O.",
-    avatar: "/src/assets/Ellipse 1.png",
+    avatar: Pic,
     message: "Paggico is a growing car wash a...",
     time: "Today, 02:45 PM",
     showIcon: true,
@@ -26,7 +28,7 @@ const requests: Request[] = [
   {
     id: 2,
     name: "Adeniji Promise O.",
-    avatar: "/src/assets/Ellipse.png",
+    avatar: Pic,
     message: "Paggico is a growing car wash a...",
     time: "Today, 02:45 PM",
     showIcon: true,
@@ -35,7 +37,7 @@ const requests: Request[] = [
   {
     id: 3,
     name: "Adeniji Promise O.",
-    avatar: "/src/assets/Ellipse.png",
+    avatar: Pic,
     message: "Paggico is a growing car wash a...",
     time: "Today, 02:45 PM",
     showIcon: true,
@@ -44,16 +46,16 @@ const requests: Request[] = [
   {
     id: 4,
     name: "Adeniji Promise O.",
-    avatar: "/src/assets/Ellipse.png",
+    avatar: Pic,
     message: "Paggico is a growing car wash a...",
     time: "Today, 02:45 PM",
     showIcon: false,
     showDetailIcon: true,
   },
-  {
+  { 
     id: 5,
     name: "Adeniji Promise O.",
-    avatar: "/src/assets/Ellipse.png",
+    avatar: Pic,
     message: "Paggico is a growing car wash a...",
     time: "Today, 02:45 PM",
     showIcon: false,
@@ -64,7 +66,7 @@ const requests: Request[] = [
 const RequestCard = ({ name, avatar, message, time, showIcon, showDetailIcon }: Request) => (
   <div className="flex gap-3 pb-4">
     <div className="">
-      <Image src={avatar} alt={""} width={100} height={100} />
+      <Image src={avatar} alt={""} width={100} height={100} className="w-[60px] h-[52px]" />
     </div>
     <div className="w-full">
       <div className="flex justify-between items-center">

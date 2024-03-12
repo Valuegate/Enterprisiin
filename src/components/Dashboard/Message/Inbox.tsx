@@ -9,6 +9,8 @@ import PI from "@/public/assets/Ellipse 1.png";
 
 import { iInboxData, iMessage } from "./Data";
 
+import { IoIosArrowBack } from "react-icons/io";
+
 const currentUser = "currentUser",
   otherUser = "otherUser";
 
@@ -53,9 +55,12 @@ const Inbox: FC<iInboxData> = ({ conversation }) => {
   ];
 
   return (
-    <div className="w-full h-full flex-col flex">
-      <div className="w-full flex px-6 items-center justify-between h-[10vh] border-b-[1.5px] border-contrast-10 ">
-        <div className="flex gap-4">
+    <div className="w-full h-full md:h-auto flex-col flex md:flex-col md:pt-10">
+      <div className="w-full flex px-6 items-center justify-between h-[10vh] md:h-[80px] border-b-[1.5px] md:border-none border-contrast-10 md:bg-contrast-10 md:fixed md:top-[48px]">
+        <div className="flex gap-4 md:gap-2 items-center md:w-[55%]">
+        <div className="cursor-pointer md:block hidden">
+          <IoIosArrowBack fill="#141414" size={"26px"} />
+        </div>
           <div className="w-[48px] h-[48px] relative">
             <Image
               src={conversation.image}
@@ -69,22 +74,26 @@ const Inbox: FC<iInboxData> = ({ conversation }) => {
             />
           </div>
           <div className="flex flex-col">
-            <h2 className="bold-2 text-contrast-100">
+            <h2 className="bold-2 md:text-[14px] md:leading-[24px] text-contrast-100">
               {conversation.sellerName}
             </h2>
-            <p className="med-3 text-contrast-70">{conversation.time}</p>
+            <p className="med-3 md:text-[12px] md:leading-[20px] text-contrast-70">
+              {conversation.time}
+            </p>
           </div>
         </div>
 
-        <div className="flex gap-4 items-center">
-          <div className="text-blue-base med-3 px-3 py-2 rounded-full bg-blue-10">
+        <div className="flex gap-4 md:gap-2 items-center md:w-[40%]">
+          <div className="text-blue-base med-3 md:text-[14px] md:leading-[20px] px-3 py-2 rounded-full bg-blue-10">
             {" "}
             View Business{" "}
           </div>
           <MdOutlineMoreVert fill={"#000000"} size={"24px"} />
         </div>
+
+
       </div>
-      <div className="w-full flex flex-col h-[60vh] overflow-y-scroll scrollbar-custom gap-5 px-6 py-2">
+      <div className="w-full flex flex-col h-[60vh] md:h-auto overflow-y-scroll scrollbar-custom gap-5 px-6 py-2">
         {messages.map((message, i) => {
           return (
             <div
@@ -110,11 +119,11 @@ const Inbox: FC<iInboxData> = ({ conversation }) => {
                     message.senderID === otherUser
                       ? "bg-input text-contrast-base rounded-tl-none"
                       : "bg-blue-base text-white rounded-tr-none"
-                  } px-5 py-4 med-3 rounded-lg max-w-[500px]`}
+                  } px-5 py-4 med-3 md:text-[14px] rounded-lg max-w-[500px]`}
                 >
                   {message.content}
                 </div>
-                <div className="w-fit flex gap-2 text-[12px] leading-[24px] text-contrast-base font-normal">
+                <div className="w-fit flex gap-2 text-[12px] leading-[24px] md:leading-[20px] text-contrast-base font-normal">
                   <span>{message.date}</span>
                   &#8226;
                   <span>{message.time}</span>
@@ -131,7 +140,7 @@ const Inbox: FC<iInboxData> = ({ conversation }) => {
           );
         })}
       </div>
-      <div className="w-full flex px-6 items-center gap-10 h-[10vh] border-t-[1.5px] border-contrast-10 ">
+      <div className="w-full flex px-6 items-center gap-10 h-[10vh] border-t-[1.5px] border-contrast-10 md:fixed md:bottom-0 md:bg-background">
         <div className="flex gap-4 w-[100px]">
           <div className="h-[40px] w-[40px] bg-blue-base rounded-full flex items-center justify-center">
             <IoIosAddCircle fill="#FFFFFF" size={"28px"} />
