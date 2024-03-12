@@ -34,7 +34,7 @@ import { IoMdClose } from "react-icons/io";
 import Store from "@/public/components/Dashboard/Seller/Store/StorePage";
 import Settings from "@/public/components/Dashboard/Settings";
 import Messages from "@/public/components/Dashboard/Message/Messages";
-import Wallet from "@/public/components/Dashboard/Wallet";
+import Wallet from "@/public/components/Dashboard/Wallet/Wallet";
 import Consult from "@/public/components/Dashboard/Seller/Consult/Consult";
 import HelpAndSupport from "@/public/components/Dashboard/HelpAndSupport";
 import Marketplace from "@/public/components/Dashboard/Buyer/Marketplace/Marketplace";
@@ -97,7 +97,7 @@ const DashboardLayout = () => {
   const [isSeller, setSeller] = useState<boolean>(true);
   const [children, setChildren] = useState<ReactNode[]>([]);
   const [menus, setMenus] = useState<iMenuItemContent[]>([]);
-  const [index, setIndex] = useState<number>(2);
+  const [index, setIndex] = useState<number>(3);
   const [open, setOpen] = useState(true);
 
   const mobileLinks: iMobileDrawerLink[] = [
@@ -131,7 +131,11 @@ const DashboardLayout = () => {
       setChildren([
         <SellerOverview key={"seller-overview"} />,
         <Store key={"store"} />,
+<<<<<<< HEAD
+        <Messages key={"Messages"} seller={true} />,
+=======
         <SellerMessages key={"SellerMessages"} />,
+>>>>>>> 454431ebebc9218e1cd70e42344285c1e456bedb
         <Wallet key={"Wallet"} />,
         <Consult key={"Consult"} />,
         <Settings key={"Settings"} />,
@@ -151,7 +155,7 @@ const DashboardLayout = () => {
       setChildren([
         <BuyerOverview key={"buyer-overview"} />,
         <Marketplace key={"market-place"} />,
-        <Messages key={"Messages"} />,
+        <Messages key={"Messages"} seller={false}/>,
         <Wallet key={"Wallet"} />,
         <Settings key={"Settings"} />,
         <HelpAndSupport key={"Help & Support"} />,

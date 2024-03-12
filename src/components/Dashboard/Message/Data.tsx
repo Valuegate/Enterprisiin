@@ -26,4 +26,11 @@ export type iMessage = {
 export type iConversationListData = {
   conversations: iConversation[];
   setCurrentMessage: (val: number) => void;
+  currentMessage: number;
+  seller: boolean;
+}
+
+
+export type iMessagesProps = {
+  seller: boolean;
 }
