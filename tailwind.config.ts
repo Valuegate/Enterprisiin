@@ -53,6 +53,7 @@ module.exports = {
       "tertiary-80": "#807A6E",
       "tertiary-90": "#555149",
       "tertiary-100": "#33312C",
+      "contrast": "#FFFFFF88",
       "contrast-10": "#DADADA",
       "contrast-20": "#C2C2C2",
       "contrast-30": "#A3A3A3",

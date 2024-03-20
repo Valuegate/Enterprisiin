@@ -88,11 +88,11 @@ const Analysis = () => {
     <div
       className={`bg-white rounded border-contrast-10 border-[1.5px] w-full shadow-sm`}
     >
-      <div className="h-[80px] flex w-full items-center justify-between px-6 border-b-[1.5px] border-contrast-10">
+      <div className="h-[80px] md:h-[150px] flex md:flex-col w-full md:items-start items-center md:justify-center justify-between px-6 border-b-[1.5px] border-contrast-10">
         <h2 className="text-[24px] leading-[36px] font-bold text-contrast-100">
           Analysis
         </h2>
-        <div className="flex items-center gap-7">
+        <div className="flex md:flex-col items-center md:items-start md:gap-3 md:mt-2 gap-7 md:w-full">
           <div className="flex gap-3 items-center">
             <div className="bg-[#00A707] w-[12px] h-[12px] rounded-full" />
             <p className="text-contrast-base med-3">Top-ups</p>
@@ -103,8 +103,74 @@ const Analysis = () => {
             menus={[
               {
                 name: "January",
-                onClick: (e) => {
+                onClick: () => {
                   setCurrentMonth("January");
+                },
+              },
+              {
+                name: "February",
+                onClick: () => {
+                  setCurrentMonth("February");
+                },
+              },
+              {
+                name: "March",
+                onClick: () => {
+                  setCurrentMonth("March");
+                },
+              },
+              {
+                name: "April",
+                onClick: () => {
+                  setCurrentMonth("April");
+                },
+              },
+              {
+                name: "May",
+                onClick: () => {
+                  setCurrentMonth("May");
+                },
+              },
+              {
+                name: "June",
+                onClick: () => {
+                  setCurrentMonth("June");
+                },
+              },
+              {
+                name: "July",
+                onClick: () => {
+                  setCurrentMonth("July");
+                },
+              },
+              {
+                name: "August",
+                onClick: () => {
+                  setCurrentMonth("August");
+                },
+              },
+              {
+                name: "September",
+                onClick: () => {
+                  setCurrentMonth("September");
+                },
+              },
+              {
+                name: "October",
+                onClick: () => {
+                  setCurrentMonth("October");
+                },
+              },
+              {
+                name: "November",
+                onClick: () => {
+                  setCurrentMonth("November");
+                },
+              },
+              {
+                name: "December",
+                onClick: () => {
+                  setCurrentMonth("December");
                 },
               },
             ]}

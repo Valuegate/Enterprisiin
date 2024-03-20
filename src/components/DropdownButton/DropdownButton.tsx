@@ -10,7 +10,7 @@ interface iDropdownButton {
 
 interface iMenuItem {
   name: string;
-  onClick: MouseEventHandler;
+  onClick: () => void;
 }
 
 const DropdownButton: FC<iDropdownButton> = ({ value, menus, title }) => {
@@ -34,9 +34,9 @@ const DropdownButton: FC<iDropdownButton> = ({ value, menus, title }) => {
           {menus.map((menu, i) => {
             return (
               <Menu.Item
-                className="cursor-pointer px-4 py-2 text-base leading-8 text-light-black-5 hover:bg-blue-base hover:text-white hover:rounded"
+                className="cursor-pointer px-4 py-2 text-base leading-8 text-contrast-base hover:bg-blue-base hover:text-white hover:rounded"
                 onClick={(e) => {
-                  menu.onClick(e);
+                  menu.onClick();
                 }}
                 key={i}
               >

@@ -14,7 +14,7 @@ import {
 } from "@/public/icons";
 import { TbWindowMaximize } from "react-icons/tb";
 import Link from "next/link";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React, { MouseEventHandler } from "react";
 import { ReactNode, useState, useEffect } from "react";
 import ProfileDropdown from "@/public/components/ProfileDropdown/ProfileDropdown";
@@ -26,7 +26,6 @@ import PI from "../../assets/Ellipse 1.png";
 import { useDisclosure } from "@mantine/hooks";
 import { Drawer } from "@mantine/core";
 
-// import { motion } from "framer-motion";
 import { motion } from "framer-motion";
 
 import { FaBarsStaggered } from "react-icons/fa6";
@@ -39,6 +38,30 @@ import Consult from "@/public/components/Dashboard/Seller/Consult/Consult";
 import HelpAndSupport from "@/public/components/Dashboard/HelpAndSupport";
 import Marketplace from "@/public/components/Dashboard/Buyer/Marketplace/Marketplace";
 import SellerMessages from '@/public/components/Dashboard/Seller/SellerMessage/SellerMessages';
+import { useDashboardIndex } from "@/public/stores/dashboardStore";
+import { useGlobalStore } from "@/public/stores/globalStore";
+
+
+import DashboardActive from "@/public/assets/icons/Dashboard Active.svg";
+import DashboardInactive from "@/public/assets/icons/Dashboard Inactive.svg";
+import ShopActive from "@/public/assets/icons/Shop Active.svg";
+import ShopInactive from "@/public/assets/icons/Shop Inactive.svg";
+import MessagesActive from "@/public/assets/icons/Messages Active.svg";
+import MessagesInactive from "@/public/assets/icons/Messages Inactive.svg";
+import WalletActive from "@/public/assets/icons/Wallet Active.svg";
+import WalletInactive from "@/public/assets/icons/Wallet Inactive.svg";
+import SettingsActive from "@/public/assets/icons/Settings Active.svg";
+import SettingsInactive from "@/public/assets/icons/Settings Inactive.svg";
+import HelpActive from "@/public/assets/icons/Help Active.svg";
+import HelpInactive from "@/public/assets/icons/Help Inactive.svg";
+import ConsultActive from "@/public/assets/icons/Consult Active.svg";
+import ConsultInactive from "@/public/assets/icons/Consult Inactive.svg";
+import Logout from "@/public/assets/icons/Logout Inactive.svg";
+
+
+
+
+
 
 function convertDate(date: string | Date) {
   let dateObject = new Date(date);
@@ -84,7 +107,8 @@ function getOrdinalSuffix(day: number) {
 
 interface iMenuItemContent {
   name: string;
-  icon: any;
+  active: StaticImageData;
+  inactive: StaticImageData;
   margin?: boolean | null;
 }
 
@@ -94,10 +118,16 @@ interface iMobileDrawerLink {
 }
 
 const DashboardLayout = () => {
-  const [isSeller, setSeller] = useState<boolean>(false);
+  const index = 3; //useDashboardIndex((state) => state.index);
+  const setIndex = useDashboardIndex((state) => state.goTo);
+
+
+  const isSeller = useGlobalStore((state) => state.userType) === "Seller";
+
+  
   const [children, setChildren] = useState<ReactNode[]>([]);
   const [menus, setMenus] = useState<iMenuItemContent[]>([]);
-  const [index, setIndex] = useState<number>(3);
+  
   const [open, setOpen] = useState(true);
 
   const mobileLinks: iMobileDrawerLink[] = [
@@ -138,14 +168,14 @@ const DashboardLayout = () => {
         <HelpAndSupport key={"Help & Support"} />,
       ]);
       setMenus([
-        { name: "Overview", icon: OverviewIcon },
-        { name: "Store", icon: StoreIcon },
-        { name: "Messages", icon: MessageIcon },
-        { name: "Wallet", icon: WalletIcon },
-        { name: "Consult", icon: MicrophoneIcon },
-        { name: "Settings", icon: SettingsIcon, margin: true },
-        { name: "Help & Support", icon: HelpIcon },
-        { name: "Logout", icon: LogoutIcon },
+        { name: "Overview", active: DashboardActive, inactive: DashboardInactive },
+        { name: "Store", active: ShopActive, inactive: ShopInactive },
+        { name: "Messages", active: MessagesActive, inactive: MessagesInactive },
+        { name: "Wallet", active: WalletActive, inactive: WalletInactive },
+        { name: "Consult", active: ConsultActive, inactive: ConsultInactive },
+        { name: "Settings", active: SettingsActive, inactive: SettingsInactive, margin: true },
+        { name: "Help & Support", active: HelpActive, inactive: HelpInactive, },
+        { name: "Logout", active: Logout, inactive: Logout },
       ]);
     } else {
       setChildren([
@@ -157,13 +187,13 @@ const DashboardLayout = () => {
         <HelpAndSupport key={"Help & Support"} />,
       ]);
       setMenus([
-        { name: "Overview", icon: OverviewIcon },
-        { name: "Marketplace", icon: StoreIcon },
-        { name: "Messages", icon: MessageIcon },
-        { name: "Wallet", icon: WalletIcon },
-        { name: "Settings", icon: SettingsIcon, margin: true },
-        { name: "Help & Support", icon: HelpIcon },
-        { name: "Logout", icon: LogoutIcon },
+        { name: "Overview", active: DashboardActive, inactive: DashboardInactive },
+        { name: "Marketplace", active: ShopActive, inactive: ShopInactive },
+        { name: "Messages", active: MessagesActive, inactive: MessagesInactive },
+        { name: "Wallet", active: WalletActive, inactive: WalletInactive },
+        { name: "Settings", active: SettingsActive, inactive: SettingsInactive, margin: true },
+        { name: "Help & Support", active: HelpActive, inactive: HelpInactive, },
+        { name: "Logout", active: Logout, inactive: Logout  },
       ]);
     }
   }, []);
@@ -294,12 +324,14 @@ const DashboardLayout = () => {
                 setIndex(i);
               }}
               className={` ${menu?.margin && "mb-32"} 
-              ${index === i ? "bg-blue-80 text-blue-10" : "text-[#ffffff88]"}
+              ${index === i ? "bg-blue-80 text-blue-10" : "text-contrast"}
                 group flex items-center cursor-pointer text-sm gap-3.5 font-medium p-2 ${
                   index !== i && "hover:bg-light-blue-2"
                 }  rounded`}
             >
-              <div>{React.createElement(menu?.icon)}</div>
+              <div className="w-[24px] h-[24px] ">
+                <Image src={index === i ? menu.active : menu.inactive} alt="menu-icon"/>
+              </div>
               <h2
                 style={{
                   transitionDelay: `${i + 3}00ms`,
@@ -361,7 +393,7 @@ const DashboardLayout = () => {
         <div className="">{children[index]}</div>
         <div className="hidden md:flex justify-around fixed w-[56vw] items-center py-2 h-14 rounded-xl shadow-gray shadow-lg bg-blue-90 bottom-[5vh] right-[22vw] left-[22vw]">
           <div onClick={() => setIndex(0)}>
-            {menus[0] !== undefined && React.createElement(menus[0].icon)}
+            {menus[0] !== undefined && <Image src={index === 0 ? menus[0].active : menus[0].inactive} alt="menu-icon"/>}
           </div>
           <div
             onClick={() => {
@@ -371,7 +403,7 @@ const DashboardLayout = () => {
             <AddIcon color="#FFFFFF" />
           </div>
           <div onClick={() => setIndex(1)}>
-            {menus[1] !== undefined && React.createElement(menus[1].icon)}
+            {menus[1] !== undefined && <Image src={index === 1 ? menus[0].active : menus[0].inactive} alt="menu-icon"/>}
           </div>
         </div>
       </div>
