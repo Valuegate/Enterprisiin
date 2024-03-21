@@ -9,6 +9,8 @@ import MoneyIn from "@/public/assets/Money In.svg";
 
 import { MdMoreVert } from "react-icons/md";
 
+import { convertDateWithSlashes } from "@/public/functions/dateFunctions";
+
 interface iTransaction {
   category: string;
   name: string;
@@ -18,14 +20,8 @@ interface iTransaction {
   status: string;
 }
 
-function convertDateWithSlashes(date: Date) {
-  let isPM = date.getHours() > 11;
-  let hours = date.getHours();
-  let minutes = date.getMinutes();
-  return `${date.getDay()}/${date.getMonth()}/${date.getFullYear()}; ${hours}:${minutes} ${
-    isPM ? "PM" : "AM"
-  }`;
-}
+
+
 
 const History = () => {
   const [currentSort, setCurrentSort] = useState<string>("All");
@@ -309,64 +305,68 @@ const History = () => {
       </div>
 
       <Modal opened={opened} centered onClose={close}>
-        <div className="flex flex-col justify-start items-start gap-3">
-          <h1 className="bold-1 text-contrast-100">History Details</h1>
-          <div className="flex justify-between items-center w-full mt-6">
-            <div className="flex items-center gap-3 med-3">
-              <Image
-                src={transactions[selected].amount < 0 ? MoneyOut : MoneyIn}
-                alt=""
-              />
-              {transactions[selected].category}
+        {transactions[selected] && (
+          <div className="flex flex-col justify-start items-start gap-3">
+            <h1 className="bold-1 text-contrast-100">History Details</h1>
+            <div className="flex justify-between items-center w-full mt-6">
+              <div className="flex items-center gap-3 med-3">
+                <Image
+                  src={transactions[selected].amount < 0 ? MoneyOut : MoneyIn}
+                  alt=""
+                />
+                {transactions[selected].category}
+              </div>
+              <p className="bold-3 text-contrast-100">
+                {transactions[selected].amount < 0 ? "-" : "+"}
+                {"₦"}
+                {Math.abs(transactions[selected].amount).toLocaleString(
+                  "en-US"
+                )}
+              </p>
             </div>
-            <p className="bold-3 text-contrast-100">
-              {transactions[selected].amount < 0 ? "-" : "+"}
-              {"₦"}
-              {Math.abs(transactions[selected].amount).toLocaleString("en-US")}
-            </p>
+            <div className="mt-6 flex flex-col gap-1 w-full text-[16px] leading-[32px]">
+              <div className="flex w-full justify-between items-center">
+                <p className=" text-contrast-base">Status</p>
+                <p
+                  className={`${
+                    transactions[selected].status === "Successful"
+                      ? "text-green-100"
+                      : transactions[selected].status === "Pending"
+                      ? "text-role-orange"
+                      : "text-error"
+                  }`}
+                >
+                  {transactions[selected].status.toUpperCase()}
+                </p>
+              </div>
+              <div className="flex w-full justify-between items-center">
+                <p className=" text-contrast-base">Recipient</p>
+                <p className="text-contrast-70">
+                  {transactions[selected].name.toUpperCase()}
+                </p>
+              </div>
+              <div className="flex w-full justify-between items-center">
+                <p className=" text-contrast-base">Recipient Account</p>
+                <p className="text-contrast-70">0123456789</p>
+              </div>
+              <div className="flex w-full justify-between items-center">
+                <p className=" text-contrast-base">Transaction ID</p>
+                <p className="text-contrast-70">
+                  {transactions[selected].transactionID.toUpperCase()}
+                </p>
+              </div>
+              <div className="flex w-full justify-between items-center">
+                <p className=" text-contrast-base">Date</p>
+                <p className="text-contrast-70">
+                  {convertDateWithSlashes(transactions[selected].date)}
+                </p>
+              </div>
+            </div>
+            <button className="w-full rounded bg-blue-base text-white my-6 py-3">
+              Share
+            </button>
           </div>
-          <div className="mt-6 flex flex-col gap-1 w-full text-[16px] leading-[32px]">
-            <div className="flex w-full justify-between items-center">
-              <p className=" text-contrast-base">Status</p>
-              <p
-                className={`${
-                  transactions[selected].status === "Successful"
-                    ? "text-green-100"
-                    : transactions[selected].status === "Pending"
-                    ? "text-role-orange"
-                    : "text-error"
-                }`}
-              >
-                {transactions[selected].status.toUpperCase()}
-              </p>
-            </div>
-            <div className="flex w-full justify-between items-center">
-              <p className=" text-contrast-base">Recipient</p>
-              <p className="text-contrast-70">
-                {transactions[selected].name.toUpperCase()}
-              </p>
-            </div>
-            <div className="flex w-full justify-between items-center">
-              <p className=" text-contrast-base">Recipient Account</p>
-              <p className="text-contrast-70">
-                0123456789
-              </p>
-            </div>
-            <div className="flex w-full justify-between items-center">
-              <p className=" text-contrast-base">Transaction ID</p>
-              <p className="text-contrast-70">
-                {transactions[selected].transactionID.toUpperCase()}
-              </p>
-            </div>
-            <div className="flex w-full justify-between items-center">
-              <p className=" text-contrast-base">Date</p>
-              <p className="text-contrast-70">
-                {convertDateWithSlashes(transactions[selected].date)}
-              </p>
-            </div>
-          </div>
-          <button className="w-full rounded bg-blue-base text-white my-6 py-3">Share</button>
-        </div>
+        )}
       </Modal>
     </>
   );

@@ -6,8 +6,21 @@ type DashboardIndex = {
 };
 
 export const useDashboardIndex = create<DashboardIndex>((set) => ({
-  index: 0,
+  index: 2,
   goTo: (val) => {
     set({ index: val });
   },
 }));
+
+type MessageDetails = {
+  viewingMessage: boolean;
+};
+
+type MobileNavVisibility = {
+  shouldHide: () => boolean;
+}
+
+export const useMessageStore = create<MessageDetails>((set) => ({
+  viewingMessage: false,
+}));
+

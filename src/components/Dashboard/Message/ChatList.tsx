@@ -3,6 +3,8 @@ import React, { FC, useState, useEffect } from "react";
 
 import { iConversationListData } from "./Data";
 
+import { useMessageStore } from "@/public/stores/dashboardStore";
+
 const ChatList: FC<iConversationListData> = ({
   conversations,
   setCurrentMessage,
@@ -18,10 +20,11 @@ const ChatList: FC<iConversationListData> = ({
 
   return (
     <div className="flex flex-col w-[390px] h-full">
-      <div className={`${seller ? "h-[26.5vh] md:h-auto" : "h-[15vh]"}`}>
+      <div className={`${seller ? "h-[266px]" : "h-[178px]"} md:h-auto flex flex-col w-full`}>
         <h2 className="text-3xl md:text-[20px] md:leading-[30px] font-bold text-black md:mt-10 mt-2">
           Messages
         </h2>
+        <p className="md:text-[14px] md:leading-[20px] text-contrast-base mt-2">Buy, Invest and Loan Businesses as much as you can afford.</p>
         {seller && (
           <div className="flex flex-col">
             <p className="med-3 text-contrast-base mt-2 md:hidden">Filter by label</p>
@@ -44,18 +47,18 @@ const ChatList: FC<iConversationListData> = ({
             </div>
           </div>
         )}
-        <div className="mt-4 w-full h-[60px] flex justify-between items-center px-5 bg-input md:hidden">
-          <h1 className="bold-2 text-contrast-100">
+        <div className="mt-4 w-full h-[60px] md:h-[56px] flex justify-between items-center px-5 bg-input">
+          <h1 className="bold-2 md:text-[14px] md:leading-[24px] text-contrast-100">
             All {seller ? (filter === filters[0] ? "Messages" : filter) : "Sellers"}
           </h1>
-          <div className="bg-white rounded-full px-4 py-[6px] text-[12px] leading-[24px] font-normal text-contrast-base">
+          <div className="bg-white rounded-full px-4 py-[6px] md:py-1 text-[12px] leading-[24px] font-normal text-contrast-base">
             {conversations.length}
           </div>
         </div>
       </div>
       <div
-        className={`flex flex-col overflow-y-scroll scrollbar-custom md:h-auto md:pt-4 ${
-          seller ? "h-[60vh] " : "h-[75vh]"
+        className={`flex flex-col overflow-y-scroll w-full scrollbar-custom md:h-auto ${
+          seller ? "h-[calc(90vh-308px)] " : "h-[calc(90vh-220px)]"
         }`}
       >
         {conversations.map((conversation, i) => {
@@ -64,6 +67,7 @@ const ChatList: FC<iConversationListData> = ({
               key={i}
               onClick={() => {
                 setCurrentMessage(i);
+                useMessageStore.setState({viewingMessage: true});
               }}
               className={`flex items-center w-full pl-1 md:pl-0 pr-5 gap-3 py-2 cursor-pointer border-[0.5px] border-y-contrast-10 border-x-0 ${
                 i === currentMessage &&

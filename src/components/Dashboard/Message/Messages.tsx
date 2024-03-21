@@ -20,7 +20,7 @@ const Messages: FC<iMessagesProps> = ({ seller }) => {
   const [currentMessage, setCurrentMessage] = useState<number>(-1);
 
   return (
-    <div className="px-6 md:px-0 pt-4 h-[90vh] md:h-auto pb-6 flex items-end">
+    <div className="px-6 md:px-5 pt-4 h-[90vh] md:h-auto pb-6 flex items-end">
       <div
         className={`${
           currentMessage === -1 ? "block" : "md:hidden"
@@ -34,7 +34,12 @@ const Messages: FC<iMessagesProps> = ({ seller }) => {
         />
         <div className="w-full bg-white h-[80vh] rounded shadow-sm border-[1.5px] border-contrast-10 flex flex-col md:hidden">
           {currentMessage !== -1 ? (
-            <Inbox conversation={conversations[currentMessage]} />
+            <Inbox
+              conversation={conversations[currentMessage]}
+              exit={() => {
+                setCurrentMessage(-1);
+              }}
+            />
           ) : (
             <div className="w-full h-full flex items-center justify-center">
               <h2>There are no messages selected yet</h2>
@@ -44,7 +49,12 @@ const Messages: FC<iMessagesProps> = ({ seller }) => {
       </div>
       {currentMessage !== -1 && (
         <div className="md:block hidden">
-          <Inbox conversation={conversations[currentMessage]} />
+          <Inbox
+            conversation={conversations[currentMessage]}
+            exit={() => {
+              setCurrentMessage(-1);
+            }}
+          />
         </div>
       )}
     </div>

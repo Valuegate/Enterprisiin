@@ -12,6 +12,7 @@ export type iConversation = {
 
 export type iInboxData = {
   conversation: iConversation;
+  exit: () => void;
 };
 
 export type iMessage = {

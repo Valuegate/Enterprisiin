@@ -11,10 +11,13 @@ import { iInboxData, iMessage } from "./Data";
 
 import { IoIosArrowBack } from "react-icons/io";
 
+import { useMessageStore } from "@/public/stores/dashboardStore";
+
+
 const currentUser = "currentUser",
   otherUser = "otherUser";
 
-const Inbox: FC<iInboxData> = ({ conversation }) => {
+const Inbox: FC<iInboxData> = ({ conversation, exit }) => {
   const messages: iMessage[] = [
     {
       senderID: otherUser,
@@ -58,7 +61,12 @@ const Inbox: FC<iInboxData> = ({ conversation }) => {
     <div className="w-full h-full md:h-auto flex-col flex md:flex-col md:pt-10">
       <div className="w-full flex px-6 items-center justify-between h-[10vh] md:h-[80px] border-b-[1.5px] md:border-none border-contrast-10 md:bg-contrast-10 md:fixed md:top-[48px]">
         <div className="flex gap-4 md:gap-2 items-center md:w-[55%]">
-        <div className="cursor-pointer md:block hidden">
+        <div onClick={
+          () => {
+            useMessageStore.setState({viewingMessage: false});
+            exit();
+          }
+        } className="cursor-pointer md:block hidden">
           <IoIosArrowBack fill="#141414" size={"26px"} />
         </div>
           <div className="w-[48px] h-[48px] relative">

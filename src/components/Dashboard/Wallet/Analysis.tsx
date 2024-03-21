@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Line } from "react-chartjs-2";
 import {
   Chart,
@@ -89,15 +89,15 @@ const Analysis = () => {
       className={`bg-white rounded border-contrast-10 border-[1.5px] w-full shadow-sm`}
     >
       <div className="h-[80px] md:h-[150px] flex md:flex-col w-full md:items-start items-center md:justify-center justify-between px-6 border-b-[1.5px] border-contrast-10">
-        <h2 className="text-[24px] leading-[36px] font-bold text-contrast-100">
+        <h2 className="text-[24px] md:text-[20px] leading-[36px] md:leading-[30px] font-bold text-contrast-100">
           Analysis
         </h2>
         <div className="flex md:flex-col items-center md:items-start md:gap-3 md:mt-2 gap-7 md:w-full">
           <div className="flex gap-3 items-center">
             <div className="bg-[#00A707] w-[12px] h-[12px] rounded-full" />
-            <p className="text-contrast-base med-3">Top-ups</p>
+            <p className="text-contrast-base med-3 md:text-[14px]">Top-ups</p>
             <div className="bg-[#FF8820] w-[12px] h-[12px] rounded-full" />
-            <p className="text-contrast-base med-3">Money Out</p>
+            <p className="text-contrast-base med-3 md:text-[14px]">Money Out</p>
           </div>
           <DropdownButton
             menus={[
