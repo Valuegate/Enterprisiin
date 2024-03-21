@@ -7,12 +7,11 @@ import { IoIosAddCircle } from "react-icons/io";
 
 import PI from "@/public/assets/Ellipse 1.png";
 
-import { iInboxData, iMessage } from "./Data";
+import { iInboxData, iMessage } from "./types";
 
 import { IoIosArrowBack } from "react-icons/io";
 
-import { useMessageStore } from "@/public/stores/dashboardStore";
-
+import { useDashboardStore } from "@/public/stores/dashboardStore";
 
 const currentUser = "currentUser",
   otherUser = "otherUser";
@@ -59,17 +58,18 @@ const Inbox: FC<iInboxData> = ({ conversation, exit }) => {
 
   return (
     <div className="w-full h-full md:h-auto flex-col flex md:flex-col md:pt-10">
-      <div className="w-full flex px-6 items-center justify-between h-[10vh] md:h-[80px] border-b-[1.5px] md:border-none border-contrast-10 md:bg-contrast-10 md:fixed md:top-[48px]">
+      <div className="w-full flex px-6 md:px-0 items-center justify-between h-[10vh] md:h-[70px] border-b-[1.5px] md:border-none border-contrast-10 md:bg-contrast-10 md:fixed md:top-0 md:left-0">
         <div className="flex gap-4 md:gap-2 items-center md:w-[55%]">
-        <div onClick={
-          () => {
-            useMessageStore.setState({viewingMessage: false});
-            exit();
-          }
-        } className="cursor-pointer md:block hidden">
-          <IoIosArrowBack fill="#141414" size={"26px"} />
-        </div>
-          <div className="w-[48px] h-[48px] relative">
+          <div
+            onClick={() => {
+              useDashboardStore.setState({ viewingMessage: false });
+              exit();
+            }}
+            className="cursor-pointer md:block hidden"
+          >
+            <IoIosArrowBack fill="#141414" size={"26px"} />
+          </div>
+          <div className="w-[48px] h-[48px] md:w-[36px] md:h-[36px] relative">
             <Image
               src={conversation.image}
               alt="convo image"
@@ -81,8 +81,8 @@ const Inbox: FC<iInboxData> = ({ conversation, exit }) => {
               } rounded-full absolute bottom-0 right-0`}
             />
           </div>
-          <div className="flex flex-col">
-            <h2 className="bold-2 md:text-[14px] md:leading-[24px] text-contrast-100">
+          <div className="flex flex-col md:w-[135px]">
+            <h2 className="bold-2 md:text-[14px] md:leading-[24px] text-contrast-100 md:line-clamp-1">
               {conversation.sellerName}
             </h2>
             <p className="med-3 md:text-[12px] md:leading-[20px] text-contrast-70">
@@ -92,16 +92,14 @@ const Inbox: FC<iInboxData> = ({ conversation, exit }) => {
         </div>
 
         <div className="flex gap-4 md:gap-2 items-center md:w-[40%]">
-          <div className="text-blue-base med-3 md:text-[14px] md:leading-[20px] px-3 py-2 rounded-full bg-blue-10">
+          <div className="text-blue-base med-3 md:text-[14px] md:leading-[20px] px-3 md:px-2 py-2 rounded-full bg-blue-10">
             {" "}
             View Business{" "}
           </div>
           <MdOutlineMoreVert fill={"#000000"} size={"24px"} />
         </div>
-
-
       </div>
-      <div className="w-full flex flex-col h-[60vh] md:h-auto overflow-y-scroll scrollbar-custom gap-5 px-6 py-2">
+      <div className="w-full flex flex-col h-[60vh] md:h-auto overflow-y-scroll scrollbar-custom gap-5 px-6 py-2 md:py-16">
         {messages.map((message, i) => {
           return (
             <div
@@ -148,13 +146,19 @@ const Inbox: FC<iInboxData> = ({ conversation, exit }) => {
           );
         })}
       </div>
-      <div className="w-full flex px-6 items-center gap-10 h-[10vh] border-t-[1.5px] border-contrast-10 md:fixed md:bottom-0 md:bg-background">
-        <div className="flex gap-4 w-[100px]">
-          <div className="h-[40px] w-[40px] bg-blue-base rounded-full flex items-center justify-center">
+      <div className="w-full flex px-6 md:px-5 items-center gap-10 md:gap-5 h-[10vh] border-t-[1.5px] border-contrast-10 md:fixed md:bottom-0 md:bg-background">
+        <div className="flex gap-4 w-[100px] md:w-[90px]">
+          <div className="h-[40px] w-[40px] bg-blue-base rounded-full flex items-center justify-center md:hidden">
             <IoIosAddCircle fill="#FFFFFF" size={"28px"} />
           </div>
-          <div className="h-[40px] w-[40px] bg-blue-base rounded-full flex items-center justify-center">
+          <div className="h-[36px] w-[36px] bg-blue-base rounded-full md:flex items-center justify-center hidden">
+            <IoIosAddCircle fill="#FFFFFF" size={"22px"} />
+          </div>
+          <div className="h-[40px] w-[40px] bg-blue-base rounded-full flex items-center justify-center md:hidden">
             <MdEmojiEmotions fill="#FFFFFF" size={"28px"} />
+          </div>
+          <div className="h-[36px] w-[36px] bg-blue-base rounded-full md:flex items-center justify-center hidden">
+            <MdEmojiEmotions fill="#FFFFFF" size={"22px"} />
           </div>
         </div>
 

@@ -215,7 +215,7 @@ const AttachmentContent = () => {
                 />
               </div>
               <div className="flex flex-col justify-center gap-2">
-                <p className="text-contrast font-semibold text-[20px] md:text-[14px] leading-[32px] md:leading-[24px]">
+                <p className="text-contrast-100 font-semibold text-[20px] md:text-[14px] leading-[32px] md:leading-[24px]">
                   {attachment.title}
                 </p>
                 <div className="flex leading-[24px] font-medium text-contrast-70 text-[16px] md:text-[14px]">

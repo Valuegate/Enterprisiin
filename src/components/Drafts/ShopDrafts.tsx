@@ -55,25 +55,25 @@ const ShopDrafts: FC<iShopDraftSectionData> = ({ drafts, onSelectDraft }) => {
               menus={[
                 {
                   name: "Business for sale",
-                  onClick: (e) => {
+                  onClick: () => {
                     setSortByFilter("Business for sale");
                   },
                 },
                 {
                   name: "Business investment",
-                  onClick: (e) => {
+                  onClick: () => {
                     setSortByFilter("Business investment");
                   },
                 },
                 {
                   name: "Business loan",
-                  onClick: (e) => {
+                  onClick: () => {
                     setSortByFilter("Business loan");
                   },
                 },
                 {
                   name: "Asset for sale",
-                  onClick: (e) => {
+                  onClick: () => {
                     setSortByFilter("Asset for sale");
                   },
                 },
@@ -85,13 +85,13 @@ const ShopDrafts: FC<iShopDraftSectionData> = ({ drafts, onSelectDraft }) => {
               menus={[
                 {
                   name: "Active",
-                  onClick: (e) => {
+                  onClick: () => {
                     setFilterBy("Active");
                   },
                 },
                 {
                   name: "Archived",
-                  onClick: (e) => {
+                  onClick: () => {
                     setFilterBy("Archived");
                   },
                 },

@@ -1,26 +1,18 @@
 import { create } from "zustand";
 
-type DashboardIndex = {
-  index: number;
+type DashboardData = {
+  dashboardIndex: number;
   goTo: (val: number) => void;
-};
 
-export const useDashboardIndex = create<DashboardIndex>((set) => ({
-  index: 2,
-  goTo: (val) => {
-    set({ index: val });
-  },
-}));
-
-type MessageDetails = {
   viewingMessage: boolean;
+  viewingBusiness: boolean;
 };
 
-type MobileNavVisibility = {
-  shouldHide: () => boolean;
-}
-
-export const useMessageStore = create<MessageDetails>((set) => ({
+export const useDashboardStore = create<DashboardData>((set) => ({
+  dashboardIndex: 0,
+  goTo: (val) => {
+    set({ dashboardIndex: val });
+  },
+  viewingBusiness: false,
   viewingMessage: false,
 }));
-

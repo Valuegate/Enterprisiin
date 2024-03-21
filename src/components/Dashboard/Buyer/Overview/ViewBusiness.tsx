@@ -11,16 +11,18 @@ import Button from "@/public/components/Button";
 import { IoMdMore } from "react-icons/io";
 import { LuDownload } from "react-icons/lu";
 
+
+
 const ViewBusiness: FC<iViewBusiness> = ({ business, onExit }) => {
   return (
     business && (
-      <div className="flex flex-col w-full px-6 h-[90vh] md:h-auto overflow-y-scroll">
+      <div className="flex flex-col w-full px-6 md:px-5 h-[90vh] md:h-auto overflow-y-scroll">
         <div className="flex justify-between items-center w-full mt-4">
-          <div className="flex gap-2 bold-2 items-center">
+          <div className="flex gap-2 items-center w-full">
             <div onClick={onExit} className="cursor-pointer">
-              <IoIosArrowBack fill="#141414" />
+              <IoIosArrowBack fill="#141414" size={"26px"} />
             </div>
-            {business.name}
+            <h2 className="bold-2 md:text-[16px] md:leading-[28px] line-clamp-1 w-[85%]">{business.name}</h2>
             <div
               className={`${
                 business.status === PROPOSED
@@ -31,6 +33,9 @@ const ViewBusiness: FC<iViewBusiness> = ({ business, onExit }) => {
               } px-2 rounded-full py-1 med-3 md:hidden`}
             >
               {business.status}
+            </div>
+            <div className="md:block hidden">
+            <IoMdMore size={"26px"} />
             </div>
           </div>
           <div className="flex gap-2 items-center med-3 md:hidden">

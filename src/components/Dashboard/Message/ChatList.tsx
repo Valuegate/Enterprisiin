@@ -1,9 +1,9 @@
 import Image from "next/image";
 import React, { FC, useState, useEffect } from "react";
 
-import { iConversationListData } from "./Data";
+import { iConversationListData } from "./types";
 
-import { useMessageStore } from "@/public/stores/dashboardStore";
+import { useDashboardStore } from "@/public/stores/dashboardStore";
 
 const ChatList: FC<iConversationListData> = ({
   conversations,
@@ -19,7 +19,7 @@ const ChatList: FC<iConversationListData> = ({
   }, []);
 
   return (
-    <div className="flex flex-col w-[390px] h-full">
+    <div className="flex flex-col w-[390px] md:w-full h-full">
       <div className={`${seller ? "h-[266px]" : "h-[178px]"} md:h-auto flex flex-col w-full`}>
         <h2 className="text-3xl md:text-[20px] md:leading-[30px] font-bold text-black md:mt-10 mt-2">
           Messages
@@ -67,9 +67,9 @@ const ChatList: FC<iConversationListData> = ({
               key={i}
               onClick={() => {
                 setCurrentMessage(i);
-                useMessageStore.setState({viewingMessage: true});
+                useDashboardStore.setState({viewingMessage: true});
               }}
-              className={`flex items-center w-full pl-1 md:pl-0 pr-5 gap-3 py-2 cursor-pointer border-[0.5px] border-y-contrast-10 border-x-0 ${
+              className={`flex items-center w-full pl-1 md:pl-0 pr-5 md:pr-0 gap-3 md:gap-4 py-2 cursor-pointer border-[0.5px] border-y-contrast-10 border-x-0 ${
                 i === currentMessage &&
                 "bg-blue-10 rounded "
               }`}
@@ -78,7 +78,7 @@ const ChatList: FC<iConversationListData> = ({
                 <Image
                   src={conversation.image}
                   alt="convo image"
-                  className="w-full h-full rounded-full"
+                  className="w-[48px] h-[48px] rounded-full"
                 />
                 <div
                   className={`h-[16px] w-[16px] border-4 border-white ${

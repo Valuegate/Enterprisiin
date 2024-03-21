@@ -21,8 +21,7 @@ import Wallet from "@/public/components/Dashboard/Wallet/Wallet";
 import Consult from "@/public/components/Dashboard/Seller/Consult/Consult";
 import HelpAndSupport from "@/public/components/Dashboard/HelpAndSupport";
 import Marketplace from "@/public/components/Dashboard/Buyer/Marketplace/Marketplace";
-import SellerMessages from "@/public/components/Dashboard/Seller/SellerMessage/SellerMessages";
-import { useDashboardIndex, useMessageStore } from "@/public/stores/dashboardStore";
+import { useDashboardStore } from "@/public/stores/dashboardStore";
 import { useUserStore } from "@/public/stores/userStore";
 
 import DashboardActive from "@/public/assets/icons/Dashboard Active.svg";
@@ -51,8 +50,8 @@ import MobileDrawer from "@/public/components/Dashboard/Layout/MobileDrawer";
 
 
 const DashboardLayout = () => {
-  const index = useDashboardIndex((state) => state.index);
-  const setIndex = useDashboardIndex((state) => state.goTo);
+  const index = useDashboardStore((state) => state.dashboardIndex);
+  const setIndex = useDashboardStore((state) => state.goTo);
   const isSeller = useUserStore((state) => state.type) === "Seller";
   const username = useUserStore((state) => state.fullName);
   const role = useUserStore((state) => state.role);
@@ -60,9 +59,10 @@ const DashboardLayout = () => {
 
 
 
-  // MOBILE NAV BAR CONDITIONS
-  const viewingMessage = useMessageStore((state) => state.viewingMessage);
 
+  // MOBILE NAV BAR VISIBILITY CONDITIONS
+  const viewingMessage = useDashboardStore((state) => state.viewingMessage);
+  const viewingBusiness = useDashboardStore((state) => state.viewingBusiness);
 
 
 
@@ -73,6 +73,10 @@ const DashboardLayout = () => {
 
   const [openedDrawer, { open: openDrawer, close: closeDrawer }] =
     useDisclosure(false);
+
+
+
+  let hideNavigationBar = viewingBusiness || viewingMessage;
 
   useEffect(() => {
     if (isSeller) {
@@ -161,7 +165,7 @@ const DashboardLayout = () => {
         setOpen={setOpen}
       />
 
-      <div className={`hidden ${viewingMessage && "md:hidden"} md:flex h-[8vh] bg-background justify-between items-center w-full fixed md:px-5 z-10 top-0`}>
+      <div className={`hidden ${hideNavigationBar  && "md:hidden"} md:flex h-[8vh] bg-background justify-between items-center w-full fixed md:px-5 z-10 top-0`}>
         <Logo />
         <div onClick={openDrawer}>
           <FaBarsStaggered size={"24px"} />
@@ -199,7 +203,7 @@ const DashboardLayout = () => {
         </nav>
 
         <div>{children[index]}</div>
-        <div className="hidden md:flex justify-around fixed w-[56vw] items-center py-2 h-14 rounded-xl shadow-gray shadow-lg bg-blue-90 bottom-[5vh] right-[22vw] left-[22vw]">
+        <div className={`hidden ${hideNavigationBar && "md:hidden"} md:flex justify-around fixed w-[56vw] items-center py-2 h-14 rounded-xl shadow-gray shadow-lg bg-blue-90 bottom-[5vh] right-[22vw] left-[22vw]`}>
           <div onClick={() => setIndex(0)}>
             {menus[0] !== undefined && (
               <Image
@@ -218,7 +222,7 @@ const DashboardLayout = () => {
           <div onClick={() => setIndex(1)}>
             {menus[1] !== undefined && (
               <Image
-                src={index === 1 ? menus[0].active : menus[0].inactive}
+                src={index === 1 ? menus[1].active : menus[1].inactive}
                 alt="menu-icon"
               />
             )}

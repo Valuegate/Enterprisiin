@@ -51,3 +51,7 @@ export function convertDate(date: string | Date) {
       isPM ? "PM" : "AM"
     }`;
   }
+
+  export function convertDateWithJustSlashes(date: Date) {
+    return `${date.getDay()}/${date.getMonth()}/${date.getFullYear()}`;
+  }

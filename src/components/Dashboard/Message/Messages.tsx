@@ -1,9 +1,11 @@
 import React, { useState, FC } from "react";
 import Person from "@/public/assets/Ellipse 4 (1).png";
-import { iConversation, iMessagesProps } from "./Data";
+import { iConversation, iMessagesProps } from "./types";
 
 import ChatList from "./ChatList";
 import Inbox from "./Inbox";
+
+import { useDashboardStore } from "@/public/stores/dashboardStore";
 
 const Messages: FC<iMessagesProps> = ({ seller }) => {
   const conversations: iConversation[] = Array(20).fill({
@@ -19,8 +21,10 @@ const Messages: FC<iMessagesProps> = ({ seller }) => {
 
   const [currentMessage, setCurrentMessage] = useState<number>(-1);
 
+  const viewingMessage = useDashboardStore((state) => state.viewingMessage);
+
   return (
-    <div className="px-6 md:px-5 pt-4 h-[90vh] md:h-auto pb-6 flex items-end">
+    <div className={`px-6 ${(viewingMessage && currentMessage !== -1) ? "md:px-0" : "md:px-5 pt-4"} w-full  h-[90vh] md:h-auto pb-6 flex items-end`}>
       <div
         className={`${
           currentMessage === -1 ? "block" : "md:hidden"

@@ -149,25 +149,25 @@ const StorePage = () => {
                     menus={[
                       {
                         name: "Business for Sale",
-                        onClick: (e) => {
+                        onClick: () => {
                           setSortFilter("Business for Sale");
                         },
                       },
                       {
                         name: "Business Investment",
-                        onClick: (e) => {
+                        onClick: () => {
                           setSortFilter("Business Investment");
                         },
                       },
                       {
                         name: "Business Loan",
-                        onClick: (e) => {
+                        onClick: () => {
                           setSortFilter("Business Loan");
                         },
                       },
                       {
                         name: "Asset for Sale",
-                        onClick: (e) => {
+                        onClick: () => {
                           setSortFilter("Asset for Sale");
                         },
                       },
@@ -179,19 +179,19 @@ const StorePage = () => {
                     menus={[
                       {
                         name: "Proposed",
-                        onClick: (e) => {
+                        onClick: () => {
                           setFilter("Proposed");
                         },
                       },
                       {
                         name: "Accepted",
-                        onClick: (e) => {
+                        onClick: () => {
                           setFilter("Accepted");
                         },
                       },
                       {
                         name: "Rejected",
-                        onClick: (e) => {
+                        onClick: () => {
                           setFilter("Rejected");
                         },
                       },

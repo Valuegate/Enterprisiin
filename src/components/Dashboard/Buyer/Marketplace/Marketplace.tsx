@@ -3,7 +3,7 @@
 import Auto from "@/public/assets/Rectangle 101.png";
 
 import Button from "@/public/components/Button";
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 
 import DropdownButton from "@/public/components/DropdownButton/DropdownButton";
 import { GrLocation } from "react-icons/gr";
@@ -16,6 +16,9 @@ import Image, { StaticImageData } from "next/image";
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, Select, MultiSelect } from "@mantine/core";
 
+import { useDashboardStore } from "@/public/stores/dashboardStore";
+import ViewBusiness from "../Overview/ViewBusiness";
+
 interface iMarketBusinessData {
   image: string | StaticImageData;
   name: string;
@@ -24,6 +27,7 @@ interface iMarketBusinessData {
   description: string;
   price: string;
   status: string;
+  onClick: () => void;
 }
 
 interface iFilterData {
@@ -59,10 +63,12 @@ const Marketplace = () => {
     status: "For Sale",
   });
 
+  const viewingBusiness = useDashboardStore((state) => state.viewingBusiness);
+
   return (
     <>
-      <div className="px-6 pt-4 overflow-y-scroll h-[90vh] md:h-auto pb-10">
-        {currentBusiness === -1 ? (
+      {currentBusiness === -1 ? (
+        <div className={`px-6 pt-4 overflow-y-scroll h-[90vh] md:h-auto pb-10`}>
           <div className="flex flex-col">
             <div className="w-full flex justify-between items-center md:flex-col">
               <div className="flex flex-col">
@@ -78,25 +84,25 @@ const Marketplace = () => {
                   menus={[
                     {
                       name: "All",
-                      onClick: (e) => {
+                      onClick: () => {
                         setSortFilter("All");
                       },
                     },
                     {
                       name: "Accepted",
-                      onClick: (e) => {
+                      onClick: () => {
                         setSortFilter("Accepted");
                       },
                     },
                     {
                       name: "Proposed",
-                      onClick: (e) => {
+                      onClick: () => {
                         setSortFilter("Proposed");
                       },
                     },
                     {
                       name: "Rejected",
-                      onClick: (e) => {
+                      onClick: () => {
                         setSortFilter("Rejected");
                       },
                     },
@@ -136,15 +142,35 @@ const Marketplace = () => {
                     price={business.price}
                     role={business.role}
                     status={business.status}
+                    onClick={() => {
+                      setCurrentBusiness(i);
+                      useDashboardStore.setState({ viewingBusiness: true });
+                    }}
                   />
                 );
               })}
             </div>
           </div>
-        ) : (
-          <></>
-        )}
-      </div>
+        </div>
+      ) : (
+        <ViewBusiness
+          business={{
+            amount: 400000,
+            businessStatus: "",
+            description: businesses[currentBusiness].description,
+            image: businesses[currentBusiness].image,
+            interest: "",
+            liked: true,
+            location: "",
+            name: businesses[currentBusiness].name,
+            status: businesses[currentBusiness].status,
+          }}
+          onExit={() => {
+            setCurrentBusiness(-1);
+            useDashboardStore.setState({ viewingBusiness: false });
+          }}
+        />
+      )}
       <Modal opened={openedFilter} centered onClose={closeFilter}>
         <div className="flex flex-col">
           <p className="bold-1 text-contrast-100">Filter</p>
@@ -211,6 +237,7 @@ const MarketCard: FC<iMarketBusinessData> = ({
   description,
   price,
   status,
+  onClick,
 }) => {
   return (
     <div className="bg-white md:bg-background md:shadow-none shadow-md w-[260px] md:w-full h-[330px] md:h-auto flex flex-col p-4 md:p-0">
@@ -267,7 +294,10 @@ const MarketCard: FC<iMarketBusinessData> = ({
             {status}
           </div>
         </div>
-        <button className="w-full h-8 bg-blue-base rounded text-white med-3 mt-3 md:mb-5">
+        <button
+          onClick={onClick}
+          className="w-full h-8 bg-blue-base rounded text-white med-3 mt-3 md:mb-5"
+        >
           Connect
         </button>
       </div>
