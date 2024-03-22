@@ -10,6 +10,7 @@ import Logo from "@/public/components/Logo/Logo";
 import SellerOverview from "@/public/components/Dashboard/Seller/SellerOverview";
 import BuyerOverview from "@/public/components/Dashboard/Buyer/Overview/BuyerOverview";
 
+import { Modal } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 
 import { FaBarsStaggered } from "react-icons/fa6";
@@ -45,9 +46,7 @@ import { convertDate } from "@/public/functions/dateFunctions";
 import { iMenuItemContent } from "@/public/components/Dashboard/types";
 import DesktopNav from "@/public/components/Dashboard/Layout/DesktopNav";
 import MobileDrawer from "@/public/components/Dashboard/Layout/MobileDrawer";
-
-
-
+import LogoutModal from "@/public/components/Dashboard/Layout/LogoutModal";
 
 const DashboardLayout = () => {
   const index = useDashboardStore((state) => state.dashboardIndex);
@@ -57,15 +56,9 @@ const DashboardLayout = () => {
   const role = useUserStore((state) => state.role);
   const contact = useUserStore((state) => state.contact);
 
-
-
-
   // MOBILE NAV BAR VISIBILITY CONDITIONS
   const viewingMessage = useDashboardStore((state) => state.viewingMessage);
   const viewingBusiness = useDashboardStore((state) => state.viewingBusiness);
-
-
-
 
   const [children, setChildren] = useState<ReactNode[]>([]);
   const [menus, setMenus] = useState<iMenuItemContent[]>([]);
@@ -74,7 +67,8 @@ const DashboardLayout = () => {
   const [openedDrawer, { open: openDrawer, close: closeDrawer }] =
     useDisclosure(false);
 
-
+  const [showLogoutModal, { open: openLogoutModal, close: closeLogoutModal }] =
+    useDisclosure(false);
 
   let hideNavigationBar = viewingBusiness || viewingMessage;
 
@@ -163,15 +157,24 @@ const DashboardLayout = () => {
         open={open}
         setIndex={setIndex}
         setOpen={setOpen}
+        onLogout={openLogoutModal}
       />
 
-      <div className={`hidden ${hideNavigationBar  && "md:hidden"} md:flex h-[8vh] bg-background justify-between items-center w-full fixed md:px-5 z-10 top-0`}>
+      <Modal opened={showLogoutModal} centered onClose={closeLogoutModal}>
+        <LogoutModal onCancel={closeLogoutModal} onProceed={() => {}} />
+      </Modal>
+
+      <div
+        className={`hidden ${
+          hideNavigationBar && "md:hidden"
+        } md:flex h-[8vh] bg-background justify-between items-center w-full fixed md:px-5 z-10 top-0`}
+      >
         <Logo />
         <div onClick={openDrawer}>
           <FaBarsStaggered size={"24px"} />
         </div>
       </div>
-      
+
       <div className="w-full">
         <nav className="flex justify-between items-center px-[40px] md:hidden h-[10vh] border-b-[1px] border-contrast-10">
           <div className="">
@@ -203,7 +206,11 @@ const DashboardLayout = () => {
         </nav>
 
         <div>{children[index]}</div>
-        <div className={`hidden ${hideNavigationBar && "md:hidden"} md:flex justify-around fixed w-[56vw] items-center py-2 h-14 rounded-xl shadow-gray shadow-lg bg-blue-90 bottom-[5vh] right-[22vw] left-[22vw]`}>
+        <div
+          className={`hidden ${
+            hideNavigationBar && "md:hidden"
+          } md:flex justify-around fixed w-[56vw] items-center py-2 h-14 rounded-xl shadow-gray shadow-lg bg-blue-90 bottom-[5vh] right-[22vw] left-[22vw]`}
+        >
           <div onClick={() => setIndex(0)}>
             {menus[0] !== undefined && (
               <Image

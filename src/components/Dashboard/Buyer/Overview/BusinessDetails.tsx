@@ -31,7 +31,7 @@ const BusinessDetails = () => {
           <p className="pl-4 pr-2 md:w-[160px]">Business Overview</p>
         </div>
         <div className="md:w-[90px]">
-          <p
+          <div
             onClick={() => {
               setActiveTab(1);
             }}
@@ -42,10 +42,10 @@ const BusinessDetails = () => {
             }`}
           >
             <p className="px-2">Attachments</p>
-          </p>
+          </div>
         </div>
         <div className="md:w-[120px]">
-          <p
+          <div
             onClick={() => {
               setActiveTab(2);
             }}
@@ -56,10 +56,10 @@ const BusinessDetails = () => {
             }`}
           >
             <p className="px-2">Business Gallery</p>
-          </p>
+          </div>
         </div>
         <div className="md:w-[60px] md:block hidden">
-          <p
+          <div
             onClick={() => {
               setActiveTab(3);
             }}
@@ -70,7 +70,7 @@ const BusinessDetails = () => {
             }`}
           >
             <p className="pl-2 pr-4">Profile</p>
-          </p>
+          </div>
         </div>
       </div>
       <div className="mt-7 px-4 w-full">

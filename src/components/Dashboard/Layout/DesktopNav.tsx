@@ -20,6 +20,7 @@ const DesktopNav: FC<iDesktopNavProps> = ({
   setOpen,
   menus,
   index,
+  onLogout,
 }) => {
   return (
     <div
@@ -74,7 +75,11 @@ const DesktopNav: FC<iDesktopNavProps> = ({
             }}
             key={i}
             onClick={() => {
-              setIndex(i);
+              if (i !== menus.length - 1) {
+                setIndex(i);
+              } else {
+                onLogout();
+              }
             }}
             className={` ${menu?.margin && "mb-32"} 
           ${index === i ? "bg-blue-80 text-blue-10" : "text-contrast"}
