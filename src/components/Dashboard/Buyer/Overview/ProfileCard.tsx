@@ -11,7 +11,7 @@ const ProfileCard = () => {
   return (
     <div className="flex flex-col items-center bg-white w-full md:border-none md:shadow-none rounded border-contrast-10 border-[1.5px] shadow-sm">
       <div className="mt-5 md:mt-2 flex justify-end w-full pr-4 md:pr-2">
-        <div className="flex items-center gap-1 bg-role-green-bg text-role-green px-2 py-1 rounded-full text-[14px] leading-[21px]">
+        <div className="flex items-center gap-1 bg-role-green-bg text-green-100 px-2 py-1 rounded-full text-[14px] leading-[21px]">
           <MdDone />
           Verified
         </div>

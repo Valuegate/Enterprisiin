@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Menu, Modal } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import DropdownButton from "../../DropdownButton/DropdownButton";
@@ -19,9 +19,6 @@ interface iTransaction {
   amount: number;
   status: string;
 }
-
-
-
 
 const History = () => {
   const [currentSort, setCurrentSort] = useState<string>("All");
@@ -182,8 +179,8 @@ const History = () => {
           <h2 className="w-[20%] bold-3 text-contrast-80">Name</h2>
           <h2 className="w-[15%] bold-3 text-contrast-80">Transaction ID</h2>
           <h2 className="w-[20%] bold-3 text-contrast-80">Date</h2>
-          <h2 className="w-[10%] bold-3 text-contrast-80">Amount</h2>
-          <h2 className="w-[15%] bold-3 text-contrast-80">Status</h2>
+          <h2 className="w-[15%] bold-3 text-contrast-80">Amount</h2>
+          <h2 className="w-[10%] bold-3 text-contrast-80">Status</h2>
           <h2 className="w-[5%] bold-3 text-contrast-80">Action</h2>
         </div>
         <div className="w-full flex flex-col md:hidden">
@@ -208,7 +205,7 @@ const History = () => {
                   {convertDateWithSlashes(transaction.date)}
                 </h2>
                 <h2
-                  className={`w-[10%] med-3 ${
+                  className={`w-[15%] med-3 ${
                     transaction.amount < 0 ? "text-error" : "text-green-100"
                   }`}
                 >
@@ -216,7 +213,7 @@ const History = () => {
                   {"₦"}
                   {Math.abs(transaction.amount).toLocaleString("en-US")}
                 </h2>
-                <h2 className={`w-[15%] med-3`}>
+                <h2 className={`w-[10%] med-3`}>
                   <div
                     className={`${
                       transaction.status === "Successful"
@@ -229,26 +226,9 @@ const History = () => {
                     {transaction.status}
                   </div>
                 </h2>
-                <Menu position="bottom">
-                  <h2 className="w-[5%] med-3 text-contrast-70 flex justify-end cursor-pointer">
-                    <Menu.Target>
-                      <MdMoreVert size={"24px"} />
-                    </Menu.Target>
-                    <Menu.Dropdown>
-                      <Menu.Item
-                        onClick={(e) => {
-                          viewTransaction(i);
-                        }}
-                        className="cursor-pointer px-4 py-2 text-base leading-8 text-contrast-base hover:bg-blue-base hover:text-white hover:rounded"
-                      >
-                        View
-                      </Menu.Item>
-                      <Menu.Item className="cursor-pointer px-4 py-2 text-base leading-8 text-contrast-base hover:bg-blue-base hover:text-white hover:rounded">
-                        Delete
-                      </Menu.Item>
-                    </Menu.Dropdown>
-                  </h2>
-                </Menu>
+                <div className="w-[5%] med-3 text-contrast-70 flex justify-end cursor-pointer">
+                  <MdMoreVert size={"24px"} fill="#000000" />
+                </div>
               </div>
             );
           })}

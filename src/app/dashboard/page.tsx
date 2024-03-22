@@ -55,6 +55,7 @@ const DashboardLayout = () => {
   const username = useUserStore((state) => state.fullName);
   const role = useUserStore((state) => state.role);
   const contact = useUserStore((state) => state.contact);
+  
 
   // MOBILE NAV BAR VISIBILITY CONDITIONS
   const viewingMessage = useDashboardStore((state) => state.viewingMessage);
@@ -69,6 +70,7 @@ const DashboardLayout = () => {
 
   const [showLogoutModal, { open: openLogoutModal, close: closeLogoutModal }] =
     useDisclosure(false);
+
 
   let hideNavigationBar = viewingBusiness || viewingMessage;
 

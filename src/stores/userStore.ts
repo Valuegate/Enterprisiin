@@ -9,6 +9,7 @@ export type User = {
   contact: string | null;
   image: string | StaticImageData;
   type: string;
+  verified: boolean;
 };
 
 export const useUserStore = create<User>((set) => ({
@@ -17,4 +18,5 @@ export const useUserStore = create<User>((set) => ({
   contact: "+2348012345678",
   type: "Buyer",
   image: PI,
+  verified: true,
 }));

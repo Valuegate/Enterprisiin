@@ -8,7 +8,7 @@ interface iNotificationData {
 }
 
 const NotificationSettings = () => {
-  const notifications: iNotificationData[] = Array(6).fill({
+  const notifications: iNotificationData[] = Array(3).fill({
     header: "Lorem ipsum dolor sit amet",
     content:
       "Lorem ipsum dolor sit amet, cons piscing elit lorem ipsumsit. Lorem ipsum dolor sit amet, cons piscing elit lorem ipsumsit.",

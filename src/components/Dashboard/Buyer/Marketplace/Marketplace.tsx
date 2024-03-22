@@ -130,7 +130,7 @@ const Marketplace = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-5 grid-cols-4 grid md:grid-cols-1 gap-7 md:gap-4">
+            <div className="mt-5 flex flex-wrap md:flex-col gap-7 md:gap-4">
               {businesses.map((business, i) => {
                 return (
                   <MarketCard
